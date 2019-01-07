@@ -1,0 +1,24 @@
+
+extends layout
+
+block video
+
+  .background-video
+    video(autoplay="autoplay" poster="_video/leaves.jpg" title="Next Generation Underwriters" loop="loop" onended="var v=this;setTimeout(function(){v.play()},300)")
+      source(src="_video/leaves.m4v" type="video/mp4")
+      source(src="_video/leaves.webm" type="video/webm")
+      object(type="application/x-shockwave-flash" data="_video/flashfox.swf" width="1920" height="1080" style="position:relative;")
+        param(name="movie" value="_video/flashfox.swf")
+        param(name="allowFullScreen" value="true")
+        param(name="flashVars" value="autoplay=true&controls=false&fullScreenEnabled=false&posterOnEnd=true&loop=true&poster=_video/leaves.jpg&src=leaves.m4v")
+        embed(src="_video/flashfox.swf" width="1920" height="1080" style="position:relative;" allowFullScreen="true" wmode="transparent" type="application/x-shockwave-flash")
+        img(alt="Next Generation Underwriters" src="_video/leaves.jpg" style="position:absolute;left:0;" width="100%" title="Video playback is not supported by your browser")
+    script(src="_video/html5ext.js" type="text/javascript")
+
+block content
+
+  img.logo.large(src='_images/logo.svg' alt='Next Generation Underwriters white logo')
+
+block sidebar
+
+  include _includes/navigation

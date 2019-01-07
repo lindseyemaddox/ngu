@@ -1,0 +1,61 @@
+
+$icomoon-font-path ?= "../_fonts"
+$icon-acorn = "\e900"
+$icon-arrow-sm = "\e901"
+$icon-arrow = "\e902"
+$icon-boat = "\e903"
+$icon-compass = "\e904"
+$icon-knife = "\e905"
+$icon-leaf = "\e906"
+$icon-sign = "\e907"
+$icon-telescope = "\e908"
+
+@font-face
+  font-family 'ngu'
+  src url($icomoon-font-path + '/ngu.eot?mrpzwq')
+  src url($icomoon-font-path + '/ngu.eot?mrpzwq#iefix') format('embedded-opentype'), url($icomoon-font-path + '/ngu.ttf?mrpzwq') format('truetype'), url($icomoon-font-path + '/ngu.woff?mrpzwq') format('woff'), url($icomoon-font-path + '/ngu.svg?mrpzwq#ngu') format('svg')
+  font-weight normal
+  font-style normal
+
+[class^="icon-"], [class*=" icon-"]
+  color: $white
+  display: block
+  font-family 'ngu' !important
+  speak none
+  font-style normal
+  font-weight normal
+  font-variant normal
+  text-transform none
+  line-height 1
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+.icon-acorn
+  &:before
+    content: $icon-acorn
+.icon-arrow-sm
+  &:before
+    content $icon-arrow-sm
+.icon-arrow
+  &:before
+    content $icon-arrow
+.icon-boat
+  &:before
+    content $icon-boat
+.icon-compass
+  &:before
+    content $icon-compass
+.icon-knife
+  &:before
+    content $icon-knife
+.icon-leaf
+  &:before
+    content $icon-leaf
+.icon-sign
+  &:before
+    content $icon-sign
+.icon-telescope
+  &:before
+    content $icon-telescope
