@@ -186,6 +186,7 @@ svg:not(root) {
   clear: both;
 }
 html {
+  color: #fff;
   font-size: 16px;
 }
 @font-face {
@@ -477,10 +478,9 @@ html {
   width: 100%;
 }
 .wrapper {
-  border-left: 0.5vw solid #1778e5;
   display: table;
   height: 100vh;
-  width: 99.5vw;
+  width: 100vw;
 }
 .wrapper .main {
   display: table-row;
@@ -498,13 +498,35 @@ html {
   width: 100%;
 }
 .grid {
-  max-width: 1800px;
-  margin: 0 400px 0 40px;
+  max-width: 930px;
+  margin-left: 40px;
 }
 @media screen and (max-width: 1200px) {
   .grid {
     max-width: 900px;
   }
+}
+.content {
+  overflow: hidden;
+  position: relative;
+}
+.panes {
+  transition: 0.8s;
+  white-space: nowrap;
+}
+.pane {
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+}
+#intro:target ~ .panes {
+  transform: translateX(0%);
+}
+#program:target ~ .panes {
+  transform: translateX(-100%);
+}
+#people:target ~ .panes {
+  transform: translateX(-200%);
 }
 span.label {
   color: #fff;
@@ -528,11 +550,44 @@ span.label.multi {
   position: relative;
   text-decoration: none;
 }
-[class^="icon-"].active,
-[class*=" icon-"].active {
+a.active {
+  color: #ffc0cb;
   font-size: 3em;
 }
 .logo {
+  margin-bottom: 62px;
   margin-top: 167px;
   width: 523px;
+}
+a {
+  color: #1a86ff;
+  text-decoration: none;
+  transition: color 400ms ease;
+}
+a:hover {
+  color: #f9d426;
+}
+h1.tagline {
+  font-size: 1.625em;
+  font-family: 'Vollkorn', 'Arial', sans-serif;
+  font-weight: 700;
+  line-height: 1.5em;
+  line-height: 1.154em;
+  margin-bottom: 40px;
+}
+h2.subhead {
+  font-size: 1.375em;
+  font-family: 'Vollkorn', 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 1.5em;
+  font-style: italic;
+  line-height: 1.636em;
+  margin-bottom: 40px;
+}
+p.intro {
+  font-size: 1.125em;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 1.5em;
+  line-height: 1.666em;
 }

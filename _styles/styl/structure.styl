@@ -19,10 +19,9 @@
     width: 100%
 
 .wrapper
-  border-left: .5vw solid $light-blue
   display: table
   height: 100vh
-  width: 99.5vw
+  width: 100vw
 
   .main
     display: table-row
@@ -40,8 +39,30 @@
       width: 100%
 
 .grid
-  max-width: 1800px
-  margin: 0 400px 0 40px
+  max-width: 930px
+  margin-left: 40px
 
   @media screen and (max-width: 1200px)
   	max-width: 900px
+
+.content
+  overflow: hidden
+  position: relative
+
+.panes
+  transition: .8s
+  white-space: nowrap
+
+.pane
+  display: inline-block
+  vertical-align: top
+  white-space: normal
+
+#intro:target ~ .panes
+  transform: translateX(0%)
+
+#program:target ~ .panes
+  transform: translateX(-100%)
+
+#people:target ~ .panes
+  transform: translateX(-200%)

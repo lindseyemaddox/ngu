@@ -227,6 +227,19 @@
 		"oS": 0,
 		"rrU": 0
 		},
+	"/_styles/styl/responsive.styl": {
+		"aP": 0,
+		"bl": 0,
+		"dS": 0,
+		"ft": 8,
+		"iC": 0,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/styles.css/responsive.css",
+		"oF": 0,
+		"oS": 0,
+		"rrU": 0
+		},
 	"/_styles/styl/structure.styl": {
 		"aP": 0,
 		"bl": 0,
@@ -804,7 +817,7 @@
 	"alwaysUseExternalServer": 0,
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
-	"autoprefixerEnableIEGrid": 0,
+	"autoprefixerEnableIEGrid": 1,
 	"babel7PresetType": 1,
 	"babelAllowRCFiles": 0,
 	"babelAuxiliaryCommentAfter": "",
