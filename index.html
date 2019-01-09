@@ -34,7 +34,20 @@
       <div class="wrapper">
         <div class="main">
           <aside>
-            <nav><a href="#intro" class="icon-acorn"> <span class="label multi">A Tradition of <br>Strength &amp; Trust</span></a><a href="#program" class="icon-leaf"> <span class="label">Our Program</span></a><a href="#people" class="icon-knife"> <span class="label">Our People</span></a><a href="#foundation" class="icon-compass"> <span class="label">Our Foundation</span></a><a href="#perspective" class="icon-telescope"> <span class="label">Our Perspective</span></a><a href="#faq" class="icon-sign"> <span class="label multi">Frequently <br>Asked Questions</span></a><a href="#forms" class="icon-boat"> <span class="label">Forms</span></a></nav>
+            <nav id="nav"><a href="#intro" class="loc icon-acorn active"> <span class="label multi">A Tradition of <br>Strength &amp; Trust</span></a><a href="#program" class="loc icon-leaf"> <span class="label">Our Program</span></a><a href="#people" class="loc icon-knife"> <span class="label">Our People</span></a><a href="#foundation" class="loc icon-compass"> <span class="label">Our Foundation</span></a><a href="#perspective" class="loc icon-telescope"> <span class="label">Our Perspective</span></a><a href="#faq" class="loc icon-sign"> <span class="label multi">Frequently <br>Asked Questions</span></a><a href="#forms" class="loc icon-boat"> <span class="label">Forms</span></a></nav>
+            <script>
+              var header = document.getElementById("nav");
+              var btns = header.getElementsByClassName("loc");
+              for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                if (current.length > 0) { 
+                  current[0].className = current[0].className.replace(" active", "");
+                }
+                this.className += " active";
+                });
+              }
+            </script>
           </aside>
           <section class="body">
             <div class="grid">

@@ -1,34 +1,47 @@
 
-nav
+nav#nav
 
-  a.icon-acorn(href='#intro') 
+  a.loc.icon-acorn.active(href='#intro') 
   
     span.label.multi A Tradition of 
       br
       | Strength &amp; Trust
 
-  a.icon-leaf(href='#program') 
+  a.loc.icon-leaf(href='#program') 
     
     span.label Our Program
 
-  a.icon-knife(href='#people') 
+  a.loc.icon-knife(href='#people') 
     
     span.label Our People
 
-  a.icon-compass(href='#foundation') 
+  a.loc.icon-compass(href='#foundation') 
     
     span.label Our Foundation
 
-  a.icon-telescope(href='#perspective') 
+  a.loc.icon-telescope(href='#perspective') 
 
     span.label Our Perspective
 
-  a.icon-sign(href='#faq') 
+  a.loc.icon-sign(href='#faq') 
   
     span.label.multi Frequently 
       br
       | Asked Questions
 
-  a.icon-boat(href='#forms') 
+  a.loc.icon-boat(href='#forms') 
     
     span.label Forms
+
+script.
+  var header = document.getElementById("nav");
+  var btns = header.getElementsByClassName("loc");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    if (current.length > 0) { 
+      current[0].className = current[0].className.replace(" active", "");
+    }
+    this.className += " active";
+    });
+  }

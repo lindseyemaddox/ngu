@@ -1,1 +1,5 @@
-function setActive(){for(aObj=document.getElementById("nav").getElementsByTagName("a"),i=0;i<aObj.length;i++)0<=document.location.href.indexOf(aObj[i].href)&&(aObj[i].className="active")}window.onload=setActive;
+// Get the container element
+// Loop through the buttons and add the active class to the current/clicked button
+for(var btnContainer=document.getElementById("nav"),btns=btnContainer.getElementsByClassName("loc"),i=0
+// Get all buttons with class="btn" inside the container
+;i<btns.length;i++)btns[i].addEventListener("click",function(){var e=document.getElementsByClassName("active");e[0].className=e[0].className.replace(" active",""),this.className+=" active"});
