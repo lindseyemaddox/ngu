@@ -603,3 +603,8 @@ p.intro {
   line-height: 1.5em;
   line-height: 1.666em;
 }
+@media screen and (max-width: 1000px) {
+  .full {
+    display: none;
+  }
+}
