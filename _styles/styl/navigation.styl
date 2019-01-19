@@ -5,9 +5,11 @@ span.label
   left: 60px
   primary-type($sans,$bold)
   line-height: 1.1em
+  opacity: 1
   position: absolute
   text-transform: uppercase
   top: 7px
+  transition: opacity 300ms ease
 
   &.multi
     top: 2px
@@ -21,3 +23,8 @@ span.label
 a.active
   color: pink
   font-size: 3em
+
+.loc:not(.active)
+
+  .label
+    opacity: 0

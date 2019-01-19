@@ -488,18 +488,21 @@ html {
 }
 .wrapper .main aside {
   display: table-cell;
-  padding: 223px 30px 0;
+  height: 100vh;
   min-width: 340px;
+  padding: 223px 30px 0;
+  position: fixed;
   width: 340px;
 }
-.wrapper .main section.body {
+.wrapper .main section {
   display: table-cell;
+  padding-left: 400px;
   vertical-align: top;
   width: 100%;
 }
 .grid {
-  max-width: 930px;
   margin-left: 40px;
+  max-width: 930px;
 }
 @media screen and (max-width: 1200px) {
   .grid {
@@ -511,34 +514,32 @@ html {
   position: relative;
 }
 .panes {
-  transition: 0.8s;
-  white-space: nowrap;
+  overflow-y: hidden;
+  transition: 800ms;
 }
 .pane {
-  display: inline-block;
-  vertical-align: top;
-  white-space: normal;
+  height: 100vh;
 }
 #intro:target ~ .panes {
-  transform: translateX(0%);
+  transform: translateY(0%);
 }
 #program:target ~ .panes {
-  transform: translateX(-100%);
+  transform: translateY(-100vh);
 }
 #people:target ~ .panes {
-  transform: translateX(-200%);
+  transform: translateY(-200vh);
 }
 #foundation:target ~ .panes {
-  transform: translateX(-300%);
+  transform: translateY(-300vh);
 }
 #perspective:target ~ .panes {
-  transform: translateX(-400%);
+  transform: translateY(-400vh);
 }
 #faq:target ~ .panes {
-  transform: translateX(-500%);
+  transform: translateY(-500vh);
 }
 #forms:target ~ .panes {
-  transform: translateX(-600%);
+  transform: translateY(-600vh);
 }
 span.label {
   color: #fff;
@@ -548,9 +549,11 @@ span.label {
   font-weight: 700;
   line-height: 1.5em;
   line-height: 1.1em;
+  opacity: 1;
   position: absolute;
   text-transform: uppercase;
   top: 7px;
+  transition: opacity 300ms ease;
 }
 span.label.multi {
   top: 2px;
@@ -565,6 +568,9 @@ span.label.multi {
 a.active {
   color: #ffc0cb;
   font-size: 3em;
+}
+.loc:not(.active) .label {
+  opacity: 0;
 }
 .logo {
   margin-bottom: 62px;

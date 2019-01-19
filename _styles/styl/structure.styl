@@ -29,18 +29,21 @@
 
     aside
       display: table-cell
-      padding: $top-margin 30px 0
+      height: 100vh
       min-width: 340px
+      padding: $top-margin 30px 0
+      position: fixed
       width: 340px
 
-    section.body
+    section
       display: table-cell
+      padding-left: 400px
       vertical-align: top
       width: 100%
 
 .grid
-  max-width: 930px
   margin-left: 40px
+  max-width: 930px
 
   @media screen and (max-width: 1200px)
   	max-width: 900px
@@ -50,31 +53,29 @@
   position: relative
 
 .panes
-  transition: .8s
-  white-space: nowrap
+  overflow-y: hidden
+  transition: 800ms
 
 .pane
-  display: inline-block
-  vertical-align: top
-  white-space: normal
+  height: 100vh
 
 #intro:target ~ .panes
-  transform: translateX(0%)
+  transform: translateY(0%)
 
 #program:target ~ .panes
-  transform: translateX(-100%)
+  transform: translateY(-100vh)
 
 #people:target ~ .panes
-  transform: translateX(-200%)
+  transform: translateY(-200vh)
 
 #foundation:target ~ .panes
-  transform: translateX(-300%)
+  transform: translateY(-300vh)
 
 #perspective:target ~ .panes
-  transform: translateX(-400%)
+  transform: translateY(-400vh)
 
 #faq:target ~ .panes
-  transform: translateX(-500%)
+  transform: translateY(-500vh)
 
 #forms:target ~ .panes
-  transform: translateX(-600%)
+  transform: translateY(-600vh)

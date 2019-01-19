@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900|Vollkorn:400,400i,600,700,900">
     <link rel="stylesheet" type="text/css" href="_styles/compiled.css">
     <script type="text/javascript" src="_scripts/min/main-min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <div class="overlay"></div>
     <div class="background-video">
       <video autoplay="autoplay" poster="_video/leaves.jpg" title="Next Generation Underwriters" loop="loop" onended="var v=this;setTimeout(function(){v.play()},300)">
@@ -30,26 +31,94 @@
       </video>
       <script src="_video/html5ext.js" type="text/javascript"></script>
     </div>
-    <body>
+    <body data-spy="scroll" data-target="#scroll-spy" class="scrollspy">
       <div class="wrapper">
         <div class="main">
           <aside>
-            <nav id="nav"><a href="#intro" class="loc icon-acorn active"> <span class="label multi">A Tradition of <br>Strength &amp; Trust</span></a><a href="#program" class="loc icon-leaf"> <span class="label">Our Program</span></a><a href="#people" class="loc icon-knife"> <span class="label">Our People</span></a><a href="#foundation" class="loc icon-compass"> <span class="label">Our Foundation</span></a><a href="#perspective" class="loc icon-telescope"> <span class="label">Our Perspective</span></a><a href="#faq" class="loc icon-sign"> <span class="label multi">Frequently <br>Asked Questions</span></a><a href="#forms" class="loc icon-boat"> <span class="label">Forms</span></a></nav>
+            <nav id="scroll-spy"><a href="#intro" class="loc icon-acorn active"> <span class="label multi">A Tradition of <br>Strength &amp; Trust</span></a><a href="#program" class="loc icon-leaf"> <span class="label">Our Program</span></a><a href="#people" class="loc icon-knife"> <span class="label">Our People</span></a><a href="#foundation" class="loc icon-compass"> <span class="label">Our Foundation</span></a><a href="#perspective" class="loc icon-telescope"> <span class="label">Our Perspective</span></a><a href="#faq" class="loc icon-sign"> <span class="label multi">Frequently <br>Asked Questions</span></a><a href="#forms" class="loc icon-boat"> <span class="label">Forms</span></a></nav>
             <script>
-              var header = document.getElementById("nav");
-              var btns = header.getElementsByClassName("loc");
-              for (var i = 0; i < btns.length; i++) {
-                btns[i].addEventListener("click", function() {
-                var current = document.getElementsByClassName("active");
-                if (current.length > 0) { 
-                  current[0].className = current[0].className.replace(" active", "");
-                }
-                this.className += " active";
-                });
-              }
+              $(document).ready(function(){
+              	
+              	// Scrollspy initiation
+              	$('body').scrollspy({ 
+              		target: '#scroll-spy',
+              		offset: 70
+              	});
+              
+              	// On render, adjust body padding to ensure last Scroll target can reach top of screen
+              	var height = $('#forms').innerHeight();
+              	var windowHeight = $(window).height();
+              	var navHeight = $('nav').innerHeight();
+              	var siblingHeight = $('#forms').nextAll().innerHeight();
+              
+              
+              	if(height < windowHeight){
+              		$('body').css("padding-bottom", windowHeight-navHeight-height-siblingHeight + "px");
+              	}
+              
+              	// On window resize, adjust body padding to ensure last Scroll target can reach top of screen
+              	$(window).resize(function(event){
+              		var height = $('#forms').innerHeight();
+              		var windowHeight = $(window).height();
+              		var navHeight = $('nav').innerHeight();
+              		var siblingHeight = $('#forms').nextAll().innerHeight();
+              		
+              		
+              		if(height < windowHeight){
+              			$('body').css("padding-bottom", windowHeight-navHeight-height-siblingHeight + "px");
+              		}
+              	});
+              	
+              	$('nav a').click(function(event){
+              		// Make sure this.hash has a value before overriding default behavior
+              		if (this.hash !== "") {
+              			// Prevent default anchor click behavior
+              			event.preventDefault();
+              
+              			// Store hash (#)
+              			var hash = this.hash;
+              			
+              			// Ensure no section has relevant class
+              			$('section').removeClass("focus");
+              
+              			// Add class to target
+              			$(hash).addClass("focus");
+              
+              			// Remove class after timeout
+              			setTimeout(function(){
+              				$(hash).removeClass("focus");
+              			}, 2000);			
+              			
+                  // Using jQuery's animate() method to add smooth page scroll
+                  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area (the speed of the animation)
+              			$('html, body').animate({
+              				scrollTop: $(hash).offset().top - 69
+              			}, 600, function(){
+              				
+              				// Add hash (#) to URL when done scrolling (default click behavior)
+              				window.location.hash = hash;				
+              			});
+              					
+              			// Collapse Navbar for mobile view
+              			$(".navbar-collapse").collapse('hide');			
+              		}
+              
+              	});
+              	$(window).scroll(function(){
+              		var scrollPos = $('body').scrollTop();
+              		if(scrollPos > 0){
+              			$('nav').addClass('show-color');
+              			$('.scrollTop').addClass('show-button');
+              		} else{
+              			$('nav').removeClass('show-color');
+              			$('.scrollTop').removeClass('show-button');
+              		}
+              		
+              	});
+              });
             </script>
           </aside>
-          <section class="body">
+          <section>
             <div class="grid">
               <div class="content">
                 <s id="intro"></s>
@@ -67,6 +136,9 @@
                   </div>
                   <div class="pane"><img src="_images/logo.svg" alt="Next Generation Underwriters white logo" class="logo large">
                     <h1 class="tagline">poop</h1>
+                  </div>
+                  <div class="pane"><img src="_images/logo.svg" alt="Next Generation Underwriters white logo" class="logo large">
+                    <h1 class="tagline">soop</h1>
                   </div>
                 </div>
               </div>
