@@ -18,7 +18,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="_scripts/min/bootstrap-min.js"></script>
     <script type="text/javascript" src="_scripts/min/main-min.js"></script>
-    <body data-spy="scroll" data-target="nav" data-offset="100">
+    <body data-spy="scroll" data-target="nav" data-offset="0">
       <div class="overlay"></div>
       <div class="background-video">
         <video autoplay="autoplay" poster="_video/leaves.jpg" title="Next Generation Underwriters" loop="loop" onended="var v=this;setTimeout(function(){v.play()},300)">
@@ -47,19 +47,16 @@
           <section>
             <div class="grid">
               <div class="content">
-                <s id="intro"></s>
-                <s id="program"></s>
-                <s id="people"></s>
                 <div class="panes">
-                  <div class="pane"><img src="_images/logo.svg" alt="Next Generation Underwriters white logo" class="logo large">
+                  <div id="intro" class="pane"><img src="_images/logo.svg" alt="Next Generation Underwriters white logo" class="logo large">
                     <h1 class="tagline">We&rsquo;re here as your hedge of protection,<br class="full">at your service when you need us most.</h1>
                     <h2 class="subhead">Whether it&rsquo;s for a local government, a public school system, a utility district and many other public entities, NGU excels in customizing risk transfer programs specifically designed to meet each client&lsquo;s individual needs.</h2>
-                    <p class="intro">We offer solutions that simply aren&lsquo;t available anywhere else for the price we can offer them. We know this because<a href="/faq">our clients tell us</a>. We are confident the service we provide to our customers is simply unmatched in the industry. As a certified agency partner with the<a href="http://www.tnrmt.com/" rel="nofollow" target="_blank">Tennessee Risk Management Trust</a>(TNRMT), we serve government and public entities to provide a full array of innovative risk management solutions.</p>
+                    <p class="intro">We offer solutions that simply aren&lsquo;t available anywhere else for the price we can offer them. We know this because <a href="/faq">our clients tell us</a>. We are confident the service we provide to our customers is simply unmatched in the industry. As a certified agency partner with the <a href="http://www.tnrmt.com/" rel="nofollow" target="_blank">Tennessee Risk Management Trust </a>(TNRMT), we serve government and public entities to provide a full array of innovative risk management solutions.</p>
                   </div>
-                  <div class="pane"><img src="_images/logo.svg" alt="Next Generation Underwriters white logo" class="logo large">
+                  <div id="program" class="pane"><img src="_images/logo.svg" alt="Next Generation Underwriters white logo" class="logo large">
                     <h1 class="tagline">poop</h1>
                   </div>
-                  <div class="pane"><img src="_images/logo.svg" alt="Next Generation Underwriters white logo" class="logo large">
+                  <div id="people" class="pane"><img src="_images/logo.svg" alt="Next Generation Underwriters white logo" class="logo large">
                     <h1 class="tagline">soop</h1>
                   </div>
                 </div>
