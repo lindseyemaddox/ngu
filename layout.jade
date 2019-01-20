@@ -1,11 +1,11 @@
 
 include _includes/head
 
-  .overlay
+  body(data-spy="scroll" data-target="nav" data-offset="100")
 
-  block video
+    .overlay
 
-  body.scrollspy(data-spy="scroll" data-target="#scroll-spy")
+    block video  
 
     .wrapper
 
@@ -20,5 +20,3 @@ include _includes/head
           .grid
         
             block content
-
-    include _includes/footer

@@ -79,15 +79,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/_includes/footer.jade": {
-		"cB": 0,
-		"cOD": 1,
-		"ft": 512,
-		"oA": 1,
-		"oAP": "/_includes/footer.html",
-		"oF": 0,
-		"oS": 0
-		},
 	"/_includes/head.jade": {
 		"cB": 0,
 		"cOD": 1,
@@ -106,12 +97,41 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"/_includes/panes.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "/_includes/panes.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"/_scripts/bootstrap.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/_scripts/min/bootstrap-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/_scripts/main.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/_scripts/min/main-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/_scripts/min/bootstrap-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/_scripts/min/min/bootstrap-min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0

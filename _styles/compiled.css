@@ -458,6 +458,9 @@ html {
     margin-left: 0;
   }
 }
+body {
+  position: relative;
+}
 .overlay {
   background-color: #000;
   bottom: 0;
@@ -478,27 +481,22 @@ html {
   width: 100%;
 }
 .wrapper {
-  display: table;
   height: 100vh;
   width: 100vw;
 }
 .wrapper .main {
-  display: table-row;
   height: 100%;
 }
 .wrapper .main aside {
-  display: table-cell;
+  display: inline-block;
   height: 100vh;
   min-width: 340px;
-  padding: 223px 30px 0;
-  position: fixed;
-  width: 340px;
+  padding: 223px 2% 0;
+  width: 14%;
 }
 .wrapper .main section {
-  display: table-cell;
-  padding-left: 400px;
-  vertical-align: top;
-  width: 100%;
+  display: inline-block;
+  width: 80%;
 }
 .grid {
   margin-left: 40px;
@@ -509,12 +507,7 @@ html {
     max-width: 900px;
   }
 }
-.content {
-  overflow: hidden;
-  position: relative;
-}
 .panes {
-  overflow-y: hidden;
   transition: 800ms;
 }
 .pane {
@@ -545,15 +538,15 @@ span.label {
   color: #fff;
   font-size: 0.4em;
   left: 60px;
-  font-family: 'Raleway', 'Arial', sans-serif;
-  font-weight: 700;
-  line-height: 1.5em;
-  line-height: 1.1em;
   opacity: 1;
   position: absolute;
   text-transform: uppercase;
   top: 7px;
   transition: opacity 300ms ease;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 700;
+  line-height: 1.5em;
+  line-height: 1.1em;
 }
 span.label.multi {
   top: 2px;
@@ -565,8 +558,8 @@ span.label.multi {
   position: relative;
   text-decoration: none;
 }
-a.active {
-  color: #ffc0cb;
+li.active {
+  color: #1778e5;
   font-size: 3em;
 }
 .loc:not(.active) .label {

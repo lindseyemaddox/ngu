@@ -16,49 +16,9 @@ block video
     script(src="_video/html5ext.js" type="text/javascript")
 
 block content
-
-  .content
   
-    s#intro
-    s#program
-    s#people
-    s#pane-four
-    s#pane-five
-    s#pane-six
-    s#pane-seven
-  
-    .panes
-    
-      .pane
+  include _includes/panes
 
-        img.logo.large(src='_images/logo.svg' alt='Next Generation Underwriters white logo')
-        
-        h1.tagline We&rsquo;re here as your hedge of protection, 
-          br.full 
-          | at your service when you need us most.
-          
-        h2.subhead Whether it&rsquo;s for a local government, a public school system, a utility district and many other public entities, NGU excels in customizing risk transfer programs specifically designed to meet each client&lsquo;s individual needs.
-        
-        p.intro We offer solutions that simply aren&lsquo;t available anywhere else for the price we can offer them. We know this because 
-          a(href='/faq')
-            | our clients tell us
-          |. We are confident the service we provide to our customers is simply unmatched in the industry. As a certified agency partner with the 
-          a(href='http://www.tnrmt.com/' rel='nofollow' target='_blank')
-            | Tennessee Risk Management Trust 
-          | (TNRMT), we serve government and public entities to provide a full array of innovative risk management solutions. 
-
-      .pane
-
-        img.logo.large(src='_images/logo.svg' alt='Next Generation Underwriters white logo')
-        
-        h1.tagline poop
-        
-      .pane
-
-        img.logo.large(src='_images/logo.svg' alt='Next Generation Underwriters white logo')
-        
-        h1.tagline soop
-        
 block sidebar
 
   include _includes/navigation

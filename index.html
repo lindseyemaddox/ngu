@@ -15,108 +15,34 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900|Vollkorn:400,400i,600,700,900">
     <link rel="stylesheet" type="text/css" href="_styles/compiled.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="_scripts/min/bootstrap-min.js"></script>
     <script type="text/javascript" src="_scripts/min/main-min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <div class="overlay"></div>
-    <div class="background-video">
-      <video autoplay="autoplay" poster="_video/leaves.jpg" title="Next Generation Underwriters" loop="loop" onended="var v=this;setTimeout(function(){v.play()},300)">
-        <source src="_video/leaves.m4v" type="video/mp4">
-        <source src="_video/leaves.webm" type="video/webm">
-        <object type="application/x-shockwave-flash" data="_video/flashfox.swf" width="1920" height="1080" style="position:relative;">
-          <param name="movie" value="_video/flashfox.swf">
-          <param name="allowFullScreen" value="true">
-          <param name="flashVars" value="autoplay=true&amp;controls=false&amp;fullScreenEnabled=false&amp;posterOnEnd=true&amp;loop=true&amp;poster=_video/leaves.jpg&amp;src=leaves.m4v">
-          <embed src="_video/flashfox.swf" width="1920" height="1080" style="position:relative;" allowFullScreen="true" wmode="transparent" type="application/x-shockwave-flash"><img alt="Next Generation Underwriters" src="_video/leaves.jpg" style="position:absolute;left:0;" width="100%" title="Video playback is not supported by your browser">
-        </object>
-      </video>
-      <script src="_video/html5ext.js" type="text/javascript"></script>
-    </div>
-    <body data-spy="scroll" data-target="#scroll-spy" class="scrollspy">
+    <body data-spy="scroll" data-target="nav" data-offset="100">
+      <div class="overlay"></div>
+      <div class="background-video">
+        <video autoplay="autoplay" poster="_video/leaves.jpg" title="Next Generation Underwriters" loop="loop" onended="var v=this;setTimeout(function(){v.play()},300)">
+          <source src="_video/leaves.m4v" type="video/mp4">
+          <source src="_video/leaves.webm" type="video/webm">
+          <object type="application/x-shockwave-flash" data="_video/flashfox.swf" width="1920" height="1080" style="position:relative;">
+            <param name="movie" value="_video/flashfox.swf">
+            <param name="allowFullScreen" value="true">
+            <param name="flashVars" value="autoplay=true&amp;controls=false&amp;fullScreenEnabled=false&amp;posterOnEnd=true&amp;loop=true&amp;poster=_video/leaves.jpg&amp;src=leaves.m4v">
+            <embed src="_video/flashfox.swf" width="1920" height="1080" style="position:relative;" allowFullScreen="true" wmode="transparent" type="application/x-shockwave-flash"><img alt="Next Generation Underwriters" src="_video/leaves.jpg" style="position:absolute;left:0;" width="100%" title="Video playback is not supported by your browser">
+          </object>
+        </video>
+        <script src="_video/html5ext.js" type="text/javascript"></script>
+      </div>
       <div class="wrapper">
         <div class="main">
           <aside>
-            <nav id="scroll-spy"><a href="#intro" class="loc icon-acorn active"> <span class="label multi">A Tradition of <br>Strength &amp; Trust</span></a><a href="#program" class="loc icon-leaf"> <span class="label">Our Program</span></a><a href="#people" class="loc icon-knife"> <span class="label">Our People</span></a><a href="#foundation" class="loc icon-compass"> <span class="label">Our Foundation</span></a><a href="#perspective" class="loc icon-telescope"> <span class="label">Our Perspective</span></a><a href="#faq" class="loc icon-sign"> <span class="label multi">Frequently <br>Asked Questions</span></a><a href="#forms" class="loc icon-boat"> <span class="label">Forms</span></a></nav>
-            <script>
-              $(document).ready(function(){
-              	
-              	// Scrollspy initiation
-              	$('body').scrollspy({ 
-              		target: '#scroll-spy',
-              		offset: 70
-              	});
-              
-              	// On render, adjust body padding to ensure last Scroll target can reach top of screen
-              	var height = $('#forms').innerHeight();
-              	var windowHeight = $(window).height();
-              	var navHeight = $('nav').innerHeight();
-              	var siblingHeight = $('#forms').nextAll().innerHeight();
-              
-              
-              	if(height < windowHeight){
-              		$('body').css("padding-bottom", windowHeight-navHeight-height-siblingHeight + "px");
-              	}
-              
-              	// On window resize, adjust body padding to ensure last Scroll target can reach top of screen
-              	$(window).resize(function(event){
-              		var height = $('#forms').innerHeight();
-              		var windowHeight = $(window).height();
-              		var navHeight = $('nav').innerHeight();
-              		var siblingHeight = $('#forms').nextAll().innerHeight();
-              		
-              		
-              		if(height < windowHeight){
-              			$('body').css("padding-bottom", windowHeight-navHeight-height-siblingHeight + "px");
-              		}
-              	});
-              	
-              	$('nav a').click(function(event){
-              		// Make sure this.hash has a value before overriding default behavior
-              		if (this.hash !== "") {
-              			// Prevent default anchor click behavior
-              			event.preventDefault();
-              
-              			// Store hash (#)
-              			var hash = this.hash;
-              			
-              			// Ensure no section has relevant class
-              			$('section').removeClass("focus");
-              
-              			// Add class to target
-              			$(hash).addClass("focus");
-              
-              			// Remove class after timeout
-              			setTimeout(function(){
-              				$(hash).removeClass("focus");
-              			}, 2000);			
-              			
-                  // Using jQuery's animate() method to add smooth page scroll
-                  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area (the speed of the animation)
-              			$('html, body').animate({
-              				scrollTop: $(hash).offset().top - 69
-              			}, 600, function(){
-              				
-              				// Add hash (#) to URL when done scrolling (default click behavior)
-              				window.location.hash = hash;				
-              			});
-              					
-              			// Collapse Navbar for mobile view
-              			$(".navbar-collapse").collapse('hide');			
-              		}
-              
-              	});
-              	$(window).scroll(function(){
-              		var scrollPos = $('body').scrollTop();
-              		if(scrollPos > 0){
-              			$('nav').addClass('show-color');
-              			$('.scrollTop').addClass('show-button');
-              		} else{
-              			$('nav').removeClass('show-color');
-              			$('.scrollTop').removeClass('show-button');
-              		}
-              		
-              	});
-              });
-            </script>
+            <nav>
+              <ul role="tablist" class="nav">
+                <li class="active"><a href="#intro" class="icon-acorn"> <span class="label multi">A Tradition of <br>Strength &amp; Trust</span></a></li>
+                <li><a href="#program" class="icon-leaf"> <span class="label">Our Program</span></a></li>
+                <li><a href="#people" class="icon-knife"> <span class="label">Our People</span></a></li>
+              </ul>
+            </nav>
           </aside>
           <section>
             <div class="grid">
@@ -124,15 +50,11 @@
                 <s id="intro"></s>
                 <s id="program"></s>
                 <s id="people"></s>
-                <s id="pane-four"></s>
-                <s id="pane-five"></s>
-                <s id="pane-six"></s>
-                <s id="pane-seven"></s>
                 <div class="panes">
                   <div class="pane"><img src="_images/logo.svg" alt="Next Generation Underwriters white logo" class="logo large">
-                    <h1 class="tagline">We&rsquo;re here as your hedge of protection, <br class="full">at your service when you need us most.</h1>
+                    <h1 class="tagline">We&rsquo;re here as your hedge of protection,<br class="full">at your service when you need us most.</h1>
                     <h2 class="subhead">Whether it&rsquo;s for a local government, a public school system, a utility district and many other public entities, NGU excels in customizing risk transfer programs specifically designed to meet each client&lsquo;s individual needs.</h2>
-                    <p class="intro">We offer solutions that simply aren&lsquo;t available anywhere else for the price we can offer them. We know this because <a href="/faq">our clients tell us</a>. We are confident the service we provide to our customers is simply unmatched in the industry. As a certified agency partner with the <a href="http://www.tnrmt.com/" rel="nofollow" target="_blank">Tennessee Risk Management Trust </a>(TNRMT), we serve government and public entities to provide a full array of innovative risk management solutions. </p>
+                    <p class="intro">We offer solutions that simply aren&lsquo;t available anywhere else for the price we can offer them. We know this because<a href="/faq">our clients tell us</a>. We are confident the service we provide to our customers is simply unmatched in the industry. As a certified agency partner with the<a href="http://www.tnrmt.com/" rel="nofollow" target="_blank">Tennessee Risk Management Trust</a>(TNRMT), we serve government and public entities to provide a full array of innovative risk management solutions.</p>
                   </div>
                   <div class="pane"><img src="_images/logo.svg" alt="Next Generation Underwriters white logo" class="logo large">
                     <h1 class="tagline">poop</h1>
@@ -146,7 +68,6 @@
           </section>
         </div>
       </div>
-      <footer></footer>
     </body>
   </head>
 </html>
