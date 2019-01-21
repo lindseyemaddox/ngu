@@ -1,9 +1,3 @@
-$('body').addClass('.poop').scrollspy({ target: 'nav' });
-
-$('[data-spy="scroll"]').each(function () {
-  var $spy = $(this).scrollspy('refresh');
-
-});
 
 $(window).scroll(function() {
 
@@ -16,3 +10,11 @@ $(window).scroll(function() {
       $('.fade').fadeOut();
      }
  });
+
+$(window).load(function(){
+
+  $(".evans").click(function(){
+    $("#evans").addClass("poop");
+  });
+
+});

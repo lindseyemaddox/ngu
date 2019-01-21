@@ -597,17 +597,7 @@ ul.reg li {
   line-height: 2em;
 }
 .name {
-  bottom: 250px;
-  font-size: 0.8em;
-  left: 90px;
-  letter-spacing: 1px;
   opacity: 0;
-  position: absolute;
-  font-family: 'Raleway', 'Arial', sans-serif;
-  font-weight: $bole;
-  line-height: 1.5em;
-  text-transform: uppercase;
-  transition: opacity 400ms ease;
 }
 .staff {
   height: 28vh;
@@ -616,6 +606,7 @@ ul.reg li {
 .staff img {
   filter: grayscale(1);
   transition: filter 400ms ease;
+  z-index: 0;
 }
 .staff > a {
   bottom: 0;
@@ -630,24 +621,39 @@ ul.reg li {
 }
 .staff .name {
   background-color: #0b396d;
+  font-size: 0.8em;
   height: 10px;
-  left: 48px;
-  line-height: 0em;
-  padding: 15px 30px 5px 40px;
+  left: 36%;
+  letter-spacing: 2px;
+  padding: 4px 15px 14px 40px;
   position: absolute;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+  text-transform: uppercase;
   top: -50px;
+  transition: opacity 400ms ease;
   white-space: nowrap;
   width: auto;
+  z-index: 9;
+}
+.staff .name.bottom {
+  bottom: 17px;
+  top: inherit;
+}
+.staff .name.bottom:before {
+  top: -16px;
+  transform: rotate(180deg);
 }
 .staff .name:before {
   background: url("../_images/pin.svg") no-repeat center left transparent;
   content: '';
   display: block;
   height: 50px;
-  left: 0;
+  left: -3px;
   position: absolute;
   top: -5px;
-  width: 40px;
+  width: 50px;
 }
 .staff .name:hover {
   background-color: #1778e5;

@@ -1,1 +1,1 @@
-$("body").addClass(".poop").scrollspy({target:"nav"}),$('[data-spy="scroll"]').each(function(){var s=$(this).scrollspy("refresh")}),$(window).scroll(function(){500<$(this).scrollTop()?$(".fade").fadeIn():$(".fade").fadeOut()});
+$(window).scroll(function(){500<$(this).scrollTop()?$(".fade").fadeIn():$(".fade").fadeOut()}),$(window).load(function(){$(".evans").click(function(){$("#evans").addClass("poop")})});

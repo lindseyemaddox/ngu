@@ -245,7 +245,7 @@
 		},
 	"/_images/tom-stanley.png": {
 		"ft": 32768,
-		"iS": 0,
+		"iS": 155790,
 		"oA": 0,
 		"oAP": "/_images/tom-stanley.png",
 		"oF": 0,
@@ -256,7 +256,7 @@
 		},
 	"/_images/video.jpg": {
 		"ft": 16384,
-		"iS": 0,
+		"iS": 159699,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/_images/video.jpg",
@@ -326,7 +326,7 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "/_scripts/min/min/main-min-min.js",
 		"oF": 0,
 		"sC": 1,
@@ -337,7 +337,7 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "/_styles/compiled-min.css",
 		"oF": 0,
 		"oS": 3
@@ -886,7 +886,7 @@
 	"/index.html": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "/index.html",
 		"oF": 0
 		},
@@ -904,8 +904,8 @@
 		"cOD": 1,
 		"ft": 512,
 		"oA": 1,
-		"oAP": "/index.html",
-		"oF": 2,
+		"oAP": "/layout.html",
+		"oF": 0,
 		"oS": 0
 		},
 	"/mstile-144x144.png": {
