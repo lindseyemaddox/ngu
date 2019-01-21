@@ -42,6 +42,7 @@ p
 
   &.subhead
     font-size: 1.125em
+    margin-bottom: 30px
     primary-type($serif, $regular)
     line-height: 1.666em
 
@@ -52,3 +53,61 @@ h3.headline
   primary-type($sans, $regular)
   line-height: 1.333em
   text-transform: uppercase
+
+.three li
+  font-size: 1.125em
+  primary-type($serif, $bold)
+  line-height: 2em
+
+  &.head
+    font-size: 1.25em
+    letter-spacing: 3px
+    margin-bottom: 10px
+    primary-type($serif, $bold)
+    text-transform: uppercase
+
+ul.reg li
+  font-size: 1em
+  primary-type($serif, $regular)
+  line-height: 2em
+
+.staff
+  height: 28vh
+  position: relative
+
+  img
+    bottom: 0
+    filter: grayscale(1)
+    position: absolute
+    transition: filter 400ms ease
+
+    &:hover
+      filter: grayscale(0)
+
+  .evans
+    left: 0
+    width: 160px
+
+  .mangrum
+    left: 43px
+    width: 175px
+
+  .robinson
+    left: 132px
+    width: 135px
+
+  .sager
+    left: 168px
+    width: 172px
+
+  .hall
+    left: 239px
+    width: 147px
+
+  .stanley
+    left: 286px
+    width: 174px
+
+  .sullivan
+    left: 348px
+    width: 127px

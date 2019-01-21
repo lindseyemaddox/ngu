@@ -47,6 +47,105 @@
 		"oAP": "/_fonts/ngu.woff",
 		"oF": 0
 		},
+	"/_images/betsey-sullivan.png": {
+		"ft": 32768,
+		"iS": 114565,
+		"oA": 0,
+		"oAP": "/_images/betsey-sullivan.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/chris-stites.png": {
+		"ft": 32768,
+		"iS": 147116,
+		"oA": 0,
+		"oAP": "/_images/chris-stites.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/donna-robinson.png": {
+		"ft": 32768,
+		"iS": 100581,
+		"oA": 0,
+		"oAP": "/_images/donna-robinson.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/jeff-mathis.png": {
+		"ft": 32768,
+		"iS": 187997,
+		"oA": 0,
+		"oAP": "/_images/jeff-mathis.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/jennifer-hall.png": {
+		"ft": 32768,
+		"iS": 123932,
+		"oA": 0,
+		"oAP": "/_images/jennifer-hall.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/joan-peace.png": {
+		"ft": 32768,
+		"iS": 143567,
+		"oA": 0,
+		"oAP": "/_images/joan-peace.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/john-evans.png": {
+		"ft": 32768,
+		"iS": 172970,
+		"oA": 0,
+		"oAP": "/_images/john-evans.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/kathy-kinard.png": {
+		"ft": 32768,
+		"iS": 121155,
+		"oA": 0,
+		"oAP": "/_images/kathy-kinard.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/kyle-greenup.png": {
+		"ft": 32768,
+		"iS": 235408,
+		"oA": 0,
+		"oAP": "/_images/kyle-greenup.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/_images/logo.png": {
 		"ft": 32768,
 		"iS": 39375,
@@ -68,6 +167,28 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"/_images/mark-bilyeu.png": {
+		"ft": 32768,
+		"iS": 222018,
+		"oA": 0,
+		"oAP": "/_images/mark-bilyeu.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/mark-sager.png": {
+		"ft": 32768,
+		"iS": 172594,
+		"oA": 0,
+		"oAP": "/_images/mark-sager.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/_images/overlay.png": {
 		"ft": 32768,
 		"iS": 2541,
@@ -77,6 +198,71 @@
 		"oIPL": 1,
 		"opt": 1,
 		"oT": 1,
+		"q": 100
+		},
+	"/_images/paul-mangrum.png": {
+		"ft": 32768,
+		"iS": 191583,
+		"oA": 0,
+		"oAP": "/_images/paul-mangrum.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/pin.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/_images/pin.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/_images/ruby-keith.png": {
+		"ft": 32768,
+		"iS": 105544,
+		"oA": 0,
+		"oAP": "/_images/ruby-keith.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/tom-montgomery.png": {
+		"ft": 32768,
+		"iS": 181054,
+		"oA": 0,
+		"oAP": "/_images/tom-montgomery.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/tom-stanley.png": {
+		"ft": 32768,
+		"iS": 0,
+		"oA": 0,
+		"oAP": "/_images/tom-stanley.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/video.jpg": {
+		"ft": 16384,
+		"iS": 0,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/_images/video.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"/_includes/head.jade": {
