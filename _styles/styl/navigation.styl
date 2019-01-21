@@ -3,7 +3,6 @@ span.label
   color: $white
   font-size: .4em
   left: 60px
-  opacity: 1
   position: absolute
   text-transform: uppercase
   top: 7px
@@ -20,11 +19,17 @@ span.label
   position: relative
   text-decoration: none
 
-li.active
-  color: $light-blue
-  font-size: 3em
+li
+  opacity: 1
+  transition: opacity 400ms ease
 
-.loc:not(.active)
+  a
+    opacity: .2
 
-  .label
-    opacity: 0
+    &:hover
+      color: $white
+
+  &.active span,
+  &.active a,
+  &:hover a
+    opacity: 1

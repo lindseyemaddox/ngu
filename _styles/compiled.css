@@ -414,52 +414,8 @@ html {
     opacity: 100%;
   }
 }
-@-moz-keyframes layout-slide {
-  0% {
-    margin-left: 280px;
-  }
-  30% {
-    margin-left: 355px;
-  }
-  100% {
-    margin-left: 0;
-  }
-}
-@-webkit-keyframes layout-slide {
-  0% {
-    margin-left: 280px;
-  }
-  30% {
-    margin-left: 355px;
-  }
-  100% {
-    margin-left: 0;
-  }
-}
-@-o-keyframes layout-slide {
-  0% {
-    margin-left: 280px;
-  }
-  30% {
-    margin-left: 355px;
-  }
-  100% {
-    margin-left: 0;
-  }
-}
-@keyframes layout-slide {
-  0% {
-    margin-left: 280px;
-  }
-  30% {
-    margin-left: 355px;
-  }
-  100% {
-    margin-left: 0;
-  }
-}
 body {
-  position: relative;
+  scroll-behavior: smooth;
 }
 .overlay {
   background-color: #000;
@@ -512,32 +468,10 @@ body {
 .pane {
   height: 100vh;
 }
-#intro:target ~ .panes {
-  transform: translateY(0%);
-}
-#program:target ~ .panes {
-  transform: translateY(-100vh);
-}
-#people:target ~ .panes {
-  transform: translateY(-200vh);
-}
-#foundation:target ~ .panes {
-  transform: translateY(-300vh);
-}
-#perspective:target ~ .panes {
-  transform: translateY(-400vh);
-}
-#faq:target ~ .panes {
-  transform: translateY(-500vh);
-}
-#forms:target ~ .panes {
-  transform: translateY(-600vh);
-}
 span.label {
   color: #fff;
   font-size: 0.4em;
   left: 60px;
-  opacity: 1;
   position: absolute;
   text-transform: uppercase;
   top: 7px;
@@ -557,12 +491,20 @@ span.label.multi {
   position: relative;
   text-decoration: none;
 }
-li.active {
-  color: #1778e5;
-  font-size: 3em;
+li {
+  opacity: 1;
+  transition: opacity 400ms ease;
 }
-.loc:not(.active) .label {
-  opacity: 0;
+li a {
+  opacity: 0.2;
+}
+li a:hover {
+  color: #fff;
+}
+li.active span,
+li.active a,
+li:hover a {
+  opacity: 1;
 }
 .logo {
   margin-bottom: 62px;

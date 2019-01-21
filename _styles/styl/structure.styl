@@ -1,6 +1,6 @@
 
 body
-  position: relative
+  scroll-behavior: smooth
 
 .overlay
   background-color: $darkest
@@ -33,10 +33,10 @@ body
       padding: $top-margin 2% 0
       position: fixed
       top: 0
-      width: 340px
+      width: $sidebar-width
 
     section
-      padding-left: 340px
+      padding-left: $sidebar-width
 
 .grid
   margin-left: 40px
@@ -45,33 +45,8 @@ body
   @media screen and (max-width: 1200px)
   	max-width: 900px
 
-// .content
-//   overflow: hidden
-//   position: relative
-
 .panes
   transition: 800ms
 
 .pane
   height: 100vh
-
-#intro:target ~ .panes
-  transform: translateY(0%)
-
-#program:target ~ .panes
-  transform: translateY(-100vh)
-
-#people:target ~ .panes
-  transform: translateY(-200vh)
-
-#foundation:target ~ .panes
-  transform: translateY(-300vh)
-
-#perspective:target ~ .panes
-  transform: translateY(-400vh)
-
-#faq:target ~ .panes
-  transform: translateY(-500vh)
-
-#forms:target ~ .panes
-  transform: translateY(-600vh)
