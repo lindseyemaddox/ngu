@@ -596,6 +596,19 @@ ul.reg li {
   line-height: 1.5em;
   line-height: 2em;
 }
+.name {
+  bottom: 250px;
+  font-size: 0.8em;
+  left: 90px;
+  letter-spacing: 1px;
+  opacity: 0;
+  position: absolute;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: $bole;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  transition: opacity 400ms ease;
+}
 .staff {
   height: 28vh;
   position: relative;
@@ -606,11 +619,50 @@ ul.reg li {
   position: absolute;
   transition: filter 400ms ease;
 }
-.staff img:hover {
+.staff > a {
+  color: #fff;
+}
+.staff > a:hover img {
   filter: grayscale(0);
+}
+.staff > a:hover .name {
+  opacity: 1;
+}
+.staff .name {
+  background-color: #0b396d;
+  height: 10px;
+  left: 48px;
+  line-height: 0em;
+  padding: 15px 30px 5px 40px;
+  position: absolute;
+  top: 40px;
+  width: auto;
+}
+.staff .name:before {
+  background: url("../_images/pin.svg") no-repeat center left transparent;
+  content: '';
+  display: block;
+  height: 50px;
+  left: 0;
+  position: absolute;
+  top: -5px;
+  width: 40px;
+}
+.staff .name:hover {
+  background-color: #1778e5;
+  color: #fff;
+  cursor: pointer;
+}
+.staff .bio {
+  display: none;
+}
+.staff .bio:target {
+  display: block;
 }
 .staff .evans {
   left: 0;
+}
+.staff .evans img {
   width: 160px;
 }
 .staff .mangrum {

@@ -71,6 +71,21 @@ ul.reg li
   primary-type($serif, $regular)
   line-height: 2em
 
+.name
+  bottom: 250px
+  font-size: .8em
+  left: 90px
+  letter-spacing: 1px
+  opacity: 0
+  position: absolute
+  primary-type($sans, $bole)
+  text-transform: uppercase
+  transition: opacity 400ms ease
+
+
+
+
+
 .staff
   height: 28vh
   position: relative
@@ -81,12 +96,52 @@ ul.reg li
     position: absolute
     transition: filter 400ms ease
 
+  & > a
+    color: $white
+
     &:hover
-      filter: grayscale(0)
+
+      img
+        filter: grayscale(0)
+
+      .name
+        opacity: 1
+
+  .name
+    background-color: $dark-blue
+    height: 10px
+    left: 48px
+    line-height: 0em
+    padding: 15px 30px 5px 40px
+    position: absolute
+    top: 40px
+    width: auto
+
+    &:before
+      background: url(../_images/pin.svg) no-repeat center left transparent
+      content: ''
+      display: block
+      height: 50px
+      left: 0
+      position: absolute
+      top: -5px
+      width: 40px
+
+    &:hover
+      background-color: $light-blue
+      color: $white
+      cursor: pointer
+
+  .bio
+    display: none
+
+    &:target
+      display: block
 
   .evans
     left: 0
-    width: 160px
+    img
+      width: 160px
 
   .mangrum
     left: 55px
