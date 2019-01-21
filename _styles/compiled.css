@@ -614,13 +614,13 @@ ul.reg li {
   position: relative;
 }
 .staff img {
-  bottom: 0;
   filter: grayscale(1);
-  position: absolute;
   transition: filter 400ms ease;
 }
 .staff > a {
+  bottom: 0;
   color: #fff;
+  position: absolute;
 }
 .staff > a:hover img {
   filter: grayscale(0);
@@ -635,7 +635,8 @@ ul.reg li {
   line-height: 0em;
   padding: 15px 30px 5px 40px;
   position: absolute;
-  top: 40px;
+  top: -50px;
+  white-space: nowrap;
   width: auto;
 }
 .staff .name:before {
@@ -667,58 +668,86 @@ ul.reg li {
 }
 .staff .mangrum {
   left: 55px;
+}
+.staff .mangrum img {
   width: 175px;
 }
 .staff .robinson {
   left: 359px;
+}
+.staff .robinson img {
   width: 135px;
 }
 .staff .sager {
   left: 168px;
+}
+.staff .sager img {
   width: 172px;
 }
 .staff .hall {
   left: 239px;
+}
+.staff .hall img {
   width: 147px;
 }
 .staff .stanley {
   left: 286px;
+}
+.staff .stanley img {
   width: 174px;
 }
 .staff .sullivan {
   left: 132px;
+}
+.staff .sullivan img {
   width: 127px;
 }
 .staff .greenup {
   left: 393px;
+}
+.staff .greenup img {
   width: 161px;
 }
 .staff .peace {
   left: 452px;
+}
+.staff .peace img {
   width: 145px;
 }
 .staff .bilyeu {
   left: 491px;
+}
+.staff .bilyeu img {
   width: 198px;
 }
 .staff .kinard {
   left: 573px;
+}
+.staff .kinard img {
   width: 157px;
 }
 .staff .montgomery {
   left: 597px;
+}
+.staff .montgomery img {
   width: 193px;
 }
 .staff .keith {
   left: 662px;
+}
+.staff .keith img {
   width: 146px;
 }
 .staff .mathis {
   left: 689px;
+}
+.staff .mathis img {
   width: 187px;
 }
 .staff .stites {
   right: 0;
+}
+.staff .stites img {
   width: 150px;
 }
 @media screen and (max-width: 1000px) {
