@@ -1,8 +1,18 @@
 
-.logo
+.logo.fade
+  display: none
+  left: 35px
+  position: absolute
+  top: 66px
+  width: 186px
+
+#intro .logo
+  width: 523px
   margin-bottom: 62px
   margin-top: $top-margin - 56px
-  width: 523px
+
+.poop:target .logo.small
+  display: block
 
 a
   color: $lightest-blue
@@ -13,18 +23,32 @@ a
 
 h1.tagline
   font-size: 1.625em
+  margin-bottom: 40px
   primary-type($serif, $bold)
   line-height: 1.154em
-  margin-bottom: 40px
 
 h2.subhead
   font-size: 1.375em
+  margin-bottom: 40px
   primary-type($serif, $regular)
   font-style: italic
   line-height: 1.636em
-  margin-bottom: 40px
 
-p.intro
+p
+  &.intro
+    font-size: 1.125em
+    primary-type($sans, $regular)
+    line-height: 1.666em
+
+  &.subhead
+    font-size: 1.125em
+    primary-type($serif, $regular)
+    line-height: 1.666em
+
+h3.headline
   font-size: 1.125em
+  letter-spacing: 1px
+  margin-bottom: 10px
   primary-type($sans, $regular)
-  line-height: 1.666em
+  line-height: 1.333em
+  text-transform: uppercase

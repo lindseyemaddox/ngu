@@ -360,12 +360,9 @@ html {
 }
 @-moz-keyframes link-opacity {
   0% {
-    opacity: 0;
+    opacity: 100%;
   }
   80% {
-    opacity: 0;
-  }
-  90% {
     opacity: 30%;
   }
   100% {
@@ -374,12 +371,9 @@ html {
 }
 @-webkit-keyframes link-opacity {
   0% {
-    opacity: 0;
+    opacity: 100%;
   }
   80% {
-    opacity: 0;
-  }
-  90% {
     opacity: 30%;
   }
   100% {
@@ -388,12 +382,9 @@ html {
 }
 @-o-keyframes link-opacity {
   0% {
-    opacity: 0;
+    opacity: 100%;
   }
   80% {
-    opacity: 0;
-  }
-  90% {
     opacity: 30%;
   }
   100% {
@@ -402,12 +393,9 @@ html {
 }
 @keyframes link-opacity {
   0% {
-    opacity: 0;
+    opacity: 100%;
   }
   80% {
-    opacity: 0;
-  }
-  90% {
     opacity: 30%;
   }
   100% {
@@ -506,10 +494,20 @@ li.active a,
 li:hover a {
   opacity: 1;
 }
-.logo {
+.logo.fade {
+  display: none;
+  left: 35px;
+  position: absolute;
+  top: 66px;
+  width: 186px;
+}
+#intro .logo {
+  width: 523px;
   margin-bottom: 62px;
   margin-top: 167px;
-  width: 523px;
+}
+.poop:target .logo.small {
+  display: block;
 }
 a {
   color: #1a86ff;
@@ -521,20 +519,20 @@ a:hover {
 }
 h1.tagline {
   font-size: 1.625em;
+  margin-bottom: 40px;
   font-family: 'Vollkorn', 'Arial', sans-serif;
   font-weight: 700;
   line-height: 1.5em;
   line-height: 1.154em;
-  margin-bottom: 40px;
 }
 h2.subhead {
   font-size: 1.375em;
+  margin-bottom: 40px;
   font-family: 'Vollkorn', 'Arial', sans-serif;
   font-weight: 400;
   line-height: 1.5em;
   font-style: italic;
   line-height: 1.636em;
-  margin-bottom: 40px;
 }
 p.intro {
   font-size: 1.125em;
@@ -542,6 +540,23 @@ p.intro {
   font-weight: 400;
   line-height: 1.5em;
   line-height: 1.666em;
+}
+p.subhead {
+  font-size: 1.125em;
+  font-family: 'Vollkorn', 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 1.5em;
+  line-height: 1.666em;
+}
+h3.headline {
+  font-size: 1.125em;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 1.5em;
+  line-height: 1.333em;
+  text-transform: uppercase;
 }
 @media screen and (max-width: 1000px) {
   .full {
