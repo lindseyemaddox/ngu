@@ -1,1 +1,0 @@
-$(window).scroll(function(){500<$(this).scrollTop()?$(".fade").fadeIn():$(".fade").fadeOut(),$(".greenup").click(function(){var e;document.getElementById("greenup").classList.add("show")}),$(".greenup").click(function(){$(".greenup").addClass("selected")})});

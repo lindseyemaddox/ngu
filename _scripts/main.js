@@ -16,4 +16,4 @@ $(window).scroll(function() {
       $(".greenup").addClass("selected");
     });
 
- });
+});
