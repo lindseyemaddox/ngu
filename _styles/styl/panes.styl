@@ -71,6 +71,14 @@ ul.reg li
   primary-type($serif, $regular)
   line-height: 2em
 
+
+
+
+/* ---------- staff image ----------*/
+
+
+
+
 .name
   opacity: 0
 
@@ -88,8 +96,8 @@ ul.reg li
     color: $white
     position: absolute
 
-    &:hover
-
+    &:hover,
+    &.selected
       img
         filter: grayscale(0)
 
@@ -135,83 +143,146 @@ ul.reg li
       color: $white
       cursor: pointer
 
-  .bio
-    display: none
+.bio
+  display: none
 
-    &:target
-      display: block
+  &.show
+    display: block
 
-  .evans
-    left: 0
-    img
-      width: 160px
+.evans
+  left: 0
+  img
+    width: 160px
 
-  .mangrum
-    left: 55px
-    img
-      width: 175px
+.mangrum
+  left: 55px
+  img
+    width: 175px
 
-  .robinson
-    left: 359px
-    img
-      width: 135px
+.robinson
+  left: 359px
+  img
+    width: 135px
 
-  .sager
-    left: 168px
-    img
-      width: 172px
+.sager
+  left: 168px
+  img
+    width: 172px
 
-  .hall
-    left: 239px
-    img
-      width: 147px
+.hall
+  left: 239px
+  img
+    width: 147px
 
-  .stanley
-    left: 286px
-    img
-      width: 174px
+.stanley
+  left: 286px
+  img
+    width: 174px
 
-  .sullivan
-    left: 132px
-    img
-      width: 127px
+.sullivan
+  left: 132px
+  img
+    width: 127px
 
-  .greenup
-    left: 393px
-    img
-      width: 161px
+.greenup
+  left: 393px
+  img
+    width: 161px
 
-  .peace
-    left: 452px
-    img
-      width: 145px
+.peace
+  left: 452px
+  img
+    width: 145px
 
-  .bilyeu
-    left: 491px
-    img
-      width: 198px
+.bilyeu
+  left: 491px
+  img
+    width: 198px
 
-  .kinard
-    left: 573px
-    img
-      width: 157px
+.kinard
+  left: 573px
+  img
+    width: 157px
 
-  .montgomery
-    left: 597px
-    img
-      width: 193px
+.montgomery
+  left: 597px
+  img
+    width: 193px
 
-  .keith
-    left: 662px
-    img
-      width: 146px
+.keith
+  left: 662px
+  img
+    width: 146px
 
-  .mathis
-    left: 689px
-    img
-      width: 187px
+.mathis
+  left: 689px
+  img
+    width: 187px
 
-  .stites
-    right: 0
-    img
-      width: 150px
+.stites
+  right: 0
+  img
+    width: 150px
+
+
+
+
+/* ---------- staff bios ---------- */
+
+.bio
+  margin: 40px 0 0 27px
+  position: relative
+
+  &:before
+    background: url(../_images/pin.svg) no-repeat center left transparent
+    content: ''
+    display: block
+    height: 50px
+    left: -56px
+    position: absolute
+    top: -16px
+    transform: rotate(-90deg)
+    width: 50px
+
+  h4.employee
+    font-size: 0.9375em
+    primary-type($sans, $semi-bold)
+    letter-spacing: 3px
+    line-height: 1.2em
+    text-transform: uppercase
+
+  h5.title
+    font-size: 0.6875em
+    primary-type($sans, $regular)
+    letter-spacing: 1px
+    line-height: 2.182em
+    text-transform: uppercase
+
+  a
+    color: $white
+    display: block
+    font-size: 0.9375em
+    primary-type($sans, $regular)
+    line-height: 2em
+
+    &:hover
+      color: $lightest-blue
+
+    &.email
+      primary-type($sans, $bold)
+      line-height: 2em
+
+  .card
+    float: left
+    width: 32%
+
+  .story
+    float: left
+    margin-left: 3%
+    width: 65%
+
+    p
+      font-size: .9375em
+      primary-type($serif, $regular)
+      line-height: 1.6em
+      padding-bottom: 20px

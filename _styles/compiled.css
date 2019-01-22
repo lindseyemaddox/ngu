@@ -613,10 +613,12 @@ ul.reg li {
   color: #fff;
   position: absolute;
 }
-.staff > a:hover img {
+.staff > a:hover img,
+.staff > a.selected img {
   filter: grayscale(0);
 }
-.staff > a:hover .name {
+.staff > a:hover .name,
+.staff > a.selected .name {
   opacity: 1;
 }
 .staff .name {
@@ -660,101 +662,169 @@ ul.reg li {
   color: #fff;
   cursor: pointer;
 }
-.staff .bio {
+.bio {
   display: none;
 }
-.staff .bio:target {
+.bio.show {
   display: block;
 }
-.staff .evans {
+.evans {
   left: 0;
 }
-.staff .evans img {
+.evans img {
   width: 160px;
 }
-.staff .mangrum {
+.mangrum {
   left: 55px;
 }
-.staff .mangrum img {
+.mangrum img {
   width: 175px;
 }
-.staff .robinson {
+.robinson {
   left: 359px;
 }
-.staff .robinson img {
+.robinson img {
   width: 135px;
 }
-.staff .sager {
+.sager {
   left: 168px;
 }
-.staff .sager img {
+.sager img {
   width: 172px;
 }
-.staff .hall {
+.hall {
   left: 239px;
 }
-.staff .hall img {
+.hall img {
   width: 147px;
 }
-.staff .stanley {
+.stanley {
   left: 286px;
 }
-.staff .stanley img {
+.stanley img {
   width: 174px;
 }
-.staff .sullivan {
+.sullivan {
   left: 132px;
 }
-.staff .sullivan img {
+.sullivan img {
   width: 127px;
 }
-.staff .greenup {
+.greenup {
   left: 393px;
 }
-.staff .greenup img {
+.greenup img {
   width: 161px;
 }
-.staff .peace {
+.peace {
   left: 452px;
 }
-.staff .peace img {
+.peace img {
   width: 145px;
 }
-.staff .bilyeu {
+.bilyeu {
   left: 491px;
 }
-.staff .bilyeu img {
+.bilyeu img {
   width: 198px;
 }
-.staff .kinard {
+.kinard {
   left: 573px;
 }
-.staff .kinard img {
+.kinard img {
   width: 157px;
 }
-.staff .montgomery {
+.montgomery {
   left: 597px;
 }
-.staff .montgomery img {
+.montgomery img {
   width: 193px;
 }
-.staff .keith {
+.keith {
   left: 662px;
 }
-.staff .keith img {
+.keith img {
   width: 146px;
 }
-.staff .mathis {
+.mathis {
   left: 689px;
 }
-.staff .mathis img {
+.mathis img {
   width: 187px;
 }
-.staff .stites {
+.stites {
   right: 0;
 }
-.staff .stites img {
+.stites img {
   width: 150px;
+}
+.bio {
+  margin: 40px 0 0 27px;
+  position: relative;
+}
+.bio:before {
+  background: url("../_images/pin.svg") no-repeat center left transparent;
+  content: '';
+  display: block;
+  height: 50px;
+  left: -56px;
+  position: absolute;
+  top: -16px;
+  transform: rotate(-90deg);
+  width: 50px;
+}
+.bio h4.employee {
+  font-size: 0.9375em;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 600;
+  line-height: 1.5em;
+  letter-spacing: 3px;
+  line-height: 1.2em;
+  text-transform: uppercase;
+}
+.bio h5.title {
+  font-size: 0.6875em;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 1.5em;
+  letter-spacing: 1px;
+  line-height: 2.182em;
+  text-transform: uppercase;
+}
+.bio a {
+  color: #fff;
+  display: block;
+  font-size: 0.9375em;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 1.5em;
+  line-height: 2em;
+}
+.bio a:hover {
+  color: #1a86ff;
+}
+.bio a.email {
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 700;
+  line-height: 1.5em;
+  line-height: 2em;
+}
+.bio .card {
+  float: left;
+  width: 32%;
+}
+.bio .story {
+  float: left;
+  margin-left: 3%;
+  width: 65%;
+}
+.bio .story p {
+  font-size: 0.9375em;
+  font-family: 'Vollkorn', 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 1.5em;
+  line-height: 1.6em;
+  padding-bottom: 20px;
 }
 @media screen and (max-width: 1000px) {
   .full {
