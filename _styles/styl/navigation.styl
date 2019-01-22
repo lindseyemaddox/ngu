@@ -22,17 +22,19 @@ span.label
 
 li
   cursor: pointer
-  opacity: 1
-  transition: opacity 400ms ease
 
   a
-    opacity: .2
+    opacity: .1
+    transition: opacity 400ms ease
 
-    &:hover,
-    &:hover span
-      color: $medium-blue
+    &:hover
+      opacity: .5
 
   &.active span,
-  &.active a,
-  &:hover a
+  &.active a
+    opacity: 1
+
+  &.active a:before,
+  a:hover:before
+    color: $white
     opacity: 1

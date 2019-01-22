@@ -493,19 +493,21 @@ span.label.multi {
 }
 li {
   cursor: pointer;
-  opacity: 1;
-  transition: opacity 400ms ease;
 }
 li a {
-  opacity: 0.2;
+  opacity: 0.1;
+  transition: opacity 400ms ease;
 }
-li a:hover,
-li a:hover span {
-  color: #0d437f;
+li a:hover {
+  opacity: 0.5;
 }
 li.active span,
-li.active a,
-li:hover a {
+li.active a {
+  opacity: 1;
+}
+li.active a:before,
+li a:hover:before {
+  color: #fff;
   opacity: 1;
 }
 .logo.fade {
