@@ -625,6 +625,10 @@ ul.reg li {
 }
 .staff > a.selected .name {
   background-color: #1778e5;
+  z-index: 2;
+}
+.staff > a:hover .name {
+  z-index: 3;
 }
 .staff .name {
   background-color: #0b396d;
