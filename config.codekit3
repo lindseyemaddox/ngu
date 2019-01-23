@@ -322,6 +322,16 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"/_scripts/min/main-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/_scripts/min/min/main-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/_styles/compiled.css": {
 		"aP": 1,
 		"bl": 0,
