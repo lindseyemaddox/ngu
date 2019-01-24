@@ -21,7 +21,7 @@ a
   &:hover
     color: $gold
 
-h1.tagline
+.tagline
   font-size: 1.625em
   margin-bottom: 40px
   primary-type($serif, $bold)
@@ -238,6 +238,11 @@ ul.reg li
 .bio
   margin: 40px 0 0 27px
   position: relative
+
+  &:after
+    clear: both
+    content: ''
+    display: block
 
   &:before
     background: url(../_images/pin.svg) no-repeat center left transparent
