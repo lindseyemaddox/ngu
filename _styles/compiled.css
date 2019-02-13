@@ -494,10 +494,8 @@ span.label.multi {
   position: relative;
   text-decoration: none;
 }
-li {
-  cursor: pointer;
-}
 li a {
+  cursor: pointer;
   opacity: 0.1;
   transition: opacity 400ms ease;
 }
@@ -544,7 +542,7 @@ a:hover {
   line-height: 1.5em;
   line-height: 1.154em;
 }
-h2.subhead {
+.subhead {
   font-size: 1.375em;
   margin-bottom: 40px;
   font-family: 'Vollkorn', 'Arial', sans-serif;
@@ -685,89 +683,47 @@ ul.reg li {
 .evans img {
   width: 160px;
 }
-.mangrum {
-  left: 55px;
-}
-.mangrum img {
-  width: 175px;
-}
 .robinson {
-  left: 359px;
+  left: 35%;
 }
 .robinson img {
   width: 135px;
 }
-.sager {
-  left: 168px;
-}
-.sager img {
-  width: 172px;
-}
-.hall {
-  left: 239px;
-}
-.hall img {
-  width: 147px;
-}
-.stanley {
-  left: 286px;
-}
-.stanley img {
-  width: 174px;
-}
 .sullivan {
-  left: 132px;
+  left: 57%;
 }
 .sullivan img {
   width: 127px;
 }
 .greenup {
-  left: 393px;
+  left: 45%;
 }
 .greenup img {
   width: 161px;
 }
 .peace {
-  left: 452px;
+  left: 11%;
 }
 .peace img {
   width: 145px;
 }
-.bilyeu {
-  left: 491px;
-}
-.bilyeu img {
-  width: 198px;
-}
-.kinard {
-  left: 573px;
-}
-.kinard img {
-  width: 157px;
-}
 .montgomery {
-  left: 597px;
+  left: 20%;
 }
 .montgomery img {
   width: 193px;
 }
 .keith {
-  left: 662px;
+  left: 82%;
 }
 .keith img {
   width: 146px;
 }
 .mathis {
-  left: 689px;
+  left: 67%;
 }
 .mathis img {
   width: 187px;
-}
-.stites {
-  right: 0;
-}
-.stites img {
-  width: 150px;
 }
 .bio {
   margin: 40px 0 0 27px;
