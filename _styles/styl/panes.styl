@@ -27,7 +27,7 @@ a
   primary-type($serif, $bold)
   line-height: 1.154em
 
-.subhead
+h2.subhead
   font-size: 1.375em
   margin-bottom: 40px
   primary-type($serif, $regular)
@@ -262,3 +262,64 @@ ul.reg li
       primary-type($serif, $regular)
       line-height: 1.6em
       padding-bottom: 20px
+
+
+// ---------------------- perspective -----------------------
+
+#perspective
+  p.intro
+    line-height: 1.5em
+
+    &:nth-child(3)
+      margin-top: 40px
+
+
+// ---------------------- faq -----------------------
+
+p.q
+  font-size: 1.125em
+  primary-type($serif, $medium)
+  line-height: 1.333em
+  padding-top: 36px
+
+p.a
+  font-size: 1em
+  border-bottom: 1px solid rgba($white, .5)
+  primary-type($sans, $light)
+  line-height: 1.333em
+  padding: 14px 0 36px
+
+
+// ---------------------- forms -----------------------
+
+#forms
+  p.intro
+    line-height: 1.25em
+    margin-top: 75px
+
+    &:first-of-type
+      margin-top: 0
+
+a.arrow
+  color: $white
+  display: block
+  font-size: .8em
+  letter-spacing: 2px
+  margin-top: 20px
+  primary-type($sans, $light)
+  text-align: right
+  text-transform: uppercase
+  transition: color 400ms ease
+
+  &:after
+    content: "\e902"
+    font-family: 'ngu'
+    padding-left: 10px
+    transition: all 400ms ease
+
+  &:hover
+    color: $gold
+
+    &:after
+      margin-right: -10px
+      padding-left: 20px
