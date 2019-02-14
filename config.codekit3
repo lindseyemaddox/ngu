@@ -265,6 +265,29 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/_includes/contact.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/_includes/contact.html",
+		"oF": 0
+		},
+	"/_includes/contact.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "/_includes/contact.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"/_includes/contact.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/_includes/contact.php",
+		"oF": 0
+		},
 	"/_includes/head.jade": {
 		"cB": 0,
 		"cOD": 1,
@@ -300,6 +323,13 @@
 		"oAP": "/_includes/resources.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"/_includes/thank-you.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/_includes/thank-you.html",
+		"oF": 0
 		},
 	"/_scripts/bootstrap.js": {
 		"ft": 64,
@@ -628,6 +658,16 @@
 		"opt": 0,
 		"oT": 1,
 		"q": 100
+		},
+	"/app.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/min/app-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
 		},
 	"/apple-touch-icon-114x114-precomposed.png": {
 		"ft": 32768,
@@ -962,6 +1002,14 @@
 		"opt": 0,
 		"oT": 1,
 		"q": 100
+		},
+	"/package.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/package-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
 		},
 	"/README.html": {
 		"cB": 0,
