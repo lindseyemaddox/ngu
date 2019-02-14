@@ -1,0 +1,54 @@
+
+@keyframes example
+  from {opacity: 0}
+  to {opacity:1}
+
+.modal
+  display: none
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  overflow: auto
+  background-color: rgba($darkest-blue, 0.8)
+
+.modal:target
+  display: block
+  position: fixed
+
+.modal-content
+  margin: auto
+  background-color: $white
+  position: relative
+  padding: 0
+  outline: 0
+  top: 38vh
+  width: 60%
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  animation-name: example
+  animation-duration: 500ms
+
+.closebtn
+  color: rgba($darkest-blue, .5)
+  font-size: .8em
+  letter-spacing: 3px
+  position: absolute
+  primary-type($sans, $semi-bold)
+  right: 10px
+  text-decoration: none
+  text-transform: uppercase
+  top: 10px
+
+.closebtn:hover,
+.closebtn:focus
+  color: $lightest-blue
+  text-decoration: none
+  cursor: pointer
+
+.container
+  padding:  5vw 7vw 10vw
+
+  .headline
+    color: $darkest
+    primary-type($sans, $semi-bold)

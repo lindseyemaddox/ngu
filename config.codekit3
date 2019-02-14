@@ -292,6 +292,15 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"/_includes/resources.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "/_includes/resources.html",
+		"oF": 0,
+		"oS": 0
+		},
 	"/_scripts/bootstrap.js": {
 		"ft": 64,
 		"ma": 0,
@@ -342,19 +351,6 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"/_styles/styl/animations.styl": {
-		"aP": 0,
-		"bl": 0,
-		"dS": 0,
-		"ft": 8,
-		"iC": 0,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/styles.css/animations.css",
-		"oF": 0,
-		"oS": 0,
-		"rrU": 0
-		},
 	"/_styles/styl/icons.styl": {
 		"aP": 0,
 		"bl": 0,
@@ -390,6 +386,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/styles.css/mixins.css",
+		"oF": 0,
+		"oS": 0,
+		"rrU": 0
+		},
+	"/_styles/styl/modals.styl": {
+		"aP": 0,
+		"bl": 0,
+		"dS": 0,
+		"ft": 8,
+		"iC": 0,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/styles.css/modals.css",
 		"oF": 0,
 		"oS": 0,
 		"rrU": 0
@@ -896,15 +905,6 @@
 		"ft": 512,
 		"oA": 0,
 		"oAP": "/index.html",
-		"oF": 0,
-		"oS": 0
-		},
-	"/layout.jade": {
-		"cB": 0,
-		"cOD": 1,
-		"ft": 512,
-		"oA": 1,
-		"oAP": "/layout.html",
 		"oF": 0,
 		"oS": 0
 		},
