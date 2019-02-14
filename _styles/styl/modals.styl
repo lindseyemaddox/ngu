@@ -23,11 +23,14 @@
   position: relative
   padding: 0
   outline: 0
-  top: 38vh
-  width: 60%
+  top: 8vh
+  width: auto
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
   animation-name: example
   animation-duration: 500ms
+
+#links .modal-content
+  max-width: 700px
 
 .closebtn
   color: rgba($darkest-blue, .5)
@@ -47,8 +50,25 @@
   cursor: pointer
 
 .container
-  padding:  5vw 7vw 10vw
+  padding:  5vw 5vw 6vw
 
   .headline
     color: $darkest
+    padding-bottom: 20px
     primary-type($sans, $semi-bold)
+
+  a
+    color: $medium-blue
+    display: block
+    primary-type($sans, $light)
+    line-height: 2em
+
+    &:visited
+      color: $light-blue
+
+  .column
+    display: inline-block
+    width: 48%
+
+    &:first-child
+      margin-right: 3%

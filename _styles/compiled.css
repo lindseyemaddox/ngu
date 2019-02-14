@@ -258,11 +258,14 @@ html {
   position: relative;
   padding: 0;
   outline: 0;
-  top: 38vh;
-  width: 60%;
+  top: 8vh;
+  width: auto;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   animation-name: example;
   animation-duration: 500ms;
+}
+#links .modal-content {
+  max-width: 700px;
 }
 .closebtn {
   color: rgba(6,34,64,0.5);
@@ -284,13 +287,32 @@ html {
   cursor: pointer;
 }
 .container {
-  padding: 5vw 7vw 10vw;
+  padding: 5vw 5vw 6vw;
 }
 .container .headline {
   color: #000;
+  padding-bottom: 20px;
   font-family: 'Raleway', 'Arial', sans-serif;
   font-weight: 600;
   line-height: 1.5em;
+}
+.container a {
+  color: #0d437f;
+  display: block;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+  line-height: 2em;
+}
+.container a:visited {
+  color: #1778e5;
+}
+.container .column {
+  display: inline-block;
+  width: 48%;
+}
+.container .column:first-child {
+  margin-right: 3%;
 }
 @-moz-keyframes example {
   from {
