@@ -1,22 +1,50 @@
 
-.form(name="contactform" method="post" action="send_form_email.php")
+.contact-modal
 
-  label(for="first_name") First Name *
-  input(type="text" name="first_name" maxlength="50" size="30")
-  
-  label(for="last_name") Last Name *
-  input(type="text" name="last_name" maxlength="50" size="30")
-  
-  label(for="email") Email Address *
-  input(type="text" name="email" maxlength="80" size="30")
+  p If we can help you with your risk management needs or you have questions about what we can do for you, please don&rsquo;t hesitate to give us a call or complete the online contact form below.
 
-  label(for="telephone") Telephone Number
-  input(type="text" name="telephone" maxlength="30" size="30")
 
-  label(for="comments") Comments *
-  textarea(name="comments" maxlength="1000" cols="25" rows="6")
+  .form(name="contactform" method="post" action="send_form_email.php")
 
-  input(type="submit" value="Submit")
+    label(for="first_name") First Name *
+    input(type="text" name="first_name" maxlength="50" size="30" value="poopoo")
+
+    label(for="last_name") Last Name *
+    input(type="text" name="last_name" maxlength="50" size="30" value="poopoo")
+
+    label(for="email") Email Address *
+    input(type="text" name="email" maxlength="80" size="30" value="poopoo")
+
+    label(for="telephone") Telephone Number
+    input(type="text" name="telephone" maxlength="30" size="30" value="poopoo")
+
+    label(for="comments") Comments *
+    textarea(name="comments" maxlength="1000" cols="25" rows="6" placeholder="poopoo")
+
+    input(type="submit" value="Submit")
+
+  .other-contact
+
+    p Next Generation Underwriters
+      br
+      | 111 Hazel Path
+      br
+      | Hendersonville, TN 37075
+
+    p 
+      a(href="mailto:info@ngutn.com?subject=Query from ngutn.com Contact Form") info@ngutn.com
+
+    p
+      a(href="tel:16158225454") (615) 822-5454
+
+    p 
+      a(href="tel:18778226161") (877) 822-6161
+
+    p 
+      a fax: (615) 824-1980
+
+
+
 
 
 router.post('/', function (req, res) {

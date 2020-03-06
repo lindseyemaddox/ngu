@@ -264,7 +264,8 @@ html {
   animation-name: example;
   animation-duration: 500ms;
 }
-#links .modal-content {
+#links .modal-content,
+#contact .modal-content {
   max-width: 700px;
 }
 .closebtn {
@@ -275,10 +276,10 @@ html {
   font-family: 'Raleway', 'Arial', sans-serif;
   font-weight: 600;
   line-height: 1.5em;
-  right: 10px;
+  right: 40px;
   text-decoration: none;
   text-transform: uppercase;
-  top: 10px;
+  top: 30px;
 }
 .closebtn:hover,
 .closebtn:focus {
@@ -812,6 +813,37 @@ a.arrow:hover {
 a.arrow:hover:after {
   margin-right: -10px;
   padding-left: 20px;
+}
+.form {
+  display: inline-block;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+  vertical-align: top;
+  width: 45%;
+}
+.form label,
+.form input[type="submit"] {
+  color: #0d437f;
+  display: block;
+  margin: 20px 0 0;
+  padding: 0 0 2px;
+}
+.form input,
+.form textarea {
+  border: 1px #1778e5 solid;
+  color: #f9d426;
+  padding: 7px;
+}
+.other-contact {
+  display: inline-block;
+  float: right;
+  width: 50%;
+}
+p {
+  color: #0d437f;
+  margin: 20px 0 0;
+  padding: 0 0 2px;
 }
 @media screen and (max-width: 1000px) {
   .full {

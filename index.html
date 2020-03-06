@@ -285,18 +285,28 @@
                       <div class="modal-content">
                         <div class="container"><a href="#resources" class="closebtn">close</a>
                           <h3 class="headline">Contact NGU</h3>
-                          <div name="contactform" method="post" action="send_form_email.php" class="form">
-                            <label for="first_name">First Name *</label>
-                            <input type="text" name="first_name" maxlength="50" size="30">
-                            <label for="last_name">Last Name *</label>
-                            <input type="text" name="last_name" maxlength="50" size="30">
-                            <label for="email">Email Address *</label>
-                            <input type="text" name="email" maxlength="80" size="30">
-                            <label for="telephone">Telephone Number</label>
-                            <input type="text" name="telephone" maxlength="30" size="30">
-                            <label for="comments">Comments *</label>
-                            <textarea name="comments" maxlength="1000" cols="25" rows="6"></textarea>
-                            <input type="submit" value="Submit">
+                          <div class="contact-modal">
+                            <p>If we can help you with your risk management needs or you have questions about what we can do for you, please don&rsquo;t hesitate to give us a call or complete the online contact form below.</p>
+                            <div name="contactform" method="post" action="send_form_email.php" class="form">
+                              <label for="first_name">First Name *</label>
+                              <input type="text" name="first_name" maxlength="50" size="30" value="poopoo">
+                              <label for="last_name">Last Name *</label>
+                              <input type="text" name="last_name" maxlength="50" size="30" value="poopoo">
+                              <label for="email">Email Address *</label>
+                              <input type="text" name="email" maxlength="80" size="30" value="poopoo">
+                              <label for="telephone">Telephone Number</label>
+                              <input type="text" name="telephone" maxlength="30" size="30" value="poopoo">
+                              <label for="comments">Comments *</label>
+                              <textarea name="comments" maxlength="1000" cols="25" rows="6" placeholder="poopoo"></textarea>
+                              <input type="submit" value="Submit">
+                            </div>
+                            <div class="other-contact">
+                              <p>Next Generation Underwriters<br>111 Hazel Path<br>Hendersonville, TN 37075</p>
+                              <p> <a href="mailto:info@ngutn.com?subject=Query from ngutn.com Contact Form">info@ngutn.com</a></p>
+                              <p><a href="tel:16158225454">(615) 822-5454</a></p>
+                              <p> <a href="tel:18778226161">(877) 822-6161</a></p>
+                              <p> <a>fax: (615) 824-1980</a></p>
+                            </div>
                           </div>
                           <router / function (req res) { console.log(req.body.title); console.log(req.body.description); res.send('Post page'); } class="post"></router>
                         </div>
