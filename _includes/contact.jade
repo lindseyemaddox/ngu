@@ -7,23 +7,25 @@
   .form(name="contactform" method="post" action="send_form_email.php")
 
     label(for="first_name") First Name *
-    input(type="text" name="first_name" maxlength="50" size="30" value="poopoo")
+    input(type="text" name="first_name" maxlength="50" size="30")
 
     label(for="last_name") Last Name *
-    input(type="text" name="last_name" maxlength="50" size="30" value="poopoo")
+    input(type="text" name="last_name" maxlength="50" size="30")
 
     label(for="email") Email Address *
-    input(type="text" name="email" maxlength="80" size="30" value="poopoo")
+    input(type="text" name="email" maxlength="80" size="30")
 
     label(for="telephone") Telephone Number
-    input(type="text" name="telephone" maxlength="30" size="30" value="poopoo")
+    input(type="text" name="telephone" maxlength="30" size="30")
 
     label(for="comments") Comments *
-    textarea(name="comments" maxlength="1000" cols="25" rows="6" placeholder="poopoo")
+    textarea(name="comments" maxlength="1000" cols="25" rows="6")
 
     input(type="submit" value="Submit")
 
   .other-contact
+  
+    img(src="./_images/logo-color.svg")
 
     p Next Generation Underwriters
       br

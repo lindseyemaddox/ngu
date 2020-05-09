@@ -814,36 +814,116 @@ a.arrow:hover:after {
   margin-right: -10px;
   padding-left: 20px;
 }
-.form {
-  display: inline-block;
-  font-family: 'Raleway', 'Arial', sans-serif;
+.contact-modal > p {
+  color: #0d437f;
+  font-size: 0.8em;
+  margin-bottom: 30px;
+  font-family: 'Vollkorn', 'Arial', sans-serif;
   font-weight: 300;
   line-height: 1.5em;
+}
+.form {
+  display: inline-block;
+  max-width: 200px;
   vertical-align: top;
   width: 45%;
 }
+.form label {
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  margin: 20px 0 2px;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+.form input {
+  opacity: 0.6;
+}
 .form label,
-.form input[type="submit"] {
-  color: #0d437f;
+.form input {
+  color: #062240;
   display: block;
-  margin: 20px 0 0;
   padding: 0 0 2px;
+}
+.form input[type="submit"] {
+  background-color: #000;
+  background-image: linear-gradient(#0b396d, #062240);
+  border: 1px solid #f9d426;
+  border-radius: 2px;
+  color: #fff;
+  box-shadow: 2px 2px 10px rgba(6,34,64,0.8);
+  letter-spacing: 2px;
+  margin: 30px auto 0;
+  opacity: 1;
+  padding: 7px;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  width: 100%;
+}
+.form input[type="submit"]:hover {
+  background-color: #f9d426;
+  background-image: linear-gradient(#f9d426, #ff0);
+  border-color: #062240;
+  color: #062240;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 500;
+  line-height: 1.5em;
+}
+.form input[type="submit"]:active {
+  background-color: #fff;
+  background-image: none;
 }
 .form input,
 .form textarea {
-  border: 1px #1778e5 solid;
-  color: #f9d426;
+  border: 1px #062240 solid;
+  box-sizing: border-box;
+  color: #0b396d;
+  font-size: 1em;
+  opacity: 0.6;
   padding: 7px;
+  font-family: 'Vollkorn', 'Arial', sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+  transition: all 800ms ease;
+  width: 100%;
 }
-.other-contact {
-  display: inline-block;
-  float: right;
-  width: 50%;
+.form input:focus,
+.form textarea:focus,
+.form input:active,
+.form textarea:active {
+  border-color: #f9d426;
+  opacity: 1;
 }
-p {
+.form input:visited,
+.form textarea:visited {
+  border-color: #1778e5;
+  opacity: 0.3;
+}
+.form p {
   color: #0d437f;
   margin: 20px 0 0;
   padding: 0 0 2px;
+}
+.other-contact {
+  color: #0b396d;
+  display: inline-block;
+  float: right;
+  margin-top: 20px;
+  width: 50%;
+}
+.other-contact p {
+  font-size: 1em;
+  padding-bottom: 20px;
+  font-family: 'Vollkorn', 'Arial', sans-serif;
+  font-weight: 600;
+  line-height: 1.5em;
+}
+.other-contact img {
+  margin-bottom: 50px;
+  width: 75%;
 }
 @media screen and (max-width: 1000px) {
   .full {
