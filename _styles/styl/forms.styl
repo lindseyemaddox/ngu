@@ -1,5 +1,5 @@
 
-.contact-modal
+.form-modal
 
   > p
     color: $medium-blue
@@ -7,13 +7,17 @@
     margin-bottom: 30px
     primary-type($serif,$light)
 
-.form
-  display: inline-block
-  max-width: 200px
-  vertical-align: top
-  width: 45%
+  a.inline
+    color: $light-blue
+    display: inline
+    font-style: inherit
+    primary-type($serif,$light)
 
-  label
+    &:hover
+      color: $gold
+
+  label,
+  p.label
     font-size: .8em
     letter-spacing: 1px
     margin: 20px 0 2px
@@ -29,9 +33,9 @@
     padding: 0 0 2px
 
   input[type="submit"]
-    background-color: $darkest
-    background-image: linear-gradient($dark-blue, $darkest-blue);
-    border: 1px solid $gold
+    // background-color: $lightest-blue
+    background-image: linear-gradient($lightest-blue, $medium-blue);
+    border: 1px solid transparent
     border-radius: 2px
     color: $white
     box-shadow: 2px 2px 10px rgba($darkest-blue, .8)
@@ -44,15 +48,16 @@
     width: 100%
 
     &:hover
-      background-color: $gold
-      background-image: linear-gradient($gold, yellow);
-      border-color: $darkest-blue
-      color: $darkest-blue
+      color: $gold
+      // background-image: linear-gradient($lightest-blue, $light-blue);
+      border: 1px solid $gold
       primary-type($sans,$medium)
 
     &:active
-      background-color: $white
-      background-image: none
+      background-image: linear-gradient($medium-blue, $lightest-blue)
+      border: 1px solid transparent
+      color: $white
+      primary-type($sans,$medium)
 
   input, textarea
     border: 1px $darkest-blue solid
@@ -62,7 +67,7 @@
     opacity: .6
     padding: 7px
     primary-type($serif,$light)
-    transition: all 800ms ease
+    transition: all 600ms ease
     width: 100%
 
     &:focus, &:active
@@ -73,10 +78,27 @@
       border-color: $light-blue
       opacity: .3
 
+  input[type="radio"],
+  label.radio
+    display: inline
+    width: auto
+
+  input[type="radio"]
+    box-shadow: 0px 0px 0px 1px rgba($darkest-blue .8)
+
   p
     color: $medium-blue
     margin: 20px 0 0
     padding: 0 0 2px
+
+.riskform
+  max-width: 500px
+
+.form
+  display: inline-block
+  max-width: 200px
+  vertical-align: top
+  width: 45%
 
 .other-contact
   color: $dark-blue
@@ -93,3 +115,17 @@
   img
     margin-bottom: 50px
     width: 75%
+
+
+#risk .modal-content
+  margin: 0 auto
+  width: 40%
+
+.path
+  display: none
+
+.toggle
+  position: relative
+
+*:focus
+  outline: none

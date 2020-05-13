@@ -1,0 +1,38 @@
+
+.form-modal
+
+  p Application for Builders Risk Coverage through NGU Risk Management.
+
+  .riskform(name="riskform" method="post" action="send_riskform_email.php")
+
+    label(for="entity_name") Entity Name *
+    input(type="text" name="entity_name" maxlength="50" size="30")
+
+    p.label Entity is a *
+    input(type='radio' name="entity_type" value="school_district")
+    label.radio(name="school_district" for="school_district") School District
+    br
+    input(type='radio' name="entity_type" value="other_district")
+    label.radio(name="other_district" for="other_district") All Other Types of Governmental Entities
+    
+    .path.school_district
+      p School District
+      label(for="campus_name") Name of Campus *
+      input(type="text" name="campus_name" maxlength="50" size="30")
+
+    .path.other_district 
+      p Other Types of Governmental Entities
+
+    label(for="billing_address") Billing Address *
+    input(type="text" name="billing_address" maxlength="50" size="30")
+
+
+script.
+  $(document).ready(function(){
+    $('input[type="radio"]').click(function(){
+      var inputValue = $(this).attr("value");
+      var targetBox = $("." + inputValue);
+      $(".path").not(targetBox).hide();
+      $(targetBox).show();
+    });
+  });

@@ -18,6 +18,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="_scripts/min/bootstrap-min.js"></script>
     <script type="text/javascript" src="_scripts/min/main-min.js"></script>
+    <script type="text/javascript" src="_scripts/min/maskedinput-min.js"></script>
     <body data-spy="scroll" data-target="nav" data-offset="0">
       <div class="overlay"></div>
       <div class="background-video">
@@ -285,8 +286,8 @@
                       <div class="modal-content">
                         <div class="container"><a href="#resources" class="closebtn">close</a>
                           <h3 class="headline">Contact NGU</h3>
-                          <div class="contact-modal">
-                            <p>If we can help you with your risk management needs or you have questions about what we can do for you, please don&rsquo;t hesitate to give us a call or complete the online contact form below.</p>
+                          <div class="form-modal">
+                            <p>If we can help you with your risk management needs or you have questions about what we can do for you, please don&rsquo;t hesitate to <a href="tel:6158225454;" class="inline">give us a call </a>or complete the contact form below.</p>
                             <div name="contactform" method="post" action="send_form_email.php" class="form">
                               <label for="first_name">First Name *</label>
                               <input type="text" name="first_name" maxlength="50" size="30">
@@ -295,10 +296,10 @@
                               <label for="email">Email Address *</label>
                               <input type="text" name="email" maxlength="80" size="30">
                               <label for="telephone">Telephone Number</label>
-                              <input type="text" name="telephone" maxlength="30" size="30">
+                              <input type="text" name="phone" maxlength="30" size="30">
                               <label for="comments">Comments *</label>
                               <textarea name="comments" maxlength="1000" cols="25" rows="6"></textarea>
-                              <input type="submit" value="Submit">
+                              <input type="submit" value="Reach Out">
                             </div>
                             <div class="other-contact"><img src="./_images/logo-color.svg">
                               <p>Next Generation Underwriters<br>111 Hazel Path<br>Hendersonville, TN 37075</p>
@@ -316,7 +317,38 @@
                       <div class="modal-content">
                         <div class="container"><a href="#resources" class="closebtn">close</a>
                           <h3 class="headline">Builders Risk Coverage Application</h3>
-                          <p>Some text in the modal.</p>
+                          <div class="form-modal">
+                            <p>Application for Builders Risk Coverage through NGU Risk Management.</p>
+                            <div name="riskform" method="post" action="send_riskform_email.php" class="riskform">
+                              <label for="entity_name">Entity Name *</label>
+                              <input type="text" name="entity_name" maxlength="50" size="30">
+                              <p class="label">Entity is a *</p>
+                              <input type="radio" name="entity_type" value="school_district">
+                              <label name="school_district" for="school_district" class="radio">School District</label><br>
+                              <input type="radio" name="entity_type" value="other_district">
+                              <label name="other_district" for="other_district" class="radio">All Other Types of Governmental Entities</label>
+                              <div class="path school_district">
+                                <p>School District</p>
+                                <label for="campus_name">Name of Campus *</label>
+                                <input type="text" name="campus_name" maxlength="50" size="30">
+                              </div>
+                              <div class="path other_district"> 
+                                <p>Other Types of Governmental Entities</p>
+                              </div>
+                              <label for="billing_address">Billing Address *</label>
+                              <input type="text" name="billing_address" maxlength="50" size="30">
+                            </div>
+                          </div>
+                          <script>
+                            $(document).ready(function(){
+                              $('input[type="radio"]').click(function(){
+                                var inputValue = $(this).attr("value");
+                                var targetBox = $("." + inputValue);
+                                $(".path").not(targetBox).hide();
+                                $(targetBox).show();
+                              });
+                            });
+                          </script>
                         </div>
                       </div>
                     </div>
@@ -361,3 +393,8 @@
     </body>
   </head>
 </html>
+<script>
+  jQuery(function($){
+    $("input[name='phone']").mask("(999) 999-9999");
+  });
+</script>

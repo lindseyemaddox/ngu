@@ -185,6 +185,12 @@ svg:not(root) {
   content: "";
   clear: both;
 }
+input {
+  font-size: 16px !important;
+}
+.inline {
+  display: inline;
+}
 html {
   color: #fff;
   font-size: 16px;
@@ -814,7 +820,7 @@ a.arrow:hover:after {
   margin-right: -10px;
   padding-left: 20px;
 }
-.contact-modal > p {
+.form-modal > p {
   color: #0d437f;
   font-size: 0.8em;
   margin-bottom: 30px;
@@ -822,13 +828,19 @@ a.arrow:hover:after {
   font-weight: 300;
   line-height: 1.5em;
 }
-.form {
-  display: inline-block;
-  max-width: 200px;
-  vertical-align: top;
-  width: 45%;
+.form-modal a.inline {
+  color: #1778e5;
+  display: inline;
+  font-style: inherit;
+  font-family: 'Vollkorn', 'Arial', sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
 }
-.form label {
+.form-modal a.inline:hover {
+  color: #f9d426;
+}
+.form-modal label,
+.form-modal p.label {
   font-size: 0.8em;
   letter-spacing: 1px;
   margin: 20px 0 2px;
@@ -837,19 +849,18 @@ a.arrow:hover:after {
   line-height: 1.5em;
   text-transform: uppercase;
 }
-.form input {
+.form-modal input {
   opacity: 0.6;
 }
-.form label,
-.form input {
+.form-modal label,
+.form-modal input {
   color: #062240;
   display: block;
   padding: 0 0 2px;
 }
-.form input[type="submit"] {
-  background-color: #000;
-  background-image: linear-gradient(#0b396d, #062240);
-  border: 1px solid #f9d426;
+.form-modal input[type="submit"] {
+  background-image: linear-gradient(#1a86ff, #0d437f);
+  border: 1px solid transparent;
   border-radius: 2px;
   color: #fff;
   box-shadow: 2px 2px 10px rgba(6,34,64,0.8);
@@ -863,21 +874,23 @@ a.arrow:hover:after {
   text-transform: uppercase;
   width: 100%;
 }
-.form input[type="submit"]:hover {
-  background-color: #f9d426;
-  background-image: linear-gradient(#f9d426, #ff0);
-  border-color: #062240;
-  color: #062240;
+.form-modal input[type="submit"]:hover {
+  color: #f9d426;
+  border: 1px solid #f9d426;
   font-family: 'Raleway', 'Arial', sans-serif;
   font-weight: 500;
   line-height: 1.5em;
 }
-.form input[type="submit"]:active {
-  background-color: #fff;
-  background-image: none;
+.form-modal input[type="submit"]:active {
+  background-image: linear-gradient(#0d437f, #1a86ff);
+  border: 1px solid transparent;
+  color: #fff;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 500;
+  line-height: 1.5em;
 }
-.form input,
-.form textarea {
+.form-modal input,
+.form-modal textarea {
   border: 1px #062240 solid;
   box-sizing: border-box;
   color: #0b396d;
@@ -887,25 +900,42 @@ a.arrow:hover:after {
   font-family: 'Vollkorn', 'Arial', sans-serif;
   font-weight: 300;
   line-height: 1.5em;
-  transition: all 800ms ease;
+  transition: all 600ms ease;
   width: 100%;
 }
-.form input:focus,
-.form textarea:focus,
-.form input:active,
-.form textarea:active {
+.form-modal input:focus,
+.form-modal textarea:focus,
+.form-modal input:active,
+.form-modal textarea:active {
   border-color: #f9d426;
   opacity: 1;
 }
-.form input:visited,
-.form textarea:visited {
+.form-modal input:visited,
+.form-modal textarea:visited {
   border-color: #1778e5;
   opacity: 0.3;
 }
-.form p {
+.form-modal input[type="radio"],
+.form-modal label.radio {
+  display: inline;
+  width: auto;
+}
+.form-modal input[type="radio"] {
+  box-shadow: 0px 0px 0px 1px rgba(6,34,64,0.8);
+}
+.form-modal p {
   color: #0d437f;
   margin: 20px 0 0;
   padding: 0 0 2px;
+}
+.riskform {
+  max-width: 500px;
+}
+.form {
+  display: inline-block;
+  max-width: 200px;
+  vertical-align: top;
+  width: 45%;
 }
 .other-contact {
   color: #0b396d;
@@ -924,6 +954,19 @@ a.arrow:hover:after {
 .other-contact img {
   margin-bottom: 50px;
   width: 75%;
+}
+#risk .modal-content {
+  margin: 0 auto;
+  width: 40%;
+}
+.path {
+  display: none;
+}
+.toggle {
+  position: relative;
+}
+*:focus {
+  outline: none;
 }
 @media screen and (max-width: 1000px) {
   .full {

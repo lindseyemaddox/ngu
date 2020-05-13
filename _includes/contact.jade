@@ -1,7 +1,9 @@
 
-.contact-modal
+.form-modal
 
-  p If we can help you with your risk management needs or you have questions about what we can do for you, please don&rsquo;t hesitate to give us a call or complete the online contact form below.
+  p If we can help you with your risk management needs or you have questions about what we can do for you, please don&rsquo;t hesitate to 
+    a.inline(href="tel:6158225454;") give us a call 
+    | or complete the contact form below.
 
 
   .form(name="contactform" method="post" action="send_form_email.php")
@@ -16,12 +18,12 @@
     input(type="text" name="email" maxlength="80" size="30")
 
     label(for="telephone") Telephone Number
-    input(type="text" name="telephone" maxlength="30" size="30")
+    input(type="text" name="phone" maxlength="30" size="30")
 
     label(for="comments") Comments *
     textarea(name="comments" maxlength="1000" cols="25" rows="6")
 
-    input(type="submit" value="Submit")
+    input(type="submit" value="Reach Out")
 
   .other-contact
   
