@@ -294,7 +294,7 @@
                               <label for="last_name">Last Name *</label>
                               <input type="text" name="last_name" maxlength="50" size="30">
                               <label for="email">Email Address *</label>
-                              <input type="text" name="email" maxlength="80" size="30">
+                              <input type="email" name="email" maxlength="80" size="30" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$">
                               <label for="telephone">Telephone Number</label>
                               <input type="text" name="phone" maxlength="30" size="30">
                               <label for="comments">Comments *</label>
@@ -325,18 +325,93 @@
                               <p class="label">Entity is a *</p>
                               <input type="radio" name="entity_type" value="school_district">
                               <label name="school_district" for="school_district" class="radio">School District</label><br>
+                              <div class="district school_district hide">
+                                <input type="text" name="campus_name">
+                                <label for="campus_name" class="smlabel">Name of Campus *</label>
+                              </div>
                               <input type="radio" name="entity_type" value="other_district">
                               <label name="other_district" for="other_district" class="radio">All Other Types of Governmental Entities</label>
-                              <div class="path school_district">
-                                <p>School District</p>
-                                <label for="campus_name">Name of Campus *</label>
-                                <input type="text" name="campus_name" maxlength="50" size="30">
-                              </div>
-                              <div class="path other_district"> 
-                                <p>Other Types of Governmental Entities</p>
-                              </div>
                               <label for="billing_address">Billing Address *</label>
-                              <input type="text" name="billing_address" maxlength="50" size="30">
+                              <input type="text" name="billing_address_street">
+                              <p class="smlabel">Street Address</p>
+                              <div class="flex">
+                                <div class="flexie city">
+                                  <input type="text" name="billing_address_city">
+                                  <p class="smlabel">City</p>
+                                </div>
+                                <div class="flexie state">
+                                  <input type="text" name="billing_address_state" pattern="[A-Za-z]{2}" value="TN">
+                                  <p class="smlabel">2-Letter State</p>
+                                </div>
+                                <div class="flexie zip">
+                                  <input id="zip" type="text" name="billing_address_zip" maxlength="5" pattern="[0-9]*">
+                                  <p class="smlabel">5-Digit Zip</p>
+                                </div>
+                              </div>
+                              <label for="construction_address">Construction Address *</label>
+                              <input type="text" name="construction_address_street">
+                              <p class="smlabel">Street Address</p>
+                              <div class="flex">
+                                <div class="flexie city">
+                                  <input type="text" name="construction_address_city">
+                                  <p class="smlabel">City</p>
+                                </div>
+                                <div class="flexie state">
+                                  <input type="text" name="construction_address_state" pattern="[A-Za-z]{2}" value="TN">
+                                  <p class="smlabel">2-Letter State</p>
+                                </div>
+                                <div class="flexie zip">
+                                  <input id="zip" type="text" name="construction_address_zip" maxlength="5" pattern="[0-9]*">
+                                  <p class="smlabel">5-Digit Zip</p>
+                                </div>
+                              </div>
+                              <label for="occupancy_description">Occupancy Description of Construction *</label>
+                              <input type="text" name="occupancy_description">
+                              <p class="smlabel">i.e. Office, Classroom, Gym, etc.</p>
+                              <label for="addition_to_existing">Addition to Exsisting Building? *</label>
+                              <input type="radio" name="addition_to_existing" value="Yes">
+                              <label name="addition_to_existing" for="Yes" class="radio smlabel">Yes</label>
+                              <input type="radio" name="addition_to_existing" value="No">
+                              <label name="addition_to_existing" for="No" class="radio smlabel">No</label>
+                              <label for="sprinkler_system">Will there be a sprinkler system? *</label>
+                              <input type="radio" name="sprinkler_system" value="Yes">
+                              <label name="sprinkler_system" for="Yes" class="radio smlabel">Yes</label>
+                              <input type="radio" name="sprinkler_system" value="No">
+                              <label name="sprinkler_system" for="No" class="radio smlabel">No</label>
+                              <label for="construction_type">Type of Construction *</label>
+                              <input type="text" name="construction_type">
+                              <p class="smlabel">i.e. Masonry, Non-combustible, Frame, etc.</p>
+                              <label for="protection_class">Protection Class (if known)</label>
+                              <input type="text" name="protection_class">
+                              <p class="smlabel">NGU will determine if unknown</p>
+                              <label for="renovation">Is this a Renovation? *</label>
+                              <input type="radio" name="renovation" value="Yes">
+                              <label name="renovation" for="Yes" class="radio smlabel">Yes</label>
+                              <input type="radio" name="renovation" value="No">
+                              <label name="renovation" for="No" class="radio smlabel">No</label>
+                              <label for="number_of_floors">Number of Floors *</label>
+                              <input type="text" name="number_of_floors">
+                              <label for="square_footage">Square Footage *</label>
+                              <input type="text" name="square_footage">
+                              <label for="completion_value">Estimated Completed Value *</label>
+                              <input type="text" name="completion_value">
+                              <label for="deductible">Deductible *</label>
+                              <input type="text" name="deductible" placeholder="$2,500.00">
+                              <label for="construction_start">Construction Start Date *</label>
+                              <div class="flex">
+                                <div class="flexie city">
+                                  <input type="text" name="construction_start_month">
+                                  <p class="smlabel">Month</p>
+                                </div>
+                                <div class="flexie state">
+                                  <input type="text" name="construction_start_day">
+                                  <p class="smlabel">Day</p>
+                                </div>
+                                <div class="flexie zip">
+                                  <input type="text" name="construction_start_year">
+                                  <p class="smlabel">Year</p>
+                                </div>
+                              </div>
                             </div>
                           </div>
                           <script>
@@ -344,8 +419,10 @@
                               $('input[type="radio"]').click(function(){
                                 var inputValue = $(this).attr("value");
                                 var targetBox = $("." + inputValue);
-                                $(".path").not(targetBox).hide();
-                                $(targetBox).show();
+                                $(".district").not(targetBox).addClass("hide");
+                                $(".district").not(targetBox).removeClass("show");
+                                $(targetBox).addClass("show");
+                                $(targetBox).removeClass("hide");
                               });
                             });
                           </script>

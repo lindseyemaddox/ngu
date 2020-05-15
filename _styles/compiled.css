@@ -294,7 +294,7 @@ html {
   cursor: pointer;
 }
 .container {
-  padding: 5vw 5vw 6vw;
+  padding: 70px 5vw 6vw;
 }
 .container .headline {
   color: #000;
@@ -889,14 +889,21 @@ a.arrow:hover:after {
   font-weight: 500;
   line-height: 1.5em;
 }
+.form-modal textarea {
+  min-height: 60px;
+}
 .form-modal input,
 .form-modal textarea {
-  border: 1px #062240 solid;
+  background: repeating-linear-gradient(135deg, rgba(249,212,38,0.2), rgba(249,212,38,0.2) 4px, rgba(249,212,38,0.1) 4px, rgba(249,212,38,0.1) 8px);
+  border-bottom: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   box-sizing: border-box;
   color: #0b396d;
   font-size: 1em;
-  opacity: 0.6;
-  padding: 7px;
+  opacity: 1;
+  padding: 6px 10px 3px;
   font-family: 'Vollkorn', 'Arial', sans-serif;
   font-weight: 300;
   line-height: 1.5em;
@@ -907,7 +914,10 @@ a.arrow:hover:after {
 .form-modal textarea:focus,
 .form-modal input:active,
 .form-modal textarea:active {
-  border-color: #f9d426;
+  border-bottom: 2px solid #1778e5;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   opacity: 1;
 }
 .form-modal input:visited,
@@ -918,6 +928,7 @@ a.arrow:hover:after {
 .form-modal input[type="radio"],
 .form-modal label.radio {
   display: inline;
+  margin-top: 10px;
   width: auto;
 }
 .form-modal input[type="radio"] {
@@ -927,9 +938,6 @@ a.arrow:hover:after {
   color: #0d437f;
   margin: 20px 0 0;
   padding: 0 0 2px;
-}
-.riskform {
-  max-width: 500px;
 }
 .form {
   display: inline-block;
@@ -957,16 +965,61 @@ a.arrow:hover:after {
 }
 #risk .modal-content {
   margin: 0 auto;
+  min-width: 500px;
   width: 40%;
-}
-.path {
-  display: none;
-}
-.toggle {
-  position: relative;
 }
 *:focus {
   outline: none;
+}
+p.smlabel,
+label.smlabel {
+  color: #0d437f;
+  font-size: 0.6em;
+  letter-spacing: 3px;
+  margin-top: 3px;
+  padding: 0 0 10px 3px;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+.school_district.hide {
+  height: 0;
+  margin: 0 24px;
+  opacity: 0;
+  overflow: hidden;
+}
+.school_district {
+  height: 55px;
+  margin: 10px 24px;
+  opacity: 1;
+  transition: opacity 300ms ease, height 150ms ease;
+}
+.school_district .smlabel {
+  font-size: 0.6em;
+  letter-spacing: 3px;
+  margin-top: 3px;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+.flex {
+  align-content: stretch;
+  align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.flexie input,
+.flexie .smlabel {
+  align-self: flex-start;
+  display: block;
+}
+.flexie.state {
+  margin: 0 10px;
 }
 @media screen and (max-width: 1000px) {
   .full {

@@ -12,19 +12,110 @@
     input(type='radio' name="entity_type" value="school_district")
     label.radio(name="school_district" for="school_district") School District
     br
+
+    .district.school_district.hide
+      input(type="text" name="campus_name")
+      label.smlabel(for="campus_name") Name of Campus *
+
     input(type='radio' name="entity_type" value="other_district")
     label.radio(name="other_district" for="other_district") All Other Types of Governmental Entities
     
-    .path.school_district
-      p School District
-      label(for="campus_name") Name of Campus *
-      input(type="text" name="campus_name" maxlength="50" size="30")
-
-    .path.other_district 
-      p Other Types of Governmental Entities
-
     label(for="billing_address") Billing Address *
-    input(type="text" name="billing_address" maxlength="50" size="30")
+    input(type="text" name="billing_address_street")
+    p.smlabel Street Address
+    
+    div.flex
+    
+      .flexie.city
+        input(type="text" name="billing_address_city")
+        p.smlabel City
+        
+      .flexie.state
+        input(type="text" name="billing_address_state" pattern="[A-Za-z]{2}" value="TN")
+        p.smlabel 2-Letter State
+        
+      .flexie.zip
+        input#zip(type="text" name="billing_address_zip" maxlength="5" pattern="[0-9]*")
+        p.smlabel 5-Digit Zip
+
+    label(for="construction_address") Construction Address *
+    input(type="text" name="construction_address_street")
+    p.smlabel Street Address
+    
+    div.flex
+    
+      .flexie.city
+        input(type="text" name="construction_address_city")
+        p.smlabel City
+        
+      .flexie.state
+        input(type="text" name="construction_address_state" pattern="[A-Za-z]{2}" value="TN")
+        p.smlabel 2-Letter State
+        
+      .flexie.zip
+        input#zip(type="text" name="construction_address_zip" maxlength="5" pattern="[0-9]*")
+        p.smlabel 5-Digit Zip
+
+    label(for="occupancy_description") Occupancy Description of Construction *
+    input(type="text" name="occupancy_description")
+    p.smlabel i.e. Office, Classroom, Gym, etc.
+    
+    label(for="addition_to_existing") Addition to Exsisting Building? *
+    input(type='radio' name="addition_to_existing" value="Yes")
+    label.radio.smlabel(name="addition_to_existing" for="Yes") Yes
+    input(type='radio' name="addition_to_existing" value="No")
+    label.radio.smlabel(name="addition_to_existing" for="No") No
+        
+    label(for="sprinkler_system") Will there be a sprinkler system? *
+    input(type='radio' name="sprinkler_system" value="Yes")
+    label.radio.smlabel(name="sprinkler_system" for="Yes") Yes
+    input(type='radio' name="sprinkler_system" value="No")
+    label.radio.smlabel(name="sprinkler_system" for="No") No
+        
+    label(for="construction_type") Type of Construction *
+    input(type="text" name="construction_type")
+    p.smlabel i.e. Masonry, Non-combustible, Frame, etc.
+    
+    label(for="protection_class") Protection Class (if known)
+    input(type="text" name="protection_class")
+    p.smlabel NGU will determine if unknown
+
+    label(for="renovation") Is this a Renovation? *
+    input(type='radio' name="renovation" value="Yes")
+    label.radio.smlabel(name="renovation" for="Yes") Yes
+    input(type='radio' name="renovation" value="No")
+    label.radio.smlabel(name="renovation" for="No") No
+        
+    label(for="number_of_floors") Number of Floors *
+    input(type="text" name="number_of_floors")
+    
+    label(for="square_footage") Square Footage *
+    input(type="text" name="square_footage")
+
+    label(for="completion_value") Estimated Completed Value *
+    input(type="text" name="completion_value")
+
+    label(for="deductible") Deductible *
+    input(type="text" name="deductible" placeholder="$2,500.00")
+
+    label(for="construction_start") Construction Start Date *
+    
+    div.flex
+    
+      .flexie.city
+        input(type="text" name="construction_start_month")
+        p.smlabel Month
+        
+      .flexie.state
+        input(type="text" name="construction_start_day")
+        p.smlabel Day
+        
+      .flexie.zip
+        input(type="text" name="construction_start_year")
+        p.smlabel Year
+
+
+
 
 
 script.
@@ -32,7 +123,9 @@ script.
     $('input[type="radio"]').click(function(){
       var inputValue = $(this).attr("value");
       var targetBox = $("." + inputValue);
-      $(".path").not(targetBox).hide();
-      $(targetBox).show();
+      $(".district").not(targetBox).addClass("hide");
+      $(".district").not(targetBox).removeClass("show");
+      $(targetBox).addClass("show");
+      $(targetBox).removeClass("hide");
     });
   });

@@ -33,7 +33,6 @@
     padding: 0 0 2px
 
   input[type="submit"]
-    // background-color: $lightest-blue
     background-image: linear-gradient($lightest-blue, $medium-blue);
     border: 1px solid transparent
     border-radius: 2px
@@ -49,7 +48,6 @@
 
     &:hover
       color: $gold
-      // background-image: linear-gradient($lightest-blue, $light-blue);
       border: 1px solid $gold
       primary-type($sans,$medium)
 
@@ -59,19 +57,29 @@
       color: $white
       primary-type($sans,$medium)
 
+  textarea
+    min-height: 60px
+
   input, textarea
-    border: 1px $darkest-blue solid
+    background: repeating-linear-gradient(135deg,rgba($gold,.2),rgba($gold,.2) 4px,rgba($gold,.1) 4px,rgba($gold,.1) 8px)
+    border-bottom: 2px solid $white
+    border-top: none
+    border-left: none
+    border-right: none
     box-sizing: border-box
     color: $dark-blue
     font-size: 1em
-    opacity: .6
-    padding: 7px
+    opacity: 1
+    padding: 6px 10px 3px
     primary-type($serif,$light)
     transition: all 600ms ease
     width: 100%
 
     &:focus, &:active
-      border-color: $gold
+      border-bottom: 2px solid $light-blue
+      border-top: none
+      border-left: none
+      border-right: none
       opacity: 1
 
     &:visited
@@ -81,6 +89,7 @@
   input[type="radio"],
   label.radio
     display: inline
+    margin-top: 10px
     width: auto
 
   input[type="radio"]
@@ -90,9 +99,6 @@
     color: $medium-blue
     margin: 20px 0 0
     padding: 0 0 2px
-
-.riskform
-  max-width: 500px
 
 .form
   display: inline-block
@@ -116,16 +122,60 @@
     margin-bottom: 50px
     width: 75%
 
-
 #risk .modal-content
   margin: 0 auto
+  min-width: 500px
   width: 40%
 
-.path
-  display: none
-
 .toggle
-  position: relative
+  // transition: margin 1000ms ease
 
 *:focus
   outline: none
+
+p.smlabel,
+label.smlabel
+  color: $medium-blue
+  font-size: .6em
+  letter-spacing: 3px
+  margin-top: 3px
+  padding: 0 0 10px 3px
+  primary-type($sans,$light)
+  text-transform: uppercase
+
+.school_district.hide
+  height: 0
+  margin: 0 24px
+  opacity: 0
+  overflow: hidden
+
+.school_district
+  height: 55px
+  margin: 10px 24px
+  opacity: 1
+  transition: opacity 300ms ease, height 150ms ease
+
+.school_district .smlabel
+  font-size: .6em
+  letter-spacing: 3px
+  margin-top: 3px
+  primary-type($sans,$light)
+  text-transform: uppercase
+
+.flex
+  align-content: stretch
+  align-items: baseline
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  flex-flow: row nowrap
+  justify-content: space-between
+
+.flexie
+
+  input, .smlabel
+    align-self: flex-start
+    display: block
+
+  &.state
+    margin: 0 10px
