@@ -1,4 +1,6 @@
 
+include mixins
+
 .form-modal
 
   p Application for Builders Risk Coverage through NGU Risk Management.
@@ -102,19 +104,29 @@
     
     div.flex
     
-      .flexie.city
-        input(type="text" name="construction_start_month")
-        p.smlabel Month
-        
-      .flexie.state
+      .flexie.month
+        +SelectBox('Month', [
+          {name: 'January', value: '1'}, 
+          {name: 'February', value: '2'}, 
+          {name: 'March', value: '3'}, 
+          {name: 'April', value: '4'}, 
+          {name: 'May', value: '5'},
+          {name: 'June', value: '6'},
+          {name: 'July', value: '7'},
+          {name: 'August', value: '8'},
+          {name: 'September', value: '9'},
+          {name: 'October', value: '10'},
+          {name: 'November', value: '11'},
+          {name: 'December', value: '12'}
+        ])
+
+      .flexie.day
         input(type="text" name="construction_start_day")
         p.smlabel Day
         
-      .flexie.zip
+      .flexie.year
         input(type="text" name="construction_start_year")
         p.smlabel Year
-
-
 
 
 

@@ -307,6 +307,16 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"/_includes/mixins.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/_includes/mixins.html",
+		"oF": 0,
+		"oS": 0
+		},
 	"/_includes/navigation.jade": {
 		"cB": 0,
 		"cOD": 1,
