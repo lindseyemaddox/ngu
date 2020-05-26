@@ -165,7 +165,6 @@ label.smlabel
 
 .flex
   align-content: stretch
-  align-items: top
   display: flex
   flex-flow: row nowrap
   justify-content: space-between
@@ -178,6 +177,9 @@ label.smlabel
 
   &.state
     margin: 0 10px
+
+.month
+  min-width: 160px
 
 .form-modal .riskform .select-box
   position: relative
@@ -215,14 +217,16 @@ label.smlabel
     display: none
 
     &:checked + .select-box__input-text
+      color: $darkest-blue
       display: block
 
   &__input-text
     display: none
     width: 100%
     margin: 0
-    padding: 15px
-    background-color: #fff
+    padding: 8.5px 10px
+    background: repeating-linear-gradient(135deg,rgba($gold,.2),rgba($gold,.2) 4px,rgba($gold,.1) 4px,rgba($gold,.1) 8px)
+    color: $dark-blue
 
   &__list
     position: absolute
@@ -238,15 +242,21 @@ label.smlabel
     box-shadow: 0 15px 30px -10px transparentize(#000, 0.9)
 
   &__option
+    border: 2px solid transparent
     display: block
+    font-size: 1em
     padding: 15px
-    background-color: #fff
-    margin: o auto
+    background-color: rgba($gold, .1)
+    margin: 0 auto
+    primary-type($sans,$light)
+    transition: all 400ms ease
 
     &:hover,
     &:focus
-      color: #546c84
-      background-color: #fbfbfb
+      border: 2px solid $light-blue
+      color: $dark-blue
+      cursor: pointer
+      background-color: rgba($gold, .025)
 
 @keyframes HideList
   from

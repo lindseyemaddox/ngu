@@ -1008,7 +1008,6 @@ label.smlabel {
 }
 .flex {
   align-content: stretch;
-  align-items: top;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -1020,6 +1019,9 @@ label.smlabel {
 }
 .flexie.state {
   margin: 0 10px;
+}
+.month {
+  min-width: 160px;
 }
 .form-modal .riskform .select-box {
   position: relative;
@@ -1056,14 +1058,16 @@ label.smlabel {
   display: none;
 }
 .form-modal .riskform .select-box__input:checked + .select-box__input-text {
+  color: #062240;
   display: block;
 }
 .form-modal .riskform .select-box__input-text {
   display: none;
   width: 100%;
   margin: 0;
-  padding: 15px;
-  background-color: #fff;
+  padding: 8.5px 10px;
+  background: repeating-linear-gradient(135deg, rgba(249,212,38,0.2), rgba(249,212,38,0.2) 4px, rgba(249,212,38,0.1) 4px, rgba(249,212,38,0.1) 8px);
+  color: #0b396d;
 }
 .form-modal .riskform .select-box__list {
   position: absolute;
@@ -1079,15 +1083,23 @@ label.smlabel {
   box-shadow: 0 15px 30px -10px transparentize(#000, 0.9);
 }
 .form-modal .riskform .select-box__option {
+  border: 2px solid transparent;
   display: block;
+  font-size: 1em;
   padding: 15px;
-  background-color: #fff;
-  margin: o auto;
+  background-color: rgba(249,212,38,0.1);
+  margin: 0 auto;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+  transition: all 400ms ease;
 }
 .form-modal .riskform .select-box__option:hover,
 .form-modal .riskform .select-box__option:focus {
-  color: #546c84;
-  background-color: #fbfbfb;
+  border: 2px solid #1778e5;
+  color: #0b396d;
+  cursor: pointer;
+  background-color: rgba(249,212,38,0.025);
 }
 @-moz-keyframes HideList {
   from {
