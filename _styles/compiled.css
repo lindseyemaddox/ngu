@@ -901,7 +901,7 @@ a.arrow:hover:after {
   border-left: none;
   border-right: none;
   box-sizing: border-box;
-  color: #0b396d;
+  color: #1778e5;
   font-size: 1em;
   opacity: 1;
   padding: 6px 10px 3px;
@@ -1020,118 +1020,18 @@ label.smlabel {
 .flexie.state {
   margin: 0 10px;
 }
+.flexie.month,
+.flexie.date {
+  margin-right: 10px;
+}
 .month {
   min-width: 160px;
 }
-.form-modal .riskform .select-box {
-  position: relative;
+.date {
+  min-width: 90px;
 }
-.form-modal .riskform .select-box__current {
-  position: relative;
-  box-shadow: 0 15px 30px -10px transparentize(#000, 0.9);
-  cursor: pointer;
+select option {
   outline: none;
-}
-.form-modal .riskform .select-box__current:focus + .select-box__list {
-  opacity: 1;
-  animation-name: none;
-}
-.form-modal .riskform .select-box__current:focus + .select-box__list .select-box__option {
-  cursor: pointer;
-}
-.form-modal .riskform .select-box__current:focus .select-box__icon {
-  opacity: 0;
-}
-.form-modal .riskform .select-box__icon {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  width: 20px;
-  opacity: 0.3;
-  transition: 0.2s ease;
-}
-.form-modal .riskform .select-box__value {
-  display: flex;
-}
-.form-modal .riskform .select-box__input {
-  display: none;
-}
-.form-modal .riskform .select-box__input:checked + .select-box__input-text {
-  color: #062240;
-  display: block;
-}
-.form-modal .riskform .select-box__input-text {
-  display: none;
-  width: 100%;
-  margin: 0;
-  padding: 8.5px 10px;
-  background: repeating-linear-gradient(135deg, rgba(249,212,38,0.2), rgba(249,212,38,0.2) 4px, rgba(249,212,38,0.1) 4px, rgba(249,212,38,0.1) 8px);
-  color: #0b396d;
-}
-.form-modal .riskform .select-box__list {
-  position: absolute;
-  width: 100%;
-  padding: 0;
-  list-style: none;
-  opacity: 0;
-  animation-name: HideList;
-  animation-duration: 0.5s;
-  animation-delay: 0.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: step-start;
-  box-shadow: 0 15px 30px -10px transparentize(#000, 0.9);
-}
-.form-modal .riskform .select-box__option {
-  border: 2px solid transparent;
-  display: block;
-  font-size: 1em;
-  padding: 15px;
-  background-color: rgba(249,212,38,0.1);
-  margin: 0 auto;
-  font-family: 'Raleway', 'Arial', sans-serif;
-  font-weight: 300;
-  line-height: 1.5em;
-  transition: all 400ms ease;
-}
-.form-modal .riskform .select-box__option:hover,
-.form-modal .riskform .select-box__option:focus {
-  border: 2px solid #1778e5;
-  color: #0b396d;
-  cursor: pointer;
-  background-color: rgba(249,212,38,0.025);
-}
-@-moz-keyframes HideList {
-  from {
-    transform: scaleY(1);
-  }
-  to {
-    transform: scaleY(0);
-  }
-}
-@-webkit-keyframes HideList {
-  from {
-    transform: scaleY(1);
-  }
-  to {
-    transform: scaleY(0);
-  }
-}
-@-o-keyframes HideList {
-  from {
-    transform: scaleY(1);
-  }
-  to {
-    transform: scaleY(0);
-  }
-}
-@keyframes HideList {
-  from {
-    transform: scaleY(1);
-  }
-  to {
-    transform: scaleY(0);
-  }
 }
 @media screen and (max-width: 1000px) {
   .full {

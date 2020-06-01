@@ -120,9 +120,41 @@ include mixins
           {name: 'December', value: '12'}
         ])
 
-      .flexie.day
-        input(type="text" name="construction_start_day")
-        p.smlabel Day
+      .flexie.date
+        +SelectBoxDate('Date', [
+          {number: 'Date', value: '0'}, 
+          {number: '1', value: '1'}, 
+          {number: '2', value: '2'}, 
+          {number: '3', value: '3'}, 
+          {number: '4', value: '4'}, 
+          {number: '5', value: '5'},
+          {number: '6', value: '6'},
+          {number: '7', value: '7'},
+          {number: '8', value: '8'},
+          {number: '9', value: '9'},
+          {number: '10', value: '10'},
+          {number: '11', value: '11'},
+          {number: '12', value: '12'},
+          {number: '13', value: '13'}, 
+          {number: '14', value: '14'}, 
+          {number: '15', value: '15'}, 
+          {number: '16', value: '16'}, 
+          {number: '17', value: '17'},
+          {number: '18', value: '18'},
+          {number: '19', value: '19'},
+          {number: '20', value: '20'},
+          {number: '21', value: '21'},
+          {number: '22', value: '22'},
+          {number: '23', value: '23'},
+          {number: '24', value: '24'},
+          {number: '25', value: '25'}, 
+          {number: '26', value: '26'}, 
+          {number: '27', value: '27'}, 
+          {number: '28', value: '28'}, 
+          {number: '29', value: '29'},
+          {number: '30', value: '30'},
+          {number: '31', value: '31'}
+        ])
         
       .flexie.year
         input(type="text" name="construction_start_year")
