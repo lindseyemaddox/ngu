@@ -5,13 +5,6 @@ mixin SelectBox(name, options)
       option.select-box__input(id=index value=option.value name=name checked)
         label.select-box__option(for=index aria-hidden) #{option.name}
 
-mixin pet(name)
-  li.pet= name
-ul
-  +pet('cat')
-  +pet('dog')
-
-
 mixin Radio(title, label)
   label(for= label) =title
   input(type="radio" name= label value="yes")
