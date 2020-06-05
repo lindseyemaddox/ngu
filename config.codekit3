@@ -7,7 +7,7 @@
 		"uuidString": "E017159A-69E1-4485-A09D-2412870ED49B"
 		}
 	],
-"creatorBuild": "32147",
+"creatorBuild": "32186",
 "files": {
 	"/.gitignore": {
 		"cB": 0,
@@ -268,6 +268,72 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/_images/ui-icons_444444_256x240.png": {
+		"ft": 32768,
+		"iS": 7006,
+		"oA": 0,
+		"oAP": "/_images/ui-icons_444444_256x240.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/ui-icons_555555_256x240.png": {
+		"ft": 32768,
+		"iS": 7074,
+		"oA": 0,
+		"oAP": "/_images/ui-icons_555555_256x240.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/ui-icons_777620_256x240.png": {
+		"ft": 32768,
+		"iS": 4676,
+		"oA": 0,
+		"oAP": "/_images/ui-icons_777620_256x240.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/ui-icons_777777_256x240.png": {
+		"ft": 32768,
+		"iS": 7013,
+		"oA": 0,
+		"oAP": "/_images/ui-icons_777777_256x240.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/ui-icons_cc0000_256x240.png": {
+		"ft": 32768,
+		"iS": 4632,
+		"oA": 0,
+		"oAP": "/_images/ui-icons_cc0000_256x240.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/_images/ui-icons_ffffff_256x240.png": {
+		"ft": 32768,
+		"iS": 6313,
+		"oA": 0,
+		"oAP": "/_images/ui-icons_ffffff_256x240.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/_images/video.jpg": {
 		"ft": 16384,
 		"iS": 159699,
@@ -306,6 +372,14 @@
 		"oAP": "/_includes/head.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"/_includes/mixins.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/_includes/mixins.html",
+		"oF": 0
 		},
 	"/_includes/mixins.jade": {
 		"cB": 0,
@@ -376,6 +450,17 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"/_scripts/datepicker.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/_scripts/min/datepicker-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/_scripts/main.js": {
 		"bF": 0,
 		"ft": 64,
@@ -409,6 +494,17 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"/_scripts/min/jquery-ui.min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/_scripts/min/min/jquery-ui.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"/_scripts/min/main-min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -438,6 +534,46 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/_styles/compiled-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/_styles/jquery-ui-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/_styles/jquery-ui-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/_styles/jquery-ui.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/_styles/jquery-ui-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/_styles/jquery-ui.structure.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/_styles/jquery-ui.structure-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/_styles/jquery-ui.theme.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/_styles/jquery-ui.theme-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -1702,6 +1838,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"default-case-last": {
+			"active": 0,
+			"optionString": ""
+			},
 		"default-param-last": {
 			"active": 0,
 			"optionString": ""
@@ -2114,6 +2254,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-loss-of-precision": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-magic-numbers": {
 			"active": 0,
 			"optionString": "{'ignore': [], 'ignoreArrayIndexes': true, 'enforceConst': false, 'detectObjects': false}"
@@ -2229,6 +2373,10 @@
 		"no-regex-spaces": {
 			"active": 1,
 			"optionString": ""
+			},
+		"no-restricted-exports": {
+			"active": 0,
+			"optionString": "{'restrictedNamedExports': []}"
 			},
 		"no-restricted-globals": {
 			"active": 0,
@@ -2373,6 +2521,10 @@
 		"no-use-before-define": {
 			"active": 0,
 			"optionString": "{'functions': true, 'classes': true, 'variables': true}"
+			},
+		"no-useless-backreference": {
+			"active": 0,
+			"optionString": ""
 			},
 		"no-useless-call": {
 			"active": 0,

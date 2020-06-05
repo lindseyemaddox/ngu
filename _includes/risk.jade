@@ -1,30 +1,33 @@
 
-include mixins
-
 .form-modal
 
-  p Application for Builders Risk Coverage through NGU Risk Management.
+  include mixins.jade
+
+  p Application for Builders Risk Coverage through NGU Risk Management. All fields are required unless otherwise noted.
 
   .riskform(name="riskform" method="post" action="send_riskform_email.php")
 
-    label(for="entity_name") Entity Name *
+    label(for="entity_name") Entity Name
     input(type="text" name="entity_name" maxlength="50" size="30")
 
-    p.label Entity is a *
+    p.label Entity is a
     input(type='radio' name="entity_type" value="school_district")
     label.radio(name="school_district" for="school_district") School District
     br
 
     .district.school_district.hide
       input(type="text" name="campus_name")
-      label.smlabel(for="campus_name") Name of Campus *
+      label.smlabel(for="campus_name") Name of Campus
 
     input(type='radio' name="entity_type" value="other_district")
     label.radio(name="other_district" for="other_district") All Other Types of Governmental Entities
     
-    label(for="billing_address") Billing Address *
+    label(for="billing_address") Billing Address
     input(type="text" name="billing_address_street")
     p.smlabel Street Address
+    
+    input(type="text" name="billing_address_street_2")
+    p.smlabel Suite / Floor / ICO / etc.
     
     div.flex
     
@@ -33,16 +36,70 @@ include mixins
         p.smlabel City
         
       .flexie.state
-        input(type="text" name="billing_address_state" pattern="[A-Za-z]{2}" value="TN")
-        p.smlabel 2-Letter State
+        +SelectBox('State', [
+          {name: 'AK', value: 'AK'},
+          {name: 'AL', value: 'AL'},
+          {name: 'AR', value: 'AR'},
+          {name: 'AZ', value: 'AZ'},
+          {name: 'CA', value: 'CA'},
+          {name: 'CO', value: 'CO'},
+          {name: 'CT', value: 'CT'},
+          {name: 'DE', value: 'DE'},
+          {name: 'FL', value: 'FL'},
+          {name: 'GA', value: 'GA'},
+          {name: 'HI', value: 'HI'},
+          {name: 'IA', value: 'IA'},
+          {name: 'ID', value: 'ID'},
+          {name: 'IL', value: 'IL'},
+          {name: 'IN', value: 'IN'},
+          {name: 'KS', value: 'KS'},
+          {name: 'KY', value: 'KY'},
+          {name: 'LA', value: 'LA'},
+          {name: 'MA', value: 'MA'},
+          {name: 'MD', value: 'MD'},
+          {name: 'ME', value: 'ME'},
+          {name: 'MI', value: 'MI'},
+          {name: 'MN', value: 'MN'},
+          {name: 'MO', value: 'MO'},
+          {name: 'MS', value: 'MS'},
+          {name: 'MT', value: 'MT'},
+          {name: 'NC', value: 'NC'},
+          {name: 'ND', value: 'ND'},
+          {name: 'NE', value: 'NE'},
+          {name: 'NH', value: 'NH'},
+          {name: 'NJ', value: 'NJ'},
+          {name: 'NM', value: 'NM'},
+          {name: 'NV', value: 'NV'},
+          {name: 'NY', value: 'NY'},
+          {name: 'OH', value: 'OH'},
+          {name: 'OK', value: 'OK'},
+          {name: 'OR', value: 'OR'},
+          {name: 'PA', value: 'PA'},
+          {name: 'RI', value: 'RI'},
+          {name: 'SC', value: 'SC'},
+          {name: 'SD', value: 'SD'},
+          {name: 'TN', value: 'TN'},
+          {name: 'TX', value: 'TX'},
+          {name: 'UT', value: 'UT'},
+          {name: 'VA', value: 'VA'},
+          {name: 'VT', value: 'VT'},
+          {name: 'WA', value: 'WA'},
+          {name: 'WI', value: 'WI'},
+          {name: 'WV', value: 'WV'},
+          {name: 'WY', value: 'WY'}
+        ])
+        p.smlabel State
         
       .flexie.zip
         input#zip(type="text" name="billing_address_zip" maxlength="5" pattern="[0-9]*")
-        p.smlabel 5-Digit Zip
+        p.smlabel Zip
 
-    label(for="construction_address") Construction Address *
+    label(for="construction_address") Construction Address
     input(type="text" name="construction_address_street")
     p.smlabel Street Address
+    
+    input(type="text" name="construction_address_street_2")
+    p.smlabel Suite / Floor / ICO / etc.
     
     div.flex
     
@@ -51,59 +108,104 @@ include mixins
         p.smlabel City
         
       .flexie.state
-        input(type="text" name="construction_address_state" pattern="[A-Za-z]{2}" value="TN")
-        p.smlabel 2-Letter State
+        +SelectBox('State', [
+          {name: 'AK', value: 'AK'},
+          {name: 'AL', value: 'AL'},
+          {name: 'AR', value: 'AR'},
+          {name: 'AZ', value: 'AZ'},
+          {name: 'CA', value: 'CA'},
+          {name: 'CO', value: 'CO'},
+          {name: 'CT', value: 'CT'},
+          {name: 'DE', value: 'DE'},
+          {name: 'FL', value: 'FL'},
+          {name: 'GA', value: 'GA'},
+          {name: 'HI', value: 'HI'},
+          {name: 'IA', value: 'IA'},
+          {name: 'ID', value: 'ID'},
+          {name: 'IL', value: 'IL'},
+          {name: 'IN', value: 'IN'},
+          {name: 'KS', value: 'KS'},
+          {name: 'KY', value: 'KY'},
+          {name: 'LA', value: 'LA'},
+          {name: 'MA', value: 'MA'},
+          {name: 'MD', value: 'MD'},
+          {name: 'ME', value: 'ME'},
+          {name: 'MI', value: 'MI'},
+          {name: 'MN', value: 'MN'},
+          {name: 'MO', value: 'MO'},
+          {name: 'MS', value: 'MS'},
+          {name: 'MT', value: 'MT'},
+          {name: 'NC', value: 'NC'},
+          {name: 'ND', value: 'ND'},
+          {name: 'NE', value: 'NE'},
+          {name: 'NH', value: 'NH'},
+          {name: 'NJ', value: 'NJ'},
+          {name: 'NM', value: 'NM'},
+          {name: 'NV', value: 'NV'},
+          {name: 'NY', value: 'NY'},
+          {name: 'OH', value: 'OH'},
+          {name: 'OK', value: 'OK'},
+          {name: 'OR', value: 'OR'},
+          {name: 'PA', value: 'PA'},
+          {name: 'RI', value: 'RI'},
+          {name: 'SC', value: 'SC'},
+          {name: 'SD', value: 'SD'},
+          {name: 'TN', value: 'TN'},
+          {name: 'TX', value: 'TX'},
+          {name: 'UT', value: 'UT'},
+          {name: 'VA', value: 'VA'},
+          {name: 'VT', value: 'VT'},
+          {name: 'WA', value: 'WA'},
+          {name: 'WI', value: 'WI'},
+          {name: 'WV', value: 'WV'},
+          {name: 'WY', value: 'WY'}
+        ])
+        p.smlabel State
         
       .flexie.zip
         input#zip(type="text" name="construction_address_zip" maxlength="5" pattern="[0-9]*")
-        p.smlabel 5-Digit Zip
+        p.smlabel Zip
 
-    label(for="occupancy_description") Occupancy Description of Construction *
+    label(for="occupancy_description") Occupancy Description of Construction
     input(type="text" name="occupancy_description")
     p.smlabel i.e. Office, Classroom, Gym, etc.
     
-    label(for="addition_to_existing") Addition to Exsisting Building? *
-    input(type='radio' name="addition_to_existing" value="Yes")
-    label.radio.smlabel(name="addition_to_existing" for="Yes") Yes
-    input(type='radio' name="addition_to_existing" value="No")
-    label.radio.smlabel(name="addition_to_existing" for="No") No
+    +Radio('addition', [
+      {title: "Addition to Exsisting Building?", label: "addition_to_existing"}
+    ])
         
-    label(for="sprinkler_system") Will there be a sprinkler system? *
-    input(type='radio' name="sprinkler_system" value="Yes")
-    label.radio.smlabel(name="sprinkler_system" for="Yes") Yes
-    input(type='radio' name="sprinkler_system" value="No")
-    label.radio.smlabel(name="sprinkler_system" for="No") No
-        
-    label(for="construction_type") Type of Construction *
+    +Radio('sprinkler', [
+      {title: "Will there be a sprinkler system?", label: "sprinkler_system"}
+    ])
+
+    label(for="construction_type") Type of Construction
     input(type="text" name="construction_type")
     p.smlabel i.e. Masonry, Non-combustible, Frame, etc.
     
-    label(for="protection_class") Protection Class (if known)
+    label(for="protection_class") Protection Class *
     input(type="text" name="protection_class")
-    p.smlabel NGU will determine if unknown
+    p.smlabel NGU will determine if unknown (*Not Required)
 
-    label(for="renovation") Is this a Renovation? *
-    input(type='radio' name="renovation" value="Yes")
-    label.radio.smlabel(name="renovation" for="Yes") Yes
-    input(type='radio' name="renovation" value="No")
-    label.radio.smlabel(name="renovation" for="No") No
+    +Radio('renovation', [
+      {title: "Is this a Renovation?", label: "renovation"}
+    ])
         
-    label(for="number_of_floors") Number of Floors *
+    label(for="number_of_floors") Number of Floors
     input(type="text" name="number_of_floors")
     
-    label(for="square_footage") Square Footage *
+    label(for="square_footage") Square Footage
     input(type="text" name="square_footage")
 
-    label(for="completion_value") Estimated Completed Value *
+    label(for="completion_value") Estimated Completed Value
     input(type="text" name="completion_value")
 
-    label(for="deductible") Deductible *
+    label(for="deductible") Deductible
     input(type="text" name="deductible" placeholder="$2,500.00")
 
-    label(for="construction_start") Construction Start Date *
-    
+    label(for="construction_start") Construction Start Date
+
     div.flex
-    
+
       .flexie.month
         +SelectBox('Month', [
           {name: 'January', value: '1'}, 
@@ -119,49 +221,242 @@ include mixins
           {name: 'November', value: '11'},
           {name: 'December', value: '12'}
         ])
-
+      
       .flexie.date
-        +SelectBoxDate('Date', [
-          {number: 'Date', value: '0'}, 
-          {number: '1', value: '1'}, 
-          {number: '2', value: '2'}, 
-          {number: '3', value: '3'}, 
-          {number: '4', value: '4'}, 
-          {number: '5', value: '5'},
-          {number: '6', value: '6'},
-          {number: '7', value: '7'},
-          {number: '8', value: '8'},
-          {number: '9', value: '9'},
-          {number: '10', value: '10'},
-          {number: '11', value: '11'},
-          {number: '12', value: '12'},
-          {number: '13', value: '13'}, 
-          {number: '14', value: '14'}, 
-          {number: '15', value: '15'}, 
-          {number: '16', value: '16'}, 
-          {number: '17', value: '17'},
-          {number: '18', value: '18'},
-          {number: '19', value: '19'},
-          {number: '20', value: '20'},
-          {number: '21', value: '21'},
-          {number: '22', value: '22'},
-          {number: '23', value: '23'},
-          {number: '24', value: '24'},
-          {number: '25', value: '25'}, 
-          {number: '26', value: '26'}, 
-          {number: '27', value: '27'}, 
-          {number: '28', value: '28'}, 
-          {number: '29', value: '29'},
-          {number: '30', value: '30'},
-          {number: '31', value: '31'}
+        +SelectBox('Date', [
+          {name: '1', value: '1'}, 
+          {name: '2', value: '2'}, 
+          {name: '3', value: '3'}, 
+          {name: '4', value: '4'}, 
+          {name: '5', value: '5'},
+          {name: '6', value: '6'},
+          {name: '7', value: '7'},
+          {name: '8', value: '8'},
+          {name: '9', value: '9'},
+          {name: '10', value: '10'},
+          {name: '11', value: '11'},
+          {name: '12', value: '12'},
+          {name: '13', value: '13'}, 
+          {name: '14', value: '14'}, 
+          {name: '15', value: '15'}, 
+          {name: '16', value: '16'}, 
+          {name: '17', value: '17'},
+          {name: '18', value: '18'},
+          {name: '19', value: '19'},
+          {name: '20', value: '20'},
+          {name: '21', value: '21'},
+          {name: '22', value: '22'},
+          {name: '23', value: '23'},
+          {name: '24', value: '24'},
+          {name: '25', value: '25'}, 
+          {name: '26', value: '26'}, 
+          {name: '27', value: '27'}, 
+          {name: '28', value: '28'}, 
+          {name: '29', value: '29'},
+          {name: '30', value: '30'},
+          {name: '31', value: '31'}
         ])
-        
+      
       .flexie.year
-        input(type="text" name="construction_start_year")
-        p.smlabel Year
+        +SelectBox('Year', [
+          {name: '2020', value: '2020'}, 
+          {name: '2021', value: '2021'}, 
+          {name: '2022', value: '2022'}, 
+          {name: '2023', value: '2023'}, 
+          {name: '2024', value: '2024'},
+          {name: '2025', value: '2025'},
+          {name: '2026', value: '2026'},
+          {name: '2027', value: '2027'},
+          {name: '2028', value: '2028'},
+          {name: '2029', value: '2029'},
+          {name: '2030', value: '2030'},
+          {name: '2031', value: '2031'},
+          {name: '2032', value: '2032'},
+          {name: '2033', value: '2033'},
+          {name: '2034', value: '2034'},
+          {name: '2035', value: '2035'}
+        ])
+      
+    label(for="construction_completion") Expected Completion Date
 
+    div.flex
 
+      .flexie.month
+        +SelectBox('Month', [
+          {name: 'January', value: '1'}, 
+          {name: 'February', value: '2'}, 
+          {name: 'March', value: '3'}, 
+          {name: 'April', value: '4'}, 
+          {name: 'May', value: '5'},
+          {name: 'June', value: '6'},
+          {name: 'July', value: '7'},
+          {name: 'August', value: '8'},
+          {name: 'September', value: '9'},
+          {name: 'October', value: '10'},
+          {name: 'November', value: '11'},
+          {name: 'December', value: '12'}
+        ])
+      
+      .flexie.date
+        +SelectBox('Date', [
+          {name: '1', value: '1'}, 
+          {name: '2', value: '2'}, 
+          {name: '3', value: '3'}, 
+          {name: '4', value: '4'}, 
+          {name: '5', value: '5'},
+          {name: '6', value: '6'},
+          {name: '7', value: '7'},
+          {name: '8', value: '8'},
+          {name: '9', value: '9'},
+          {name: '10', value: '10'},
+          {name: '11', value: '11'},
+          {name: '12', value: '12'},
+          {name: '13', value: '13'}, 
+          {name: '14', value: '14'}, 
+          {name: '15', value: '15'}, 
+          {name: '16', value: '16'}, 
+          {name: '17', value: '17'},
+          {name: '18', value: '18'},
+          {name: '19', value: '19'},
+          {name: '20', value: '20'},
+          {name: '21', value: '21'},
+          {name: '22', value: '22'},
+          {name: '23', value: '23'},
+          {name: '24', value: '24'},
+          {name: '25', value: '25'}, 
+          {name: '26', value: '26'}, 
+          {name: '27', value: '27'}, 
+          {name: '28', value: '28'}, 
+          {name: '29', value: '29'},
+          {name: '30', value: '30'},
+          {name: '31', value: '31'}
+        ])
+      
+      .flexie.year
+        +SelectBox('Year', [
+          {name: '2020', value: '2020'}, 
+          {name: '2021', value: '2021'}, 
+          {name: '2022', value: '2022'}, 
+          {name: '2023', value: '2023'}, 
+          {name: '2024', value: '2024'},
+          {name: '2025', value: '2025'},
+          {name: '2026', value: '2026'},
+          {name: '2027', value: '2027'},
+          {name: '2028', value: '2028'},
+          {name: '2029', value: '2029'},
+          {name: '2030', value: '2030'},
+          {name: '2031', value: '2031'},
+          {name: '2032', value: '2032'},
+          {name: '2033', value: '2033'},
+          {name: '2034', value: '2034'},
+          {name: '2035', value: '2035'}
+        ])        
+      
+    label(for="security_type") Type of Security (inside and outside)
+    input(type="text" name="security_type")
+    p.smlabel Fencing, Lighting, Guard, etc.
 
+    +Radio('flood', [
+      {title: "Flood / Quake?", label: "flood_quake"}
+    ])
+        
+    +Radio('terrorism', [
+      {title: "Terrorism?", label: "terrorism"}
+    ])
+        
+    label(for="contractor_name") Name of Contractor
+    input(type="text" name="contractor_name")
+    
+    label(for="contractor_address") Contractor Address
+    input(type="text" name="contractor_address_street")
+    p.smlabel Street Address
+    
+    input(type="text" name="contractor_address_street_2")
+    p.smlabel Suite / Floor / ICO / etc.
+    
+    div.flex
+    
+      .flexie.city
+        input(type="text" name="contractor_address_city")
+        p.smlabel City
+        
+      .flexie.state
+        +SelectBox('State', [
+          {name: 'AK', value: 'AK'},
+          {name: 'AL', value: 'AL'},
+          {name: 'AR', value: 'AR'},
+          {name: 'AZ', value: 'AZ'},
+          {name: 'CA', value: 'CA'},
+          {name: 'CO', value: 'CO'},
+          {name: 'CT', value: 'CT'},
+          {name: 'DE', value: 'DE'},
+          {name: 'FL', value: 'FL'},
+          {name: 'GA', value: 'GA'},
+          {name: 'HI', value: 'HI'},
+          {name: 'IA', value: 'IA'},
+          {name: 'ID', value: 'ID'},
+          {name: 'IL', value: 'IL'},
+          {name: 'IN', value: 'IN'},
+          {name: 'KS', value: 'KS'},
+          {name: 'KY', value: 'KY'},
+          {name: 'LA', value: 'LA'},
+          {name: 'MA', value: 'MA'},
+          {name: 'MD', value: 'MD'},
+          {name: 'ME', value: 'ME'},
+          {name: 'MI', value: 'MI'},
+          {name: 'MN', value: 'MN'},
+          {name: 'MO', value: 'MO'},
+          {name: 'MS', value: 'MS'},
+          {name: 'MT', value: 'MT'},
+          {name: 'NC', value: 'NC'},
+          {name: 'ND', value: 'ND'},
+          {name: 'NE', value: 'NE'},
+          {name: 'NH', value: 'NH'},
+          {name: 'NJ', value: 'NJ'},
+          {name: 'NM', value: 'NM'},
+          {name: 'NV', value: 'NV'},
+          {name: 'NY', value: 'NY'},
+          {name: 'OH', value: 'OH'},
+          {name: 'OK', value: 'OK'},
+          {name: 'OR', value: 'OR'},
+          {name: 'PA', value: 'PA'},
+          {name: 'RI', value: 'RI'},
+          {name: 'SC', value: 'SC'},
+          {name: 'SD', value: 'SD'},
+          {name: 'TN', value: 'TN'},
+          {name: 'TX', value: 'TX'},
+          {name: 'UT', value: 'UT'},
+          {name: 'VA', value: 'VA'},
+          {name: 'VT', value: 'VT'},
+          {name: 'WA', value: 'WA'},
+          {name: 'WI', value: 'WI'},
+          {name: 'WV', value: 'WV'},
+          {name: 'WY', value: 'WY'}
+        ])
+        p.smlabel State
+        
+      .flexie.zip
+        input#zip(type="text" name="contractor_address_zip" maxlength="5" pattern="[0-9]*")
+        p.smlabel Zip
+
+    label(for="surveyor_name") Name of Loss Control Surveyor
+    input(type="text" name="surveyor_name")
+    
+    label(for="phone") Phone Number of Loss Control Surveyor
+    input(type="text" name="phone")
+    
+    label(for="experience") Number of Years Experience
+    input(type="number" name="experience")
+
+    label(for="completor_name") Person Completing this Application
+    input(type="text" name="completor_name")
+    
+    label(for="email") Email Address
+    input(type="email" name="email")
+    p.smlabel Enter to receive a copy of request.
+    
+    input(type="submit" value="Submit Form")    
+      
 script.
   $(document).ready(function(){
     $('input[type="radio"]').click(function(){

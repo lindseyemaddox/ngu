@@ -5,9 +5,17 @@ mixin SelectBox(name, options)
       option.select-box__input(id=index value=option.value name=name checked)
         label.select-box__option(for=index aria-hidden) #{option.name}
 
+mixin pet(name)
+  li.pet= name
+ul
+  +pet('cat')
+  +pet('dog')
 
-mixin SelectBoxDate(number, options)
-  select
-    each option, index in options
-      option.select-box__input(id=index value=option.value name=number checked)
-        label.select-box__option(for=index aria-hidden) #{option.number}
+
+mixin Radio(title, label)
+  label(for= label) =title
+  input(type="radio" name= label value="yes")
+  label.radio.smlabel(name= label for="yes") Yes
+  input(type="radio" name= label value="no")
+  label.radio.smlabel(name= label for="no") No
+    
