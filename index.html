@@ -283,7 +283,7 @@
                   <div id="resources" class="pane">
                     <p class="intro">If we can help you with your risk management needs or you have questions about what we can do for you, please don’t hesitate to give us a call or complete the online contact form linked below.</p><a href="#contact" class="arrow">Contact NGU</a>
                     <p class="intro">If you have experienced an event which you feel requires a claim on your policy, please complete the form linked below and we will be more than happy to walk you through everything and resolve your issue.</p><a href="https://my.marshclearsight.com/hydra_customlogin" target="_blank" class="arrow">File a Claim</a>
-                    <p class="intro">To request a Certificate of Insurance or an Endorsement from the Tennessee Risk Management Trust, you can complete the forms linked below.</p><a href="#risk" class="arrow">Builders Risk Coverage Application</a><a href="#certificate" class="arrow">Certificate of Insurance Request Form</a>
+                    <p class="intro">To request a Certificate of Insurance or an Endorsement from the Tennessee Risk Management Trust, you can complete the forms linked below.</p><a href="#risk" class="arrow">Builders Risk Coverage Application</a><a href="#certificate" class="arrow">Certificate of Insurance Request</a>
                     <p class="intro">Links to information and services that benefit our clients. Please let us know if there is any other information you feel would be helpful to see here.</p><a href="#links" class="arrow">Helpful Links</a>
                     <div id="contact" class="modal">
                       <div class="modal-content">
@@ -328,15 +328,15 @@
                             <div name="riskform" method="post" action="send_riskform_email.php" class="riskform">
                               <label for="entity_name">Entity Name</label>
                               <input type="text" name="entity_name" maxlength="50" size="30">
-                              <p class="label">Entity is a...</p>
-                              <input type="radio" name="entity_type" value="other_district">
-                              <label name="other_district" for="other_district" class="radio">All Other Governmental Entities</label><br>
+                              <p class="label">Entity is a(n)...</p>
                               <input type="radio" name="entity_type" value="school_district">
-                              <label name="school_district" for="school_district" class="radio">School District</label>
+                              <label name="school_district" for="school_district" class="radio">School District</label><br>
                               <div class="district school_district hide">
                                 <input type="text" name="campus_name">
                                 <label for="campus_name" class="smlabel">Name of Campus</label>
                               </div>
+                              <input type="radio" name="entity_type" value="other_district">
+                              <label name="other_district" for="other_district" class="radio">Other Governmental Entity</label>
                               <label for="billing_address">Billing Address</label>
                               <input type="text" name="billing_address_street">
                               <p class="smlabel">Street Address</p>
@@ -1308,7 +1308,7 @@
                     <div id="certificate" class="modal">
                       <div class="modal-content">
                         <div class="container"><a href="#resources" class="closebtn">close</a>
-                          <h3 class="headline">Certificate of Insurance Request Form</h3>
+                          <h3 class="headline">Certificate of Insurance Request</h3>
                           <div class="form-modal">
                             <p>Use this form to request a Certificate of Insurance (COI) on your policy. All fields are required unless otherwise noted.</p>
                             <div name="coiform" method="post" action="send_coiform_email.php" class="coiform">
@@ -1317,17 +1317,787 @@
                               <label for="agent">Agent *</label>
                               <input type="text" name="agent">
                               <p class="smlabel">*Not Required</p>
-                              <p class="label">Entity is a...</p>
+                              <p class="label">Entity is a(n)...</p>
                               <input type="radio" name="entity_type" value="school_district">
                               <label name="school_district" for="school_district" class="radio">School District</label><br>
-                              <div class="district school_district hide">
-                                <input type="text" name="campus_name">
-                                <label for="campus_name" class="smlabel">Name of Campus</label>
-                              </div>
                               <input type="radio" name="entity_type" value="other_district">
-                              <label name="other_district" for="other_district" class="radio">All Other Governmental Entities</label>
+                              <label name="other_district" for="other_district" class="radio">Other Governmental Entity</label>
+                                                          <label for="coi_type">COI Type Requested</label>
+                                                          <input type="radio" name="coi_type" value="auto">
+                                                          <label name="coi_type" for="auto" class="check">auto</label>
+                                                          <input type="radio" name="coi_type" value="liability">
+                                                          <label name="coi_type" for="liability" class="check">liability</label>
+                                                          <input type="radio" name="coi_type" value="property">
+                                                          <label name="coi_type" for="property" class="check">property</label>
+                              <div class="auto hide">
+                                <p class="sub">Auto Certificate Details</p>
+                                <label for="payee_holder">Loss Payee / Certificate Holder</label>
+                                <input type="text" name="payee_holder">
+                                <label for="payee_holder_address">Loss Payee / Certificate Holder Address</label>
+                                <input type="text" name="payee_holder_address_street">
+                                <p class="smlabel">Street Address</p>
+                                <input type="text" name="payee_holder_address_street_2">
+                                <p class="smlabel">Suite / Floor / ICO / etc.</p>
+                                <div class="flex">
+                                  <div class="flexie city">
+                                    <input type="text" name="payee_holder_address_city">
+                                    <p class="smlabel">City</p>
+                                  </div>
+                                  <div class="flexie state">
+                                                                <select>
+                                                                  <option id="0" value="AK" name="State" checked class="select-box__input">
+                                                                    <label for="0" aria-hidden class="select-box__option">AK</label>
+                                                                  </option>
+                                                                  <option id="1" value="AL" name="State" checked class="select-box__input">
+                                                                    <label for="1" aria-hidden class="select-box__option">AL</label>
+                                                                  </option>
+                                                                  <option id="2" value="AR" name="State" checked class="select-box__input">
+                                                                    <label for="2" aria-hidden class="select-box__option">AR</label>
+                                                                  </option>
+                                                                  <option id="3" value="AZ" name="State" checked class="select-box__input">
+                                                                    <label for="3" aria-hidden class="select-box__option">AZ</label>
+                                                                  </option>
+                                                                  <option id="4" value="CA" name="State" checked class="select-box__input">
+                                                                    <label for="4" aria-hidden class="select-box__option">CA</label>
+                                                                  </option>
+                                                                  <option id="5" value="CO" name="State" checked class="select-box__input">
+                                                                    <label for="5" aria-hidden class="select-box__option">CO</label>
+                                                                  </option>
+                                                                  <option id="6" value="CT" name="State" checked class="select-box__input">
+                                                                    <label for="6" aria-hidden class="select-box__option">CT</label>
+                                                                  </option>
+                                                                  <option id="7" value="DE" name="State" checked class="select-box__input">
+                                                                    <label for="7" aria-hidden class="select-box__option">DE</label>
+                                                                  </option>
+                                                                  <option id="8" value="FL" name="State" checked class="select-box__input">
+                                                                    <label for="8" aria-hidden class="select-box__option">FL</label>
+                                                                  </option>
+                                                                  <option id="9" value="GA" name="State" checked class="select-box__input">
+                                                                    <label for="9" aria-hidden class="select-box__option">GA</label>
+                                                                  </option>
+                                                                  <option id="10" value="HI" name="State" checked class="select-box__input">
+                                                                    <label for="10" aria-hidden class="select-box__option">HI</label>
+                                                                  </option>
+                                                                  <option id="11" value="IA" name="State" checked class="select-box__input">
+                                                                    <label for="11" aria-hidden class="select-box__option">IA</label>
+                                                                  </option>
+                                                                  <option id="12" value="ID" name="State" checked class="select-box__input">
+                                                                    <label for="12" aria-hidden class="select-box__option">ID</label>
+                                                                  </option>
+                                                                  <option id="13" value="IL" name="State" checked class="select-box__input">
+                                                                    <label for="13" aria-hidden class="select-box__option">IL</label>
+                                                                  </option>
+                                                                  <option id="14" value="IN" name="State" checked class="select-box__input">
+                                                                    <label for="14" aria-hidden class="select-box__option">IN</label>
+                                                                  </option>
+                                                                  <option id="15" value="KS" name="State" checked class="select-box__input">
+                                                                    <label for="15" aria-hidden class="select-box__option">KS</label>
+                                                                  </option>
+                                                                  <option id="16" value="KY" name="State" checked class="select-box__input">
+                                                                    <label for="16" aria-hidden class="select-box__option">KY</label>
+                                                                  </option>
+                                                                  <option id="17" value="LA" name="State" checked class="select-box__input">
+                                                                    <label for="17" aria-hidden class="select-box__option">LA</label>
+                                                                  </option>
+                                                                  <option id="18" value="MA" name="State" checked class="select-box__input">
+                                                                    <label for="18" aria-hidden class="select-box__option">MA</label>
+                                                                  </option>
+                                                                  <option id="19" value="MD" name="State" checked class="select-box__input">
+                                                                    <label for="19" aria-hidden class="select-box__option">MD</label>
+                                                                  </option>
+                                                                  <option id="20" value="ME" name="State" checked class="select-box__input">
+                                                                    <label for="20" aria-hidden class="select-box__option">ME</label>
+                                                                  </option>
+                                                                  <option id="21" value="MI" name="State" checked class="select-box__input">
+                                                                    <label for="21" aria-hidden class="select-box__option">MI</label>
+                                                                  </option>
+                                                                  <option id="22" value="MN" name="State" checked class="select-box__input">
+                                                                    <label for="22" aria-hidden class="select-box__option">MN</label>
+                                                                  </option>
+                                                                  <option id="23" value="MO" name="State" checked class="select-box__input">
+                                                                    <label for="23" aria-hidden class="select-box__option">MO</label>
+                                                                  </option>
+                                                                  <option id="24" value="MS" name="State" checked class="select-box__input">
+                                                                    <label for="24" aria-hidden class="select-box__option">MS</label>
+                                                                  </option>
+                                                                  <option id="25" value="MT" name="State" checked class="select-box__input">
+                                                                    <label for="25" aria-hidden class="select-box__option">MT</label>
+                                                                  </option>
+                                                                  <option id="26" value="NC" name="State" checked class="select-box__input">
+                                                                    <label for="26" aria-hidden class="select-box__option">NC</label>
+                                                                  </option>
+                                                                  <option id="27" value="ND" name="State" checked class="select-box__input">
+                                                                    <label for="27" aria-hidden class="select-box__option">ND</label>
+                                                                  </option>
+                                                                  <option id="28" value="NE" name="State" checked class="select-box__input">
+                                                                    <label for="28" aria-hidden class="select-box__option">NE</label>
+                                                                  </option>
+                                                                  <option id="29" value="NH" name="State" checked class="select-box__input">
+                                                                    <label for="29" aria-hidden class="select-box__option">NH</label>
+                                                                  </option>
+                                                                  <option id="30" value="NJ" name="State" checked class="select-box__input">
+                                                                    <label for="30" aria-hidden class="select-box__option">NJ</label>
+                                                                  </option>
+                                                                  <option id="31" value="NM" name="State" checked class="select-box__input">
+                                                                    <label for="31" aria-hidden class="select-box__option">NM</label>
+                                                                  </option>
+                                                                  <option id="32" value="NV" name="State" checked class="select-box__input">
+                                                                    <label for="32" aria-hidden class="select-box__option">NV</label>
+                                                                  </option>
+                                                                  <option id="33" value="NY" name="State" checked class="select-box__input">
+                                                                    <label for="33" aria-hidden class="select-box__option">NY</label>
+                                                                  </option>
+                                                                  <option id="34" value="OH" name="State" checked class="select-box__input">
+                                                                    <label for="34" aria-hidden class="select-box__option">OH</label>
+                                                                  </option>
+                                                                  <option id="35" value="OK" name="State" checked class="select-box__input">
+                                                                    <label for="35" aria-hidden class="select-box__option">OK</label>
+                                                                  </option>
+                                                                  <option id="36" value="OR" name="State" checked class="select-box__input">
+                                                                    <label for="36" aria-hidden class="select-box__option">OR</label>
+                                                                  </option>
+                                                                  <option id="37" value="PA" name="State" checked class="select-box__input">
+                                                                    <label for="37" aria-hidden class="select-box__option">PA</label>
+                                                                  </option>
+                                                                  <option id="38" value="RI" name="State" checked class="select-box__input">
+                                                                    <label for="38" aria-hidden class="select-box__option">RI</label>
+                                                                  </option>
+                                                                  <option id="39" value="SC" name="State" checked class="select-box__input">
+                                                                    <label for="39" aria-hidden class="select-box__option">SC</label>
+                                                                  </option>
+                                                                  <option id="40" value="SD" name="State" checked class="select-box__input">
+                                                                    <label for="40" aria-hidden class="select-box__option">SD</label>
+                                                                  </option>
+                                                                  <option id="41" value="TN" name="State" checked class="select-box__input">
+                                                                    <label for="41" aria-hidden class="select-box__option">TN</label>
+                                                                  </option>
+                                                                  <option id="42" value="TX" name="State" checked class="select-box__input">
+                                                                    <label for="42" aria-hidden class="select-box__option">TX</label>
+                                                                  </option>
+                                                                  <option id="43" value="UT" name="State" checked class="select-box__input">
+                                                                    <label for="43" aria-hidden class="select-box__option">UT</label>
+                                                                  </option>
+                                                                  <option id="44" value="VA" name="State" checked class="select-box__input">
+                                                                    <label for="44" aria-hidden class="select-box__option">VA</label>
+                                                                  </option>
+                                                                  <option id="45" value="VT" name="State" checked class="select-box__input">
+                                                                    <label for="45" aria-hidden class="select-box__option">VT</label>
+                                                                  </option>
+                                                                  <option id="46" value="WA" name="State" checked class="select-box__input">
+                                                                    <label for="46" aria-hidden class="select-box__option">WA</label>
+                                                                  </option>
+                                                                  <option id="47" value="WI" name="State" checked class="select-box__input">
+                                                                    <label for="47" aria-hidden class="select-box__option">WI</label>
+                                                                  </option>
+                                                                  <option id="48" value="WV" name="State" checked class="select-box__input">
+                                                                    <label for="48" aria-hidden class="select-box__option">WV</label>
+                                                                  </option>
+                                                                  <option id="49" value="WY" name="State" checked class="select-box__input">
+                                                                    <label for="49" aria-hidden class="select-box__option">WY</label>
+                                                                  </option>
+                                                                </select>
+                                  </div>
+                                  <div class="flexie zip">
+                                    <input id="zip" type="text" name="payee_holder_address_zip" maxlength="5" pattern="[0-9]*">
+                                    <p class="smlabel">Zip</p>
+                                  </div>
+                                </div>
+                                <label for="vehicle_year">Vehicle Year</label>
+                                <input type="text" name="vehicle_year">
+                                <p class="smlabel">ex. 2013</p>
+                                <label for="vehicle_make">Vehicle Make</label>
+                                <input type="text" name="vehicle_make">
+                                <p class="smlabel">ex. Toyota</p>
+                                <label for="vehicle_model">Vehicle Model</label>
+                                <input type="text" name="vehicle_model">
+                                <p class="smlabel">ex. Prius</p>
+                                <label for="vin">Vehicle Identification Number</label>
+                                <input type="text" name="vin">
+                                <p class="smlabel">ex. 1HGCM82633A004352</p>
+                              </div>
+                              <div class="liability hide">
+                                <p class="sub">Liability Certificate Details</p>
+                                <label for="holder">Certificate Holder</label>
+                                <input type="text" name="holder">
+                                <label for="holder_address">Certificate Holder Address</label>
+                                <input type="text" name="holder_address_street">
+                                <p class="smlabel">Street Address</p>
+                                <input type="text" name="holder_address_street_2">
+                                <p class="smlabel">Suite / Floor / ICO / etc.</p>
+                                <div class="flex">
+                                  <div class="flexie city">
+                                    <input type="text" name="holder_address_city">
+                                    <p class="smlabel">City</p>
+                                  </div>
+                                  <div class="flexie state">
+                                                                <select>
+                                                                  <option id="0" value="AK" name="State" checked class="select-box__input">
+                                                                    <label for="0" aria-hidden class="select-box__option">AK</label>
+                                                                  </option>
+                                                                  <option id="1" value="AL" name="State" checked class="select-box__input">
+                                                                    <label for="1" aria-hidden class="select-box__option">AL</label>
+                                                                  </option>
+                                                                  <option id="2" value="AR" name="State" checked class="select-box__input">
+                                                                    <label for="2" aria-hidden class="select-box__option">AR</label>
+                                                                  </option>
+                                                                  <option id="3" value="AZ" name="State" checked class="select-box__input">
+                                                                    <label for="3" aria-hidden class="select-box__option">AZ</label>
+                                                                  </option>
+                                                                  <option id="4" value="CA" name="State" checked class="select-box__input">
+                                                                    <label for="4" aria-hidden class="select-box__option">CA</label>
+                                                                  </option>
+                                                                  <option id="5" value="CO" name="State" checked class="select-box__input">
+                                                                    <label for="5" aria-hidden class="select-box__option">CO</label>
+                                                                  </option>
+                                                                  <option id="6" value="CT" name="State" checked class="select-box__input">
+                                                                    <label for="6" aria-hidden class="select-box__option">CT</label>
+                                                                  </option>
+                                                                  <option id="7" value="DE" name="State" checked class="select-box__input">
+                                                                    <label for="7" aria-hidden class="select-box__option">DE</label>
+                                                                  </option>
+                                                                  <option id="8" value="FL" name="State" checked class="select-box__input">
+                                                                    <label for="8" aria-hidden class="select-box__option">FL</label>
+                                                                  </option>
+                                                                  <option id="9" value="GA" name="State" checked class="select-box__input">
+                                                                    <label for="9" aria-hidden class="select-box__option">GA</label>
+                                                                  </option>
+                                                                  <option id="10" value="HI" name="State" checked class="select-box__input">
+                                                                    <label for="10" aria-hidden class="select-box__option">HI</label>
+                                                                  </option>
+                                                                  <option id="11" value="IA" name="State" checked class="select-box__input">
+                                                                    <label for="11" aria-hidden class="select-box__option">IA</label>
+                                                                  </option>
+                                                                  <option id="12" value="ID" name="State" checked class="select-box__input">
+                                                                    <label for="12" aria-hidden class="select-box__option">ID</label>
+                                                                  </option>
+                                                                  <option id="13" value="IL" name="State" checked class="select-box__input">
+                                                                    <label for="13" aria-hidden class="select-box__option">IL</label>
+                                                                  </option>
+                                                                  <option id="14" value="IN" name="State" checked class="select-box__input">
+                                                                    <label for="14" aria-hidden class="select-box__option">IN</label>
+                                                                  </option>
+                                                                  <option id="15" value="KS" name="State" checked class="select-box__input">
+                                                                    <label for="15" aria-hidden class="select-box__option">KS</label>
+                                                                  </option>
+                                                                  <option id="16" value="KY" name="State" checked class="select-box__input">
+                                                                    <label for="16" aria-hidden class="select-box__option">KY</label>
+                                                                  </option>
+                                                                  <option id="17" value="LA" name="State" checked class="select-box__input">
+                                                                    <label for="17" aria-hidden class="select-box__option">LA</label>
+                                                                  </option>
+                                                                  <option id="18" value="MA" name="State" checked class="select-box__input">
+                                                                    <label for="18" aria-hidden class="select-box__option">MA</label>
+                                                                  </option>
+                                                                  <option id="19" value="MD" name="State" checked class="select-box__input">
+                                                                    <label for="19" aria-hidden class="select-box__option">MD</label>
+                                                                  </option>
+                                                                  <option id="20" value="ME" name="State" checked class="select-box__input">
+                                                                    <label for="20" aria-hidden class="select-box__option">ME</label>
+                                                                  </option>
+                                                                  <option id="21" value="MI" name="State" checked class="select-box__input">
+                                                                    <label for="21" aria-hidden class="select-box__option">MI</label>
+                                                                  </option>
+                                                                  <option id="22" value="MN" name="State" checked class="select-box__input">
+                                                                    <label for="22" aria-hidden class="select-box__option">MN</label>
+                                                                  </option>
+                                                                  <option id="23" value="MO" name="State" checked class="select-box__input">
+                                                                    <label for="23" aria-hidden class="select-box__option">MO</label>
+                                                                  </option>
+                                                                  <option id="24" value="MS" name="State" checked class="select-box__input">
+                                                                    <label for="24" aria-hidden class="select-box__option">MS</label>
+                                                                  </option>
+                                                                  <option id="25" value="MT" name="State" checked class="select-box__input">
+                                                                    <label for="25" aria-hidden class="select-box__option">MT</label>
+                                                                  </option>
+                                                                  <option id="26" value="NC" name="State" checked class="select-box__input">
+                                                                    <label for="26" aria-hidden class="select-box__option">NC</label>
+                                                                  </option>
+                                                                  <option id="27" value="ND" name="State" checked class="select-box__input">
+                                                                    <label for="27" aria-hidden class="select-box__option">ND</label>
+                                                                  </option>
+                                                                  <option id="28" value="NE" name="State" checked class="select-box__input">
+                                                                    <label for="28" aria-hidden class="select-box__option">NE</label>
+                                                                  </option>
+                                                                  <option id="29" value="NH" name="State" checked class="select-box__input">
+                                                                    <label for="29" aria-hidden class="select-box__option">NH</label>
+                                                                  </option>
+                                                                  <option id="30" value="NJ" name="State" checked class="select-box__input">
+                                                                    <label for="30" aria-hidden class="select-box__option">NJ</label>
+                                                                  </option>
+                                                                  <option id="31" value="NM" name="State" checked class="select-box__input">
+                                                                    <label for="31" aria-hidden class="select-box__option">NM</label>
+                                                                  </option>
+                                                                  <option id="32" value="NV" name="State" checked class="select-box__input">
+                                                                    <label for="32" aria-hidden class="select-box__option">NV</label>
+                                                                  </option>
+                                                                  <option id="33" value="NY" name="State" checked class="select-box__input">
+                                                                    <label for="33" aria-hidden class="select-box__option">NY</label>
+                                                                  </option>
+                                                                  <option id="34" value="OH" name="State" checked class="select-box__input">
+                                                                    <label for="34" aria-hidden class="select-box__option">OH</label>
+                                                                  </option>
+                                                                  <option id="35" value="OK" name="State" checked class="select-box__input">
+                                                                    <label for="35" aria-hidden class="select-box__option">OK</label>
+                                                                  </option>
+                                                                  <option id="36" value="OR" name="State" checked class="select-box__input">
+                                                                    <label for="36" aria-hidden class="select-box__option">OR</label>
+                                                                  </option>
+                                                                  <option id="37" value="PA" name="State" checked class="select-box__input">
+                                                                    <label for="37" aria-hidden class="select-box__option">PA</label>
+                                                                  </option>
+                                                                  <option id="38" value="RI" name="State" checked class="select-box__input">
+                                                                    <label for="38" aria-hidden class="select-box__option">RI</label>
+                                                                  </option>
+                                                                  <option id="39" value="SC" name="State" checked class="select-box__input">
+                                                                    <label for="39" aria-hidden class="select-box__option">SC</label>
+                                                                  </option>
+                                                                  <option id="40" value="SD" name="State" checked class="select-box__input">
+                                                                    <label for="40" aria-hidden class="select-box__option">SD</label>
+                                                                  </option>
+                                                                  <option id="41" value="TN" name="State" checked class="select-box__input">
+                                                                    <label for="41" aria-hidden class="select-box__option">TN</label>
+                                                                  </option>
+                                                                  <option id="42" value="TX" name="State" checked class="select-box__input">
+                                                                    <label for="42" aria-hidden class="select-box__option">TX</label>
+                                                                  </option>
+                                                                  <option id="43" value="UT" name="State" checked class="select-box__input">
+                                                                    <label for="43" aria-hidden class="select-box__option">UT</label>
+                                                                  </option>
+                                                                  <option id="44" value="VA" name="State" checked class="select-box__input">
+                                                                    <label for="44" aria-hidden class="select-box__option">VA</label>
+                                                                  </option>
+                                                                  <option id="45" value="VT" name="State" checked class="select-box__input">
+                                                                    <label for="45" aria-hidden class="select-box__option">VT</label>
+                                                                  </option>
+                                                                  <option id="46" value="WA" name="State" checked class="select-box__input">
+                                                                    <label for="46" aria-hidden class="select-box__option">WA</label>
+                                                                  </option>
+                                                                  <option id="47" value="WI" name="State" checked class="select-box__input">
+                                                                    <label for="47" aria-hidden class="select-box__option">WI</label>
+                                                                  </option>
+                                                                  <option id="48" value="WV" name="State" checked class="select-box__input">
+                                                                    <label for="48" aria-hidden class="select-box__option">WV</label>
+                                                                  </option>
+                                                                  <option id="49" value="WY" name="State" checked class="select-box__input">
+                                                                    <label for="49" aria-hidden class="select-box__option">WY</label>
+                                                                  </option>
+                                                                </select>
+                                  </div>
+                                  <div class="flexie zip">
+                                    <input id="zip" type="text" name="holder_address_zip" maxlength="5" pattern="[0-9]*">
+                                    <p class="smlabel">Zip</p>
+                                  </div>
+                                </div>
+                                <label for="event_description">Event Description</label>
+                                <textarea type="text" name="event_description"></textarea>
+                                <label for="event_start">Event Start Date</label>
+                                <div class="flex">
+                                  <div class="flexie month">
+                                                                <select>
+                                                                  <option id="0" value="1" name="Month" checked class="select-box__input">
+                                                                    <label for="0" aria-hidden class="select-box__option">January</label>
+                                                                  </option>
+                                                                  <option id="1" value="2" name="Month" checked class="select-box__input">
+                                                                    <label for="1" aria-hidden class="select-box__option">February</label>
+                                                                  </option>
+                                                                  <option id="2" value="3" name="Month" checked class="select-box__input">
+                                                                    <label for="2" aria-hidden class="select-box__option">March</label>
+                                                                  </option>
+                                                                  <option id="3" value="4" name="Month" checked class="select-box__input">
+                                                                    <label for="3" aria-hidden class="select-box__option">April</label>
+                                                                  </option>
+                                                                  <option id="4" value="5" name="Month" checked class="select-box__input">
+                                                                    <label for="4" aria-hidden class="select-box__option">May</label>
+                                                                  </option>
+                                                                  <option id="5" value="6" name="Month" checked class="select-box__input">
+                                                                    <label for="5" aria-hidden class="select-box__option">June</label>
+                                                                  </option>
+                                                                  <option id="6" value="7" name="Month" checked class="select-box__input">
+                                                                    <label for="6" aria-hidden class="select-box__option">July</label>
+                                                                  </option>
+                                                                  <option id="7" value="8" name="Month" checked class="select-box__input">
+                                                                    <label for="7" aria-hidden class="select-box__option">August</label>
+                                                                  </option>
+                                                                  <option id="8" value="9" name="Month" checked class="select-box__input">
+                                                                    <label for="8" aria-hidden class="select-box__option">September</label>
+                                                                  </option>
+                                                                  <option id="9" value="10" name="Month" checked class="select-box__input">
+                                                                    <label for="9" aria-hidden class="select-box__option">October</label>
+                                                                  </option>
+                                                                  <option id="10" value="11" name="Month" checked class="select-box__input">
+                                                                    <label for="10" aria-hidden class="select-box__option">November</label>
+                                                                  </option>
+                                                                  <option id="11" value="12" name="Month" checked class="select-box__input">
+                                                                    <label for="11" aria-hidden class="select-box__option">December</label>
+                                                                  </option>
+                                                                </select>
+                                  </div>
+                                  <div class="flexie date">
+                                                                <select>
+                                                                  <option id="0" value="1" name="Date" checked class="select-box__input">
+                                                                    <label for="0" aria-hidden class="select-box__option">1</label>
+                                                                  </option>
+                                                                  <option id="1" value="2" name="Date" checked class="select-box__input">
+                                                                    <label for="1" aria-hidden class="select-box__option">2</label>
+                                                                  </option>
+                                                                  <option id="2" value="3" name="Date" checked class="select-box__input">
+                                                                    <label for="2" aria-hidden class="select-box__option">3</label>
+                                                                  </option>
+                                                                  <option id="3" value="4" name="Date" checked class="select-box__input">
+                                                                    <label for="3" aria-hidden class="select-box__option">4</label>
+                                                                  </option>
+                                                                  <option id="4" value="5" name="Date" checked class="select-box__input">
+                                                                    <label for="4" aria-hidden class="select-box__option">5</label>
+                                                                  </option>
+                                                                  <option id="5" value="6" name="Date" checked class="select-box__input">
+                                                                    <label for="5" aria-hidden class="select-box__option">6</label>
+                                                                  </option>
+                                                                  <option id="6" value="7" name="Date" checked class="select-box__input">
+                                                                    <label for="6" aria-hidden class="select-box__option">7</label>
+                                                                  </option>
+                                                                  <option id="7" value="8" name="Date" checked class="select-box__input">
+                                                                    <label for="7" aria-hidden class="select-box__option">8</label>
+                                                                  </option>
+                                                                  <option id="8" value="9" name="Date" checked class="select-box__input">
+                                                                    <label for="8" aria-hidden class="select-box__option">9</label>
+                                                                  </option>
+                                                                  <option id="9" value="10" name="Date" checked class="select-box__input">
+                                                                    <label for="9" aria-hidden class="select-box__option">10</label>
+                                                                  </option>
+                                                                  <option id="10" value="11" name="Date" checked class="select-box__input">
+                                                                    <label for="10" aria-hidden class="select-box__option">11</label>
+                                                                  </option>
+                                                                  <option id="11" value="12" name="Date" checked class="select-box__input">
+                                                                    <label for="11" aria-hidden class="select-box__option">12</label>
+                                                                  </option>
+                                                                  <option id="12" value="13" name="Date" checked class="select-box__input">
+                                                                    <label for="12" aria-hidden class="select-box__option">13</label>
+                                                                  </option>
+                                                                  <option id="13" value="14" name="Date" checked class="select-box__input">
+                                                                    <label for="13" aria-hidden class="select-box__option">14</label>
+                                                                  </option>
+                                                                  <option id="14" value="15" name="Date" checked class="select-box__input">
+                                                                    <label for="14" aria-hidden class="select-box__option">15</label>
+                                                                  </option>
+                                                                  <option id="15" value="16" name="Date" checked class="select-box__input">
+                                                                    <label for="15" aria-hidden class="select-box__option">16</label>
+                                                                  </option>
+                                                                  <option id="16" value="17" name="Date" checked class="select-box__input">
+                                                                    <label for="16" aria-hidden class="select-box__option">17</label>
+                                                                  </option>
+                                                                  <option id="17" value="18" name="Date" checked class="select-box__input">
+                                                                    <label for="17" aria-hidden class="select-box__option">18</label>
+                                                                  </option>
+                                                                  <option id="18" value="19" name="Date" checked class="select-box__input">
+                                                                    <label for="18" aria-hidden class="select-box__option">19</label>
+                                                                  </option>
+                                                                  <option id="19" value="20" name="Date" checked class="select-box__input">
+                                                                    <label for="19" aria-hidden class="select-box__option">20</label>
+                                                                  </option>
+                                                                  <option id="20" value="21" name="Date" checked class="select-box__input">
+                                                                    <label for="20" aria-hidden class="select-box__option">21</label>
+                                                                  </option>
+                                                                  <option id="21" value="22" name="Date" checked class="select-box__input">
+                                                                    <label for="21" aria-hidden class="select-box__option">22</label>
+                                                                  </option>
+                                                                  <option id="22" value="23" name="Date" checked class="select-box__input">
+                                                                    <label for="22" aria-hidden class="select-box__option">23</label>
+                                                                  </option>
+                                                                  <option id="23" value="24" name="Date" checked class="select-box__input">
+                                                                    <label for="23" aria-hidden class="select-box__option">24</label>
+                                                                  </option>
+                                                                  <option id="24" value="25" name="Date" checked class="select-box__input">
+                                                                    <label for="24" aria-hidden class="select-box__option">25</label>
+                                                                  </option>
+                                                                  <option id="25" value="26" name="Date" checked class="select-box__input">
+                                                                    <label for="25" aria-hidden class="select-box__option">26</label>
+                                                                  </option>
+                                                                  <option id="26" value="27" name="Date" checked class="select-box__input">
+                                                                    <label for="26" aria-hidden class="select-box__option">27</label>
+                                                                  </option>
+                                                                  <option id="27" value="28" name="Date" checked class="select-box__input">
+                                                                    <label for="27" aria-hidden class="select-box__option">28</label>
+                                                                  </option>
+                                                                  <option id="28" value="29" name="Date" checked class="select-box__input">
+                                                                    <label for="28" aria-hidden class="select-box__option">29</label>
+                                                                  </option>
+                                                                  <option id="29" value="30" name="Date" checked class="select-box__input">
+                                                                    <label for="29" aria-hidden class="select-box__option">30</label>
+                                                                  </option>
+                                                                  <option id="30" value="31" name="Date" checked class="select-box__input">
+                                                                    <label for="30" aria-hidden class="select-box__option">31</label>
+                                                                  </option>
+                                                                </select>
+                                  </div>
+                                  <div class="flexie year">
+                                                                <select>
+                                                                  <option id="0" value="2020" name="Year" checked class="select-box__input">
+                                                                    <label for="0" aria-hidden class="select-box__option">2020</label>
+                                                                  </option>
+                                                                  <option id="1" value="2021" name="Year" checked class="select-box__input">
+                                                                    <label for="1" aria-hidden class="select-box__option">2021</label>
+                                                                  </option>
+                                                                  <option id="2" value="2022" name="Year" checked class="select-box__input">
+                                                                    <label for="2" aria-hidden class="select-box__option">2022</label>
+                                                                  </option>
+                                                                  <option id="3" value="2023" name="Year" checked class="select-box__input">
+                                                                    <label for="3" aria-hidden class="select-box__option">2023</label>
+                                                                  </option>
+                                                                  <option id="4" value="2024" name="Year" checked class="select-box__input">
+                                                                    <label for="4" aria-hidden class="select-box__option">2024</label>
+                                                                  </option>
+                                                                  <option id="5" value="2025" name="Year" checked class="select-box__input">
+                                                                    <label for="5" aria-hidden class="select-box__option">2025</label>
+                                                                  </option>
+                                                                  <option id="6" value="2026" name="Year" checked class="select-box__input">
+                                                                    <label for="6" aria-hidden class="select-box__option">2026</label>
+                                                                  </option>
+                                                                  <option id="7" value="2027" name="Year" checked class="select-box__input">
+                                                                    <label for="7" aria-hidden class="select-box__option">2027</label>
+                                                                  </option>
+                                                                  <option id="8" value="2028" name="Year" checked class="select-box__input">
+                                                                    <label for="8" aria-hidden class="select-box__option">2028</label>
+                                                                  </option>
+                                                                  <option id="9" value="2029" name="Year" checked class="select-box__input">
+                                                                    <label for="9" aria-hidden class="select-box__option">2029</label>
+                                                                  </option>
+                                                                  <option id="10" value="2030" name="Year" checked class="select-box__input">
+                                                                    <label for="10" aria-hidden class="select-box__option">2030</label>
+                                                                  </option>
+                                                                  <option id="11" value="2031" name="Year" checked class="select-box__input">
+                                                                    <label for="11" aria-hidden class="select-box__option">2031</label>
+                                                                  </option>
+                                                                  <option id="12" value="2032" name="Year" checked class="select-box__input">
+                                                                    <label for="12" aria-hidden class="select-box__option">2032</label>
+                                                                  </option>
+                                                                  <option id="13" value="2033" name="Year" checked class="select-box__input">
+                                                                    <label for="13" aria-hidden class="select-box__option">2033</label>
+                                                                  </option>
+                                                                  <option id="14" value="2034" name="Year" checked class="select-box__input">
+                                                                    <label for="14" aria-hidden class="select-box__option">2034</label>
+                                                                  </option>
+                                                                  <option id="15" value="2035" name="Year" checked class="select-box__input">
+                                                                    <label for="15" aria-hidden class="select-box__option">2035</label>
+                                                                  </option>
+                                                                </select>
+                                  </div>
+                                </div>
+                                <p class="smlabel">Or First Day of Event</p>
+                                <label for="construction_completion">Last Day of Event*</label>
+                                <div class="flex">
+                                  <div class="flexie month">
+                                                                <select>
+                                                                  <option id="0" value="1" name="Month" checked class="select-box__input">
+                                                                    <label for="0" aria-hidden class="select-box__option">January</label>
+                                                                  </option>
+                                                                  <option id="1" value="2" name="Month" checked class="select-box__input">
+                                                                    <label for="1" aria-hidden class="select-box__option">February</label>
+                                                                  </option>
+                                                                  <option id="2" value="3" name="Month" checked class="select-box__input">
+                                                                    <label for="2" aria-hidden class="select-box__option">March</label>
+                                                                  </option>
+                                                                  <option id="3" value="4" name="Month" checked class="select-box__input">
+                                                                    <label for="3" aria-hidden class="select-box__option">April</label>
+                                                                  </option>
+                                                                  <option id="4" value="5" name="Month" checked class="select-box__input">
+                                                                    <label for="4" aria-hidden class="select-box__option">May</label>
+                                                                  </option>
+                                                                  <option id="5" value="6" name="Month" checked class="select-box__input">
+                                                                    <label for="5" aria-hidden class="select-box__option">June</label>
+                                                                  </option>
+                                                                  <option id="6" value="7" name="Month" checked class="select-box__input">
+                                                                    <label for="6" aria-hidden class="select-box__option">July</label>
+                                                                  </option>
+                                                                  <option id="7" value="8" name="Month" checked class="select-box__input">
+                                                                    <label for="7" aria-hidden class="select-box__option">August</label>
+                                                                  </option>
+                                                                  <option id="8" value="9" name="Month" checked class="select-box__input">
+                                                                    <label for="8" aria-hidden class="select-box__option">September</label>
+                                                                  </option>
+                                                                  <option id="9" value="10" name="Month" checked class="select-box__input">
+                                                                    <label for="9" aria-hidden class="select-box__option">October</label>
+                                                                  </option>
+                                                                  <option id="10" value="11" name="Month" checked class="select-box__input">
+                                                                    <label for="10" aria-hidden class="select-box__option">November</label>
+                                                                  </option>
+                                                                  <option id="11" value="12" name="Month" checked class="select-box__input">
+                                                                    <label for="11" aria-hidden class="select-box__option">December</label>
+                                                                  </option>
+                                                                </select>
+                                  </div>
+                                  <div class="flexie date">
+                                                                <select>
+                                                                  <option id="0" value="1" name="Date" checked class="select-box__input">
+                                                                    <label for="0" aria-hidden class="select-box__option">1</label>
+                                                                  </option>
+                                                                  <option id="1" value="2" name="Date" checked class="select-box__input">
+                                                                    <label for="1" aria-hidden class="select-box__option">2</label>
+                                                                  </option>
+                                                                  <option id="2" value="3" name="Date" checked class="select-box__input">
+                                                                    <label for="2" aria-hidden class="select-box__option">3</label>
+                                                                  </option>
+                                                                  <option id="3" value="4" name="Date" checked class="select-box__input">
+                                                                    <label for="3" aria-hidden class="select-box__option">4</label>
+                                                                  </option>
+                                                                  <option id="4" value="5" name="Date" checked class="select-box__input">
+                                                                    <label for="4" aria-hidden class="select-box__option">5</label>
+                                                                  </option>
+                                                                  <option id="5" value="6" name="Date" checked class="select-box__input">
+                                                                    <label for="5" aria-hidden class="select-box__option">6</label>
+                                                                  </option>
+                                                                  <option id="6" value="7" name="Date" checked class="select-box__input">
+                                                                    <label for="6" aria-hidden class="select-box__option">7</label>
+                                                                  </option>
+                                                                  <option id="7" value="8" name="Date" checked class="select-box__input">
+                                                                    <label for="7" aria-hidden class="select-box__option">8</label>
+                                                                  </option>
+                                                                  <option id="8" value="9" name="Date" checked class="select-box__input">
+                                                                    <label for="8" aria-hidden class="select-box__option">9</label>
+                                                                  </option>
+                                                                  <option id="9" value="10" name="Date" checked class="select-box__input">
+                                                                    <label for="9" aria-hidden class="select-box__option">10</label>
+                                                                  </option>
+                                                                  <option id="10" value="11" name="Date" checked class="select-box__input">
+                                                                    <label for="10" aria-hidden class="select-box__option">11</label>
+                                                                  </option>
+                                                                  <option id="11" value="12" name="Date" checked class="select-box__input">
+                                                                    <label for="11" aria-hidden class="select-box__option">12</label>
+                                                                  </option>
+                                                                  <option id="12" value="13" name="Date" checked class="select-box__input">
+                                                                    <label for="12" aria-hidden class="select-box__option">13</label>
+                                                                  </option>
+                                                                  <option id="13" value="14" name="Date" checked class="select-box__input">
+                                                                    <label for="13" aria-hidden class="select-box__option">14</label>
+                                                                  </option>
+                                                                  <option id="14" value="15" name="Date" checked class="select-box__input">
+                                                                    <label for="14" aria-hidden class="select-box__option">15</label>
+                                                                  </option>
+                                                                  <option id="15" value="16" name="Date" checked class="select-box__input">
+                                                                    <label for="15" aria-hidden class="select-box__option">16</label>
+                                                                  </option>
+                                                                  <option id="16" value="17" name="Date" checked class="select-box__input">
+                                                                    <label for="16" aria-hidden class="select-box__option">17</label>
+                                                                  </option>
+                                                                  <option id="17" value="18" name="Date" checked class="select-box__input">
+                                                                    <label for="17" aria-hidden class="select-box__option">18</label>
+                                                                  </option>
+                                                                  <option id="18" value="19" name="Date" checked class="select-box__input">
+                                                                    <label for="18" aria-hidden class="select-box__option">19</label>
+                                                                  </option>
+                                                                  <option id="19" value="20" name="Date" checked class="select-box__input">
+                                                                    <label for="19" aria-hidden class="select-box__option">20</label>
+                                                                  </option>
+                                                                  <option id="20" value="21" name="Date" checked class="select-box__input">
+                                                                    <label for="20" aria-hidden class="select-box__option">21</label>
+                                                                  </option>
+                                                                  <option id="21" value="22" name="Date" checked class="select-box__input">
+                                                                    <label for="21" aria-hidden class="select-box__option">22</label>
+                                                                  </option>
+                                                                  <option id="22" value="23" name="Date" checked class="select-box__input">
+                                                                    <label for="22" aria-hidden class="select-box__option">23</label>
+                                                                  </option>
+                                                                  <option id="23" value="24" name="Date" checked class="select-box__input">
+                                                                    <label for="23" aria-hidden class="select-box__option">24</label>
+                                                                  </option>
+                                                                  <option id="24" value="25" name="Date" checked class="select-box__input">
+                                                                    <label for="24" aria-hidden class="select-box__option">25</label>
+                                                                  </option>
+                                                                  <option id="25" value="26" name="Date" checked class="select-box__input">
+                                                                    <label for="25" aria-hidden class="select-box__option">26</label>
+                                                                  </option>
+                                                                  <option id="26" value="27" name="Date" checked class="select-box__input">
+                                                                    <label for="26" aria-hidden class="select-box__option">27</label>
+                                                                  </option>
+                                                                  <option id="27" value="28" name="Date" checked class="select-box__input">
+                                                                    <label for="27" aria-hidden class="select-box__option">28</label>
+                                                                  </option>
+                                                                  <option id="28" value="29" name="Date" checked class="select-box__input">
+                                                                    <label for="28" aria-hidden class="select-box__option">29</label>
+                                                                  </option>
+                                                                  <option id="29" value="30" name="Date" checked class="select-box__input">
+                                                                    <label for="29" aria-hidden class="select-box__option">30</label>
+                                                                  </option>
+                                                                  <option id="30" value="31" name="Date" checked class="select-box__input">
+                                                                    <label for="30" aria-hidden class="select-box__option">31</label>
+                                                                  </option>
+                                                                </select>
+                                  </div>
+                                  <div class="flexie year">
+                                                                <select>
+                                                                  <option id="0" value="2020" name="Year" checked class="select-box__input">
+                                                                    <label for="0" aria-hidden class="select-box__option">2020</label>
+                                                                  </option>
+                                                                  <option id="1" value="2021" name="Year" checked class="select-box__input">
+                                                                    <label for="1" aria-hidden class="select-box__option">2021</label>
+                                                                  </option>
+                                                                  <option id="2" value="2022" name="Year" checked class="select-box__input">
+                                                                    <label for="2" aria-hidden class="select-box__option">2022</label>
+                                                                  </option>
+                                                                  <option id="3" value="2023" name="Year" checked class="select-box__input">
+                                                                    <label for="3" aria-hidden class="select-box__option">2023</label>
+                                                                  </option>
+                                                                  <option id="4" value="2024" name="Year" checked class="select-box__input">
+                                                                    <label for="4" aria-hidden class="select-box__option">2024</label>
+                                                                  </option>
+                                                                  <option id="5" value="2025" name="Year" checked class="select-box__input">
+                                                                    <label for="5" aria-hidden class="select-box__option">2025</label>
+                                                                  </option>
+                                                                  <option id="6" value="2026" name="Year" checked class="select-box__input">
+                                                                    <label for="6" aria-hidden class="select-box__option">2026</label>
+                                                                  </option>
+                                                                  <option id="7" value="2027" name="Year" checked class="select-box__input">
+                                                                    <label for="7" aria-hidden class="select-box__option">2027</label>
+                                                                  </option>
+                                                                  <option id="8" value="2028" name="Year" checked class="select-box__input">
+                                                                    <label for="8" aria-hidden class="select-box__option">2028</label>
+                                                                  </option>
+                                                                  <option id="9" value="2029" name="Year" checked class="select-box__input">
+                                                                    <label for="9" aria-hidden class="select-box__option">2029</label>
+                                                                  </option>
+                                                                  <option id="10" value="2030" name="Year" checked class="select-box__input">
+                                                                    <label for="10" aria-hidden class="select-box__option">2030</label>
+                                                                  </option>
+                                                                  <option id="11" value="2031" name="Year" checked class="select-box__input">
+                                                                    <label for="11" aria-hidden class="select-box__option">2031</label>
+                                                                  </option>
+                                                                  <option id="12" value="2032" name="Year" checked class="select-box__input">
+                                                                    <label for="12" aria-hidden class="select-box__option">2032</label>
+                                                                  </option>
+                                                                  <option id="13" value="2033" name="Year" checked class="select-box__input">
+                                                                    <label for="13" aria-hidden class="select-box__option">2033</label>
+                                                                  </option>
+                                                                  <option id="14" value="2034" name="Year" checked class="select-box__input">
+                                                                    <label for="14" aria-hidden class="select-box__option">2034</label>
+                                                                  </option>
+                                                                  <option id="15" value="2035" name="Year" checked class="select-box__input">
+                                                                    <label for="15" aria-hidden class="select-box__option">2035</label>
+                                                                  </option>
+                                                                </select>
+                                  </div>
+                                </div>
+                                <p class="smlabel">Only if Event is multiple days</p>
+                              </div>
+                              <div class="property hide">
+                                <p>property</p>
+                              </div>
                             </div>
                           </div>
+                          <script>
+                            $(document).ready(function(){
+                              $('input[type="radio"]').click(function(){
+                                var inputValue = $(this).attr("value");
+                                var targetBox = $("." + inputValue);
+                                $(".auto").not(targetBox).addClass("hide");
+                                $(".auto").not(targetBox).removeClass("show");
+                                $(".liability").not(targetBox).addClass("hide");
+                                $(".liability").not(targetBox).removeClass("show");
+                                $(".property").not(targetBox).addClass("hide");
+                                $(".property").not(targetBox).removeClass("show");
+                                $(targetBox).addClass("show");
+                                $(targetBox).removeClass("hide");
+                              });
+                            });
+                          </script>
                         </div>
                       </div>
                     </div>

@@ -10,18 +10,18 @@
     label(for="entity_name") Entity Name
     input(type="text" name="entity_name" maxlength="50" size="30")
 
-    p.label Entity is a...
-    input(type='radio' name="entity_type" value="other_district")
-    label.radio(name="other_district" for="other_district") All Other Governmental Entities
-    br
-
+    p.label Entity is a(n)...
     input(type='radio' name="entity_type" value="school_district")
     label.radio(name="school_district" for="school_district") School District
-    
+    br
+
     .district.school_district.hide
       input(type="text" name="campus_name")
       label.smlabel(for="campus_name") Name of Campus
 
+    input(type='radio' name="entity_type" value="other_district")
+    label.radio(name="other_district" for="other_district") Other Governmental Entity
+    
     label(for="billing_address") Billing Address
     input(type="text" name="billing_address_street")
     p.smlabel Street Address

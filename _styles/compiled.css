@@ -924,18 +924,29 @@ a.arrow:hover:after {
   opacity: 0.3;
 }
 .form-modal input[type="radio"],
-.form-modal label.radio {
+.form-modal label.radio,
+.form-modal input[type="checkbox"],
+.form-modal label.check {
   display: inline;
   margin-top: 10px;
   width: auto;
 }
-.form-modal input[type="radio"] {
+.form-modal input[type="radio"],
+.form-modal input[type="checkbox"] {
   box-shadow: 0px 0px 0px 1px rgba(6,34,64,0.8);
+}
+.form-modal input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
 }
 .form-modal p {
   color: #0d437f;
   margin: 20px 0 0;
   padding: 0 0 2px;
+}
+.form-modal p.sub {
+  margin-top: 0;
+  font-size: 1.15em;
 }
 .form {
   display: inline-block;
@@ -963,7 +974,8 @@ a.arrow:hover:after {
   margin-bottom: 50px;
   width: 75%;
 }
-#risk .modal-content {
+#risk .modal-content,
+#certificate .modal-content {
   margin: 0 auto;
   min-width: 500px;
   width: 40%;
@@ -983,7 +995,10 @@ label.smlabel {
   line-height: 1.5em;
   text-transform: uppercase;
 }
-.school_district.hide {
+.school_district.hide,
+.auto.hide,
+.liability.hide,
+.property.hide {
   height: 0;
   margin: 0 24px;
   opacity: 0;
@@ -1003,6 +1018,33 @@ label.smlabel {
   font-weight: 300;
   line-height: 1.5em;
   text-transform: uppercase;
+}
+.auto.show,
+.liability.show,
+.property.show {
+  background: repeating-linear-gradient(135deg, rgba(26,134,255,0.2), rgba(26,134,255,0.2) 4px, rgba(26,134,255,0.1) 4px, rgba(26,134,255,0.1) 8px);
+  border-bottom: 2px solid #fff;
+  height: auto;
+  margin-top: 30px;
+  opacity: 1;
+  padding: 20px;
+  transition: opacity 300ms ease;
+}
+.show input,
+.show textarea {
+  background: #fff;
+  opacity: 0.7;
+}
+.show input:focus,
+.show textarea:focus,
+.show input:active,
+.show textarea:active {
+  background: #fff;
+  border-bottom: 2px solid #1778e5;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  opacity: 1;
 }
 .flex {
   align-content: stretch;
@@ -1036,6 +1078,9 @@ select {
 }
 select option {
   outline: none;
+}
+label.check {
+  margin-right: 10px;
 }
 @media screen and (max-width: 1000px) {
   .full {

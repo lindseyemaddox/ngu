@@ -12,3 +12,12 @@ mixin Radio(title, label)
   input(type="radio" name=label value="no")
   label.radio.smlabel(name=label for="no") No
     
+mixin Radios(title, label, valone, valtwo, valthr)
+  label(for=label)=title
+  input(type='radio' name=label value=valone)
+  label.check(name=label for=valone)=valone
+  input(type='radio' name=label value=valtwo)
+  label.check(name=label for=valtwo)=valtwo
+  input(type='radio' name=label value=valthr)
+  label.check(name=label for=valthr)=valthr
+    

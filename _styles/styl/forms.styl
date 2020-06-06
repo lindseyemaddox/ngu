@@ -88,18 +88,29 @@
       opacity: .3
 
   input[type="radio"],
-  label.radio
+  label.radio,
+  input[type="checkbox"],
+  label.check
     display: inline
     margin-top: 10px
     width: auto
 
-  input[type="radio"]
+  input[type="radio"],
+  input[type="checkbox"]
     box-shadow: 0px 0px 0px 1px rgba($darkest-blue .8)
+
+  input[type="checkbox"]
+    height: 20px
+    width: 20px
 
   p
     color: $medium-blue
     margin: 20px 0 0
     padding: 0 0 2px
+
+    &.sub
+      margin-top: 0
+      font-size: 1.15em
 
 .form
   display: inline-block
@@ -125,7 +136,8 @@
     margin-bottom: 50px
     width: 75%
 
-#risk .modal-content
+#risk .modal-content,
+#certificate .modal-content
   margin: 0 auto
   min-width: 500px
   width: 40%
@@ -146,7 +158,10 @@ label.smlabel
   primary-type($sans,$light)
   text-transform: uppercase
 
-.school_district.hide
+.school_district.hide,
+.auto.hide,
+.liability.hide,
+.property.hide
   height: 0
   margin: 0 24px
   opacity: 0
@@ -164,6 +179,32 @@ label.smlabel
   margin-top: 3px
   primary-type($sans,$light)
   text-transform: uppercase
+
+.auto.show,
+.liability.show,
+.property.show
+  background: repeating-linear-gradient(135deg,rgba($lightest-blue,.2),rgba($lightest-blue,.2) 4px,rgba($lightest-blue,.1) 4px,rgba($lightest-blue,.1) 8px)
+  border-bottom: 2px solid $white
+  height: auto
+  margin-top: 30px
+  opacity: 1
+  padding: 20px
+  transition: opacity 300ms ease
+
+.show input,
+.show textarea
+  background: $white
+  opacity: .7
+
+  &:focus, &:active
+    background: rgba($white, 1)
+    border-bottom: 2px solid $light-blue
+    border-top: none
+    border-left: none
+    border-right: none
+    opacity: 1
+
+
 
 .flex
   align-content: stretch
@@ -197,3 +238,6 @@ select
 
   option
     outline: none
+
+label.check
+  margin-right: 10px
