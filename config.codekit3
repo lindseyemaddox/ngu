@@ -345,13 +345,15 @@
 		"opt": 0,
 		"q": 100
 		},
-	"/_includes/contact.html": {
+	"/_includes/certificate.jade": {
 		"cB": 0,
-		"ft": 8192,
+		"cOD": 1,
+		"ft": 512,
 		"hM": 0,
-		"oA": 0,
-		"oAP": "/_includes/contact.html",
-		"oF": 0
+		"oA": 1,
+		"oAP": "/_includes/certificate.html",
+		"oF": 0,
+		"oS": 0
 		},
 	"/_includes/contact.jade": {
 		"cB": 0,
@@ -372,14 +374,6 @@
 		"oAP": "/_includes/head.html",
 		"oF": 0,
 		"oS": 0
-		},
-	"/_includes/mixins.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_includes/mixins.html",
-		"oF": 0
 		},
 	"/_includes/mixins.jade": {
 		"cB": 0,
@@ -494,17 +488,6 @@
 		"sC": 1,
 		"tS": 0
 		},
-	"/_scripts/min/jquery-ui.min.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/_scripts/min/min/jquery-ui.min-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
 	"/_scripts/min/main-min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -534,46 +517,6 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/_styles/compiled-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/_styles/jquery-ui-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/_styles/jquery-ui-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/_styles/jquery-ui.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/_styles/jquery-ui-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/_styles/jquery-ui.structure.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/_styles/jquery-ui.structure-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/_styles/jquery-ui.theme.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/_styles/jquery-ui.theme-min.css",
 		"oF": 0,
 		"oS": 3
 		},

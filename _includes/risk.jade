@@ -10,18 +10,18 @@
     label(for="entity_name") Entity Name
     input(type="text" name="entity_name" maxlength="50" size="30")
 
-    p.label Entity is a
-    input(type='radio' name="entity_type" value="school_district")
-    label.radio(name="school_district" for="school_district") School District
+    p.label Entity is a...
+    input(type='radio' name="entity_type" value="other_district")
+    label.radio(name="other_district" for="other_district") All Other Governmental Entities
     br
 
+    input(type='radio' name="entity_type" value="school_district")
+    label.radio(name="school_district" for="school_district") School District
+    
     .district.school_district.hide
       input(type="text" name="campus_name")
       label.smlabel(for="campus_name") Name of Campus
 
-    input(type='radio' name="entity_type" value="other_district")
-    label.radio(name="other_district" for="other_district") All Other Types of Governmental Entities
-    
     label(for="billing_address") Billing Address
     input(type="text" name="billing_address_street")
     p.smlabel Street Address
@@ -35,8 +35,7 @@
         input(type="text" name="billing_address_city")
         p.smlabel City
         
-      .flexie.state
-        +SelectBox('State', [
+      .flexie.state: +SelectBox('State', [
           {name: 'AK', value: 'AK'},
           {name: 'AL', value: 'AL'},
           {name: 'AR', value: 'AR'},
@@ -107,8 +106,7 @@
         input(type="text" name="construction_address_city")
         p.smlabel City
         
-      .flexie.state
-        +SelectBox('State', [
+      .flexie.state: +SelectBox('State', [
           {name: 'AK', value: 'AK'},
           {name: 'AL', value: 'AL'},
           {name: 'AR', value: 'AR'},
@@ -170,13 +168,11 @@
     input(type="text" name="occupancy_description")
     p.smlabel i.e. Office, Classroom, Gym, etc.
     
-    +Radio('addition', [
-      {title: "Addition to Exsisting Building?", label: "addition_to_existing"}
-    ])
+    +Radio("Addition to Exsisting Building?", "addition_to_existing", [{  
+    }])
         
-    +Radio('sprinkler', [
-      {title: "Will there be a sprinkler system?", label: "sprinkler_system"}
-    ])
+    +Radio("Will there be a sprinkler system?", "sprinkler_system", [{  
+    }])
 
     label(for="construction_type") Type of Construction
     input(type="text" name="construction_type")
@@ -186,9 +182,8 @@
     input(type="text" name="protection_class")
     p.smlabel NGU will determine if unknown (*Not Required)
 
-    +Radio('renovation', [
-      {title: "Is this a Renovation?", label: "renovation"}
-    ])
+    +Radio('Is this a Renovation?', 'renovation', [{
+    }])
         
     label(for="number_of_floors") Number of Floors
     input(type="text" name="number_of_floors")
@@ -206,8 +201,7 @@
 
     div.flex
 
-      .flexie.month
-        +SelectBox('Month', [
+      .flexie.month: +SelectBox('Month', [
           {name: 'January', value: '1'}, 
           {name: 'February', value: '2'}, 
           {name: 'March', value: '3'}, 
@@ -222,8 +216,7 @@
           {name: 'December', value: '12'}
         ])
       
-      .flexie.date
-        +SelectBox('Date', [
+      .flexie.date: +SelectBox('Date', [
           {name: '1', value: '1'}, 
           {name: '2', value: '2'}, 
           {name: '3', value: '3'}, 
@@ -257,8 +250,7 @@
           {name: '31', value: '31'}
         ])
       
-      .flexie.year
-        +SelectBox('Year', [
+      .flexie.year: +SelectBox('Year', [
           {name: '2020', value: '2020'}, 
           {name: '2021', value: '2021'}, 
           {name: '2022', value: '2022'}, 
@@ -281,8 +273,7 @@
 
     div.flex
 
-      .flexie.month
-        +SelectBox('Month', [
+      .flexie.month: +SelectBox('Month', [
           {name: 'January', value: '1'}, 
           {name: 'February', value: '2'}, 
           {name: 'March', value: '3'}, 
@@ -297,8 +288,7 @@
           {name: 'December', value: '12'}
         ])
       
-      .flexie.date
-        +SelectBox('Date', [
+      .flexie.date: +SelectBox('Date', [
           {name: '1', value: '1'}, 
           {name: '2', value: '2'}, 
           {name: '3', value: '3'}, 
@@ -332,8 +322,7 @@
           {name: '31', value: '31'}
         ])
       
-      .flexie.year
-        +SelectBox('Year', [
+      .flexie.year: +SelectBox('Year', [
           {name: '2020', value: '2020'}, 
           {name: '2021', value: '2021'}, 
           {name: '2022', value: '2022'}, 
@@ -356,13 +345,11 @@
     input(type="text" name="security_type")
     p.smlabel Fencing, Lighting, Guard, etc.
 
-    +Radio('flood', [
-      {title: "Flood / Quake?", label: "flood_quake"}
-    ])
+    +Radio("Flood / Quake?", "flood_quake", [{  
+    }])
         
-    +Radio('terrorism', [
-      {title: "Terrorism?", label: "terrorism"}
-    ])
+    +Radio("Terrorism?", "terrorism", [{  
+    }])
         
     label(for="contractor_name") Name of Contractor
     input(type="text" name="contractor_name")
@@ -455,8 +442,7 @@
     input(type="email" name="email")
     p.smlabel Enter to receive a copy of request.
     
-    a(href="#resources")
-      input(type="submit" value="Submit Form")    
+    a(href="#resources"): input(type="submit" value="Submit Form")    
       
 script.
   $(document).ready(function(){

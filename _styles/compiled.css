@@ -299,7 +299,6 @@ html {
 }
 .container .headline {
   color: #000;
-  padding-bottom: 20px;
   font-family: 'Raleway', 'Arial', sans-serif;
   font-weight: 600;
   line-height: 1.5em;
@@ -785,9 +784,6 @@ p.a {
   line-height: 1.333em;
   padding: 14px 0 36px;
 }
-.forms {
-  position: relative;
-}
 #resources p.intro {
   line-height: 1.25em;
   margin-top: 75px;
@@ -943,6 +939,7 @@ a.arrow:hover:after {
 }
 .form {
   display: inline-block;
+  margin-top: 40px;
   max-width: 200px;
   vertical-align: top;
   width: 45%;
@@ -951,10 +948,11 @@ a.arrow:hover:after {
   color: #0b396d;
   display: inline-block;
   float: right;
-  margin-top: 20px;
+  margin-top: 60px;
   width: 50%;
 }
-.other-contact p {
+.other-contact p,
+.other-contact .caddy {
   font-size: 1em;
   padding-bottom: 20px;
   font-family: 'Vollkorn', 'Arial', sans-serif;

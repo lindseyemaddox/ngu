@@ -6,9 +6,9 @@ mixin SelectBox(name, options)
         label.select-box__option(for=index aria-hidden) #{option.name}
 
 mixin Radio(title, label)
-  label(for= label) =title
-  input(type="radio" name= label value="yes")
-  label.radio.smlabel(name= label for="yes") Yes
-  input(type="radio" name= label value="no")
-  label.radio.smlabel(name= label for="no") No
+  label(for=label)=title
+  input(type="radio" name=label value="yes")
+  label.radio.smlabel(name=label for="yes") Yes
+  input(type="radio" name=label value="no")
+  label.radio.smlabel(name=label for="no") No
     

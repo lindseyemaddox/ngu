@@ -12,8 +12,6 @@
 
       p.intro To request a Certificate of Insurance or an Endorsement from the Tennessee Risk Management Trust, you can complete the forms linked below.
       a.arrow(href='#risk') Builders Risk Coverage Application
-      a.arrow(href='#property') Add or Remove Property
-      a.arrow(href='#vehicle') Add or Remove Vehicle
       a.arrow(href='#certificate') Certificate of Insurance Request Form
       
       p.intro Links to information and services that benefit our clients. Please let us know if there is any other information you feel would be helpful to see here.
@@ -35,26 +33,13 @@
             
             include risk.jade
 
-      #property.modal
-        .modal-content
-          .container
-            a.closebtn(href="#resources") close
-            h3.headline Add or Remove Property
-            p Some text in the modal.
-
-      #vehicle.modal
-        .modal-content
-          .container
-            a.closebtn(href="#resources") close
-            h3.headline Add or Remove Vehicle
-            p Some text in the modal.
-
       #certificate.modal
         .modal-content
           .container
             a.closebtn(href="#resources") close
             h3.headline Certificate of Insurance Request Form
-            p Some text in the modal.
+
+            include certificate.jade
 
       #links.modal
         .modal-content

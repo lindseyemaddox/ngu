@@ -23,17 +23,17 @@
     label(for="comments") Comments *
     textarea(name="comments" maxlength="1000" cols="25" rows="6")
 
-    input(type="submit" value="Reach Out")
+    a(href="#resources"): input(type="submit" value="Reach Out")    
 
   .other-contact
   
-    img(src="./_images/logo-color.svg")
+    a(href="#resources")
+      img(src="./_images/logo-color.svg")
 
-    p Next Generation Underwriters
-      br
-      | 111 Hazel Path
-      br
-      | Hendersonville, TN 37075
+    p 
+      a.caddy(href="https://goo.gl/maps/eyYzMyzbSrYqwdWL6" target="_blank" rel="nofollow") Next Generation Underwriters
+        | <br/>111 Hazel Path
+        | <br/>Hendersonville, TN 37075
 
     p 
       a(href="mailto:info@ngutn.com?subject=Query from ngutn.com Contact Form") info@ngutn.com
@@ -46,9 +46,6 @@
 
     p 
       a fax: (615) 824-1980
-
-
-
 
 
 router.post('/', function (req, res) {

@@ -1,0 +1,28 @@
+
+.form-modal
+
+  include mixins.jade
+
+  p Use this form to request a Certificate of Insurance (COI) on your policy. All fields are required unless otherwise noted.
+
+  .coiform(name="coiform" method="post" action="send_coiform_email.php")
+
+    label(for="entity_name") Entity Name
+    input(type="text" name="entity_name")
+
+    label(for="agent") Agent *
+    input(type="text" name="agent")
+    p.smlabel *Not Required
+
+    p.label Entity is a...
+    input(type='radio' name="entity_type" value="school_district")
+    label.radio(name="school_district" for="school_district") School District
+    br
+
+    .district.school_district.hide
+      input(type="text" name="campus_name")
+      label.smlabel(for="campus_name") Name of Campus
+
+    input(type='radio' name="entity_type" value="other_district")
+    label.radio(name="other_district" for="other_district") All Other Governmental Entities
+    

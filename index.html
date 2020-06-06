@@ -283,7 +283,7 @@
                   <div id="resources" class="pane">
                     <p class="intro">If we can help you with your risk management needs or you have questions about what we can do for you, please don’t hesitate to give us a call or complete the online contact form linked below.</p><a href="#contact" class="arrow">Contact NGU</a>
                     <p class="intro">If you have experienced an event which you feel requires a claim on your policy, please complete the form linked below and we will be more than happy to walk you through everything and resolve your issue.</p><a href="https://my.marshclearsight.com/hydra_customlogin" target="_blank" class="arrow">File a Claim</a>
-                    <p class="intro">To request a Certificate of Insurance or an Endorsement from the Tennessee Risk Management Trust, you can complete the forms linked below.</p><a href="#risk" class="arrow">Builders Risk Coverage Application</a><a href="#property" class="arrow">Add or Remove Property</a><a href="#vehicle" class="arrow">Add or Remove Vehicle</a><a href="#certificate" class="arrow">Certificate of Insurance Request Form</a>
+                    <p class="intro">To request a Certificate of Insurance or an Endorsement from the Tennessee Risk Management Trust, you can complete the forms linked below.</p><a href="#risk" class="arrow">Builders Risk Coverage Application</a><a href="#certificate" class="arrow">Certificate of Insurance Request Form</a>
                     <p class="intro">Links to information and services that benefit our clients. Please let us know if there is any other information you feel would be helpful to see here.</p><a href="#links" class="arrow">Helpful Links</a>
                     <div id="contact" class="modal">
                       <div class="modal-content">
@@ -301,11 +301,14 @@
                               <label for="phone">Telephone Number</label>
                               <input type="text" name="phone" maxlength="30" size="30">
                               <label for="comments">Comments *</label>
-                              <textarea name="comments" maxlength="1000" cols="25" rows="6"></textarea>
-                              <input type="submit" value="Reach Out">
+                              <textarea name="comments" maxlength="1000" cols="25" rows="6"></textarea><a href="#resources">
+                                <input type="submit" value="Reach Out"></a>
                             </div>
-                            <div class="other-contact"><img src="./_images/logo-color.svg">
-                              <p>Next Generation Underwriters<br>111 Hazel Path<br>Hendersonville, TN 37075</p>
+                            <div class="other-contact"><a href="#resources"><img src="./_images/logo-color.svg"></a>
+                              <p> <a href="https://goo.gl/maps/eyYzMyzbSrYqwdWL6" target="_blank" rel="nofollow" class="caddy">
+                                  Next Generation Underwriters
+                                  <br/>111 Hazel Path
+                                  <br/>Hendersonville, TN 37075</a></p>
                               <p> <a href="mailto:info@ngutn.com?subject=Query from ngutn.com Contact Form">info@ngutn.com</a></p>
                               <p><a href="tel:16158225454">(615) 822-5454</a></p>
                               <p> <a href="tel:18778226161">(877) 822-6161</a></p>
@@ -325,15 +328,15 @@
                             <div name="riskform" method="post" action="send_riskform_email.php" class="riskform">
                               <label for="entity_name">Entity Name</label>
                               <input type="text" name="entity_name" maxlength="50" size="30">
-                              <p class="label">Entity is a</p>
+                              <p class="label">Entity is a...</p>
+                              <input type="radio" name="entity_type" value="other_district">
+                              <label name="other_district" for="other_district" class="radio">All Other Governmental Entities</label><br>
                               <input type="radio" name="entity_type" value="school_district">
-                              <label name="school_district" for="school_district" class="radio">School District</label><br>
+                              <label name="school_district" for="school_district" class="radio">School District</label>
                               <div class="district school_district hide">
                                 <input type="text" name="campus_name">
                                 <label for="campus_name" class="smlabel">Name of Campus</label>
                               </div>
-                              <input type="radio" name="entity_type" value="other_district">
-                              <label name="other_district" for="other_district" class="radio">All Other Types of Governmental Entities</label>
                               <label for="billing_address">Billing Address</label>
                               <input type="text" name="billing_address_street">
                               <p class="smlabel">Street Address</p>
@@ -497,7 +500,6 @@
                                                                   <label for="49" aria-hidden class="select-box__option">WY</label>
                                                                 </option>
                                                               </select>
-                                  <p class="smlabel">State</p>
                                 </div>
                                 <div class="flexie zip">
                                   <input id="zip" type="text" name="billing_address_zip" maxlength="5" pattern="[0-9]*">
@@ -667,7 +669,6 @@
                                                                   <label for="49" aria-hidden class="select-box__option">WY</label>
                                                                 </option>
                                                               </select>
-                                  <p class="smlabel">State</p>
                                 </div>
                                 <div class="flexie zip">
                                   <input id="zip" type="text" name="construction_address_zip" maxlength="5" pattern="[0-9]*">
@@ -677,27 +678,27 @@
                               <label for="occupancy_description">Occupancy Description of Construction</label>
                               <input type="text" name="occupancy_description">
                               <p class="smlabel">i.e. Office, Classroom, Gym, etc.</p>
-                                                          <label for="[object Object]">=title</label>
-                                                          <input type="radio" name="[object Object]" value="yes">
-                                                          <label name="[object Object]" for="yes" class="radio smlabel">Yes</label>
-                                                          <input type="radio" name="[object Object]" value="no">
-                                                          <label name="[object Object]" for="no" class="radio smlabel">No</label>
-                                                          <label for="[object Object]">=title</label>
-                                                          <input type="radio" name="[object Object]" value="yes">
-                                                          <label name="[object Object]" for="yes" class="radio smlabel">Yes</label>
-                                                          <input type="radio" name="[object Object]" value="no">
-                                                          <label name="[object Object]" for="no" class="radio smlabel">No</label>
+                                                          <label for="addition_to_existing">Addition to Exsisting Building?</label>
+                                                          <input type="radio" name="addition_to_existing" value="yes">
+                                                          <label name="addition_to_existing" for="yes" class="radio smlabel">Yes</label>
+                                                          <input type="radio" name="addition_to_existing" value="no">
+                                                          <label name="addition_to_existing" for="no" class="radio smlabel">No</label>
+                                                          <label for="sprinkler_system">Will there be a sprinkler system?</label>
+                                                          <input type="radio" name="sprinkler_system" value="yes">
+                                                          <label name="sprinkler_system" for="yes" class="radio smlabel">Yes</label>
+                                                          <input type="radio" name="sprinkler_system" value="no">
+                                                          <label name="sprinkler_system" for="no" class="radio smlabel">No</label>
                               <label for="construction_type">Type of Construction</label>
                               <input type="text" name="construction_type">
                               <p class="smlabel">i.e. Masonry, Non-combustible, Frame, etc.</p>
                               <label for="protection_class">Protection Class *</label>
                               <input type="text" name="protection_class">
                               <p class="smlabel">NGU will determine if unknown (*Not Required)</p>
-                                                          <label for="[object Object]">=title</label>
-                                                          <input type="radio" name="[object Object]" value="yes">
-                                                          <label name="[object Object]" for="yes" class="radio smlabel">Yes</label>
-                                                          <input type="radio" name="[object Object]" value="no">
-                                                          <label name="[object Object]" for="no" class="radio smlabel">No</label>
+                                                          <label for="renovation">Is this a Renovation?</label>
+                                                          <input type="radio" name="renovation" value="yes">
+                                                          <label name="renovation" for="yes" class="radio smlabel">Yes</label>
+                                                          <input type="radio" name="renovation" value="no">
+                                                          <label name="renovation" for="no" class="radio smlabel">No</label>
                               <label for="number_of_floors">Number of Floors</label>
                               <input type="text" name="number_of_floors">
                               <label for="square_footage">Square Footage</label>
@@ -1093,16 +1094,16 @@
                               <label for="security_type">Type of Security (inside and outside)</label>
                               <input type="text" name="security_type">
                               <p class="smlabel">Fencing, Lighting, Guard, etc.</p>
-                                                          <label for="[object Object]">=title</label>
-                                                          <input type="radio" name="[object Object]" value="yes">
-                                                          <label name="[object Object]" for="yes" class="radio smlabel">Yes</label>
-                                                          <input type="radio" name="[object Object]" value="no">
-                                                          <label name="[object Object]" for="no" class="radio smlabel">No</label>
-                                                          <label for="[object Object]">=title</label>
-                                                          <input type="radio" name="[object Object]" value="yes">
-                                                          <label name="[object Object]" for="yes" class="radio smlabel">Yes</label>
-                                                          <input type="radio" name="[object Object]" value="no">
-                                                          <label name="[object Object]" for="no" class="radio smlabel">No</label>
+                                                          <label for="flood_quake">Flood / Quake?</label>
+                                                          <input type="radio" name="flood_quake" value="yes">
+                                                          <label name="flood_quake" for="yes" class="radio smlabel">Yes</label>
+                                                          <input type="radio" name="flood_quake" value="no">
+                                                          <label name="flood_quake" for="no" class="radio smlabel">No</label>
+                                                          <label for="terrorism">Terrorism?</label>
+                                                          <input type="radio" name="terrorism" value="yes">
+                                                          <label name="terrorism" for="yes" class="radio smlabel">Yes</label>
+                                                          <input type="radio" name="terrorism" value="no">
+                                                          <label name="terrorism" for="no" class="radio smlabel">No</label>
                               <label for="contractor_name">Name of Contractor</label>
                               <input type="text" name="contractor_name">
                               <label for="contractor_address">Contractor Address</label>
@@ -1304,27 +1305,29 @@
                         </div>
                       </div>
                     </div>
-                    <div id="property" class="modal">
-                      <div class="modal-content">
-                        <div class="container"><a href="#resources" class="closebtn">close</a>
-                          <h3 class="headline">Add or Remove Property</h3>
-                          <p>Some text in the modal.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div id="vehicle" class="modal">
-                      <div class="modal-content">
-                        <div class="container"><a href="#resources" class="closebtn">close</a>
-                          <h3 class="headline">Add or Remove Vehicle</h3>
-                          <p>Some text in the modal.</p>
-                        </div>
-                      </div>
-                    </div>
                     <div id="certificate" class="modal">
                       <div class="modal-content">
                         <div class="container"><a href="#resources" class="closebtn">close</a>
                           <h3 class="headline">Certificate of Insurance Request Form</h3>
-                          <p>Some text in the modal.</p>
+                          <div class="form-modal">
+                            <p>Use this form to request a Certificate of Insurance (COI) on your policy. All fields are required unless otherwise noted.</p>
+                            <div name="coiform" method="post" action="send_coiform_email.php" class="coiform">
+                              <label for="entity_name">Entity Name</label>
+                              <input type="text" name="entity_name">
+                              <label for="agent">Agent *</label>
+                              <input type="text" name="agent">
+                              <p class="smlabel">*Not Required</p>
+                              <p class="label">Entity is a...</p>
+                              <input type="radio" name="entity_type" value="school_district">
+                              <label name="school_district" for="school_district" class="radio">School District</label><br>
+                              <div class="district school_district hide">
+                                <input type="text" name="campus_name">
+                                <label for="campus_name" class="smlabel">Name of Campus</label>
+                              </div>
+                              <input type="radio" name="entity_type" value="other_district">
+                              <label name="other_district" for="other_district" class="radio">All Other Governmental Entities</label>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
