@@ -14,12 +14,12 @@
     input(type="text" name="agent")
     p.smlabel *Not Required
 
-    p.label Entity is a(n)...
+    p.label Entity is...
     input(type='radio' name="entity_type" value="school_district")
-    label.radio(name="school_district" for="school_district") School District
+    label.radio(name="school_district" for="school_district") A School District
     br
     input(type='radio' name="entity_type" value="other_district")
-    label.radio(name="other_district" for="other_district") Other Governmental Entity
+    label.radio(name="other_district" for="other_district") Another Governmental Entity
     
     +Radios("COI Type Requested", "coi_type", "auto", "liability", "property", [{
       }])
@@ -650,14 +650,34 @@
           p.smlabel Zip      
             
       
+    #filesubmit
+      input.file-select(type="file" accept="image/*")
+      button.file-submit SUBMIT IMAGE
+        
       
       
       
-      
-      
-      
-      
+script.
+  const storageService = firebase.storage();
+  const storageRef = storageService.ref();
+  
+  document.querySelector('.file-select').addEventListener('change', handleFileUploadChange);
+  document.querySelector('.file-submit').addEventListener('click', handleFileUploadSubmit);
+  
+  let selectedFile;
+  handleFileUploadChange(e) {
+    selectedFile = e.target.files[0];
+  }
     
+  handleFileUploadSubmit(e) {  
+    const uploadTask = storageRef.child(`coi-uploads/${selectedFile.name}`).put(selectedFile); 
+    uploadTask.on('state_changed', (snapshot) => {
+    }, (error) => {
+      console.log(error);
+    }, () => {
+       console.log('success');
+    });
+  }
     
 script.
   $(document).ready(function(){

@@ -328,15 +328,15 @@
                             <div name="riskform" method="post" action="send_riskform_email.php" class="riskform">
                               <label for="entity_name">Entity Name</label>
                               <input type="text" name="entity_name" maxlength="50" size="30">
-                              <p class="label">Entity is a(n)...</p>
+                              <p class="label">Entity is...</p>
                               <input type="radio" name="entity_type" value="school_district">
-                              <label name="school_district" for="school_district" class="radio">School District</label><br>
+                              <label name="school_district" for="school_district" class="radio">A School District</label><br>
                               <div class="district school_district hide">
                                 <input type="text" name="campus_name">
                                 <label for="campus_name" class="smlabel">Name of Campus</label>
                               </div>
                               <input type="radio" name="entity_type" value="other_district">
-                              <label name="other_district" for="other_district" class="radio">Other Governmental Entity</label>
+                              <label name="other_district" for="other_district" class="radio">Another Governmental Entity</label>
                               <label for="billing_address">Billing Address</label>
                               <input type="text" name="billing_address_street">
                               <p class="smlabel">Street Address</p>
@@ -1317,11 +1317,11 @@
                               <label for="agent">Agent *</label>
                               <input type="text" name="agent">
                               <p class="smlabel">*Not Required</p>
-                              <p class="label">Entity is a(n)...</p>
+                              <p class="label">Entity is...</p>
                               <input type="radio" name="entity_type" value="school_district">
-                              <label name="school_district" for="school_district" class="radio">School District</label><br>
+                              <label name="school_district" for="school_district" class="radio">A School District</label><br>
                               <input type="radio" name="entity_type" value="other_district">
-                              <label name="other_district" for="other_district" class="radio">Other Governmental Entity</label>
+                              <label name="other_district" for="other_district" class="radio">Another Governmental Entity</label>
                                                           <label for="coi_type">COI Type Requested</label>
                                                           <input type="radio" name="coi_type" value="auto">
                                                           <label name="coi_type" for="auto" class="check">auto</label>
@@ -2767,8 +2767,35 @@
                                   </div>
                                 </div>
                               </div>
+                              <div id="filesubmit">
+                                <input type="file" accept="image/*" class="file-select">
+                                <button class="file-submit">SUBMIT IMAGE</button>
+                              </div>
                             </div>
                           </div>
+                          <script>
+                            const storageService = firebase.storage();
+                            const storageRef = storageService.ref();
+                            
+                            document.querySelector('.file-select').addEventListener('change', handleFileUploadChange);
+                            document.querySelector('.file-submit').addEventListener('click', handleFileUploadSubmit);
+                            
+                            let selectedFile;
+                            handleFileUploadChange(e) {
+                              selectedFile = e.target.files[0];
+                            }
+                              
+                            handleFileUploadSubmit(e) {  
+                              const uploadTask = storageRef.child(`coi-uploads/${selectedFile.name}`).put(selectedFile); 
+                              uploadTask.on('state_changed', (snapshot) => {
+                              }, (error) => {
+                                console.log(error);
+                              }, () => {
+                                 console.log('success');
+                              });
+                            }
+                              
+                          </script>
                           <script>
                             $(document).ready(function(){
                               $('input[type="radio"]').click(function(){
@@ -2805,11 +2832,29 @@
     </body>
   </head>
 </html>
-<script src="/__/firebase/7.15.0/firebase-app.js"></script>
-<script src="/__/firebase/7.15.0/firebase-analytics.js"></script>
-<script src="/__/firebase/init.js"></script>
 <script>
   jQuery(function($){
     $("input[name='phone']").mask("(999) 999-9999");
   });
+  
+  
 </script>
+<script src="/__/firebase/7.15.0/firebase-app.js"></script>
+<script src="/__/firebase/7.15.0/firebase-analytics.js"></script>
+<script src="/__/firebase/init.js"></script>
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyBasTK_9RUrvJaeYlB9cJ-2s-mZiyyeLco",
+    authDomain: "ngu-coi-request-form.firebaseapp.com",
+    databaseURL: "https://ngu-coi-request-form.firebaseio.com",
+    projectId: "ngu-coi-request-form",
+    storageBucket: "ngu-coi-request-form.appspot.com",
+    messagingSenderId: "930543561876",
+    appId: "1:930543561876:web:88fc8bfd5beea47e0dd881",
+    measurementId: "G-YS4YW2H331"
+  };
+  firebase.initializeApp(firebaseConfig);
+  
+</script>
+<!-- Get a reference to the storage service, which is used to create references in your storage bucket-->
+<var>storage = firebase.storage();</var>

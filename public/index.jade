@@ -44,6 +44,13 @@ include _includes/head
             include _includes/resources
 
 
+
+script.
+  jQuery(function($){
+    $("input[name='phone']").mask("(999) 999-9999");
+  });
+
+
 //- The core Firebase JS SDK is always required and must be listed first
 script(src="/__/firebase/7.15.0/firebase-app.js")
 //- TODO: Add SDKs for Firebase products that you want to use
@@ -52,7 +59,19 @@ script(src="/__/firebase/7.15.0/firebase-analytics.js")
 //- Initialize Firebase
 script(src="/__/firebase/init.js")
 
+
 script.
-  jQuery(function($){
-    $("input[name='phone']").mask("(999) 999-9999");
-  });
+  var firebaseConfig = {
+    apiKey: "AIzaSyBasTK_9RUrvJaeYlB9cJ-2s-mZiyyeLco",
+    authDomain: "ngu-coi-request-form.firebaseapp.com",
+    databaseURL: "https://ngu-coi-request-form.firebaseio.com",
+    projectId: "ngu-coi-request-form",
+    storageBucket: "ngu-coi-request-form.appspot.com",
+    messagingSenderId: "930543561876",
+    appId: "1:930543561876:web:88fc8bfd5beea47e0dd881",
+    measurementId: "G-YS4YW2H331"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+// Get a reference to the storage service, which is used to create references in your storage bucket
+var storage = firebase.storage();
